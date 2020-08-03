@@ -1,4 +1,4 @@
-class ContentCardExample extends HTMLElement {
+class HourlyForecast extends HTMLElement {
   set hass(hass) {
     if (!this.content) {
       const card = document.createElement('ha-card');
@@ -43,4 +43,4 @@ class ContentCardExample extends HTMLElement {
   }
 }
 
-customElements.define('content-card-example', ContentCardExample);
+customElements.define('hourly-forecast', HourlyForecast);
