@@ -16,7 +16,10 @@ class HourlyForecast extends HTMLElement {
     const My0hTimeStr = hass.states[Precip0h].attributes.observation_time;
 
     this.content.innerHTML = `
-      Preciptation in the next hour is ${Precip0h_stateStr}
+      <th><tr><td>Time</td><td>Precipitation</td></tr></th>
+      <tr><td> ${My0hTimeStr} </td><td>${Precip0h_stateStr}</td></tr>
+
+Preciptation in the next hour is ${Precip0h_stateStr}
       <br>
       and this is ${Precip0h}
       <br>
