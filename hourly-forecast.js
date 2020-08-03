@@ -20,7 +20,7 @@ class HourlyForecast extends HTMLElement {
       <br>
       and this is ${Precip0h}
       <br>
-      The time for 0h forecast is $(My0hTimeStr)
+      The time for 0h forecast is ${My0hTimeStr}
 `;
   }
 
