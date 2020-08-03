@@ -12,11 +12,15 @@ class HourlyForecast extends HTMLElement {
     const Precip0h = this.config.entity + '_precipitation_0h';
     const Precip0h_state = hass.states[Precip0h];
     const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
+    
+    const My0hTimeStr = hass.states[Precip0h].attributes.friendly_name;
 
     this.content.innerHTML = `
       Preciptation in the next hour is ${Precip0h_stateStr}
       <br>
       and this is ${Precip0h}
+      <br>
+      The time for 0h forecast is $(My0hTimeStr)
 `;
   }
 
