@@ -13,12 +13,13 @@ class HourlyForecast extends HTMLElement {
     const Precip0h_state = hass.states[Precip0h];
     const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
     
-    const My0hTimeStr = hass.states[Precip0h].attributes.observation_time.getHours();
-
+    const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
+    const My0hDate = Date.parse(${My0hDateTimeStr});
+    
     this.content.innerHTML = `
       <table border=1>
       <tr><th>Time</th><th>Precipitation</th></tr>
-      <tr><td> ${My0hTimeStr} </td><td>${Precip0h_stateStr}</td></tr>
+      <tr><td> ${My0hDate} </td><td>${Precip0h_stateStr}</td></tr>
       </table>
 `;
   }
