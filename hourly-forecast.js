@@ -21,6 +21,7 @@ class HourlyForecast extends HTMLElement {
       <br>
       and this is ${Precip0h}
       <br>
+      and the time is ${UpdTime_0h}
 `;
   }
 
