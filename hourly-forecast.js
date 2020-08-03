@@ -14,7 +14,7 @@ class HourlyForecast extends HTMLElement {
     const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
     
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
-    const My0hDate = Date.parse(${My0hDateTimeStr});
+    const My0hDate = Date.parse(${My0hDateTimeStr});  //convert string to date
     
     this.content.innerHTML = `
       <table border=1>
