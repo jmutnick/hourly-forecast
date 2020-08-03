@@ -17,16 +17,15 @@ class HourlyForecast extends HTMLElement {
     const Precip0h_state = hass.states[Precip0h];
     const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
 
-    const 0h_time = hass.states[Precip0h].attributes.observation_time;
-    const 0h_time_stateStr = 0htime ? Precip0h_state.statei.attributes.observation_time : 'unavailable';
+    //const 0h_time = hass.states[Precip0h].attributes.observation_time;
+    //const 0h_time_stateStr = 0htime ? Precip0h_state.statei.attributes.observation_time : 'unavailable';
 
     this.content.innerHTML = `
       Preciptation in the next hour is ${Precip0h_stateStr}
       <br>
       and this is ${Precip0h}
       <br>
-      and the time is ${0h_time_stateStr}
-    `;
+`;
   }
 
   setConfig(config) {
