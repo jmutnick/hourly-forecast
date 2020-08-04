@@ -25,7 +25,8 @@ class HourlyForecast extends HTMLElement {
     const Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
     
     //get sun position
-    const sunstate = hass.states[sun.sun];
+    const sunpos = this.config.sun;
+    const sunstate = hass.states[sunpos];
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
     
     // if daytime and clear
