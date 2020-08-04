@@ -10,8 +10,11 @@ class HourlyForecast extends HTMLElement {
     }
 
     const Precip0h = this.config.entity + '_precipitation_0h';
+    const Precip0hprob = this.config.entity + '_precipitation_probability_0h';
     const Precip0h_state = hass.states[Precip0h];
+    const Precip0hprob_state = hass.states[Precip0hprob];
     const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
+    const Precip0hprob_stateStr = Precip0hprob_state ? Precip0hprob_state.state : 'unavailable';
     
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
     
@@ -24,8 +27,8 @@ class HourlyForecast extends HTMLElement {
     
     this.content.innerHTML = `
       <table border=1>
-      <tr><th>Time</th><th>Precipitation</th></tr>
-      <tr><td> ${Hour0H} </td><td>${Precip0h_stateStr}</td></tr>
+      <tr><th>Time</th><th>Rain Probability</th><th>Precipitation</th></tr>
+      <tr><td> ${Hour0H} </td><td> ${Precip0hprob_stateStr} % </td><td>${Precip0h_stateStr} in/hr</td></tr>
       </table>
 `;
   }
