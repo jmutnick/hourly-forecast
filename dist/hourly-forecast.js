@@ -11,58 +11,20 @@ class HourlyForecast extends HTMLElement {
       card.appendChild(this.content);
       this.appendChild(card);
     }
-
-    //precip 
-    const Precip0h = this.config.entity + '_precipitation_0h';
-    const Precip0h_state = hass.states[Precip0h];
-    const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
-    //console.log(Precip0h_stateStr);
-    
-    //precip prob
-    const Precip0hprob = this.config.entity + '_precipitation_probability_0h';
-    const Precip0hprob_state = hass.states[Precip0hprob];
-    const Precip0hprob_stateStr = Precip0hprob_state ? Precip0hprob_state.state : 'unavailable';
-    //console.log(Precip0hprob_stateStr);
-    
-    //weather condition
-    const Weather0h = this.config.entity + '_weather_condition_0h';
-    const Weather0h_state = hass.states[Weather0h];
-    var Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
-    //console.log(Weather0h_stateStr);
     
     //get sun position
     const sunpos = this.config.sun_object;
-    //console.log(this.config.sun_object);
     const sunstate = hass.states[sunpos];
-    //console.log(sunstate);
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
-    //console.log(sunstatestr);
+  
+    //  this is start of repeat
     
-    // if daytime and clear
-    if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon") {
-       Weather0h_stateStr = "clear_day";
-    }
-    // if nighttime and clear
-    //fixed elseif to else if
-    else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon") {
-      Weather0h_stateStr = "clear_night";
-    }
+    import "./hour0.js"
+    import "./hour1.js"
+    // this is end of repeat
     
-    //temperature
-    const Temp0h = this.config.entity + '_temperature_0h';
-    const Temp0h_state = hass.states[Temp0h];
-    const Temp0h_stateStr = Temp0h_state ? Temp0h_state.state : 'unavailable';
-    // console.log(Temp0h_stateStr);
     
-    //time
-    const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
-    const uiDateOptions = {  
-      hour: 'numeric',
-    };  //pluck out hour with options
-    const event = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
-    const Hour0H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
-    
-    //construct html with images for conditions, now checking locally without a path
+    //construct html
     this.content.innerHTML = `
       <table border=1>
       <tr><th>Condition/Time</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
