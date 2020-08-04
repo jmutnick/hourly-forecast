@@ -21,7 +21,7 @@ class HourlyForecast extends HTMLElement {
     
     //weather condition
     const Weather0h = this.config.entity + '_weather_condition_0h';
-    const Weater0h_state = hass.states[Weather0h];
+    const Weather0h_state = hass.states[Weather0h];
     const Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
     
     //temperature
