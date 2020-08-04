@@ -66,7 +66,11 @@ class HourlyForecast extends HTMLElement {
     this.content.innerHTML = `
       <table border=1>
       <tr><th>Condition/Time</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
-      <tr><td><IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg"><br>${Hour0H}</td><td> ${Temp0h_stateStr} F</td><td> ${Precip0hprob_stateStr} % </td><td>${Precip0h_stateStr} in/hr</td></tr>
+      <tr><td style="text-align:center"><IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg"><br>${Hour0H}</td>
+          <td style="text-align:center"> ${Temp0h_stateStr} F</td>
+          <td style="text-align:center"> ${Precip0hprob_stateStr} % </td>
+          <td style="text-align:center">${Precip0h_stateStr} in/hr</td>
+      </tr>
       </table>
 `;
   }
