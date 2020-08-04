@@ -24,6 +24,17 @@ class HourlyForecast extends HTMLElement {
     const Weather0h_state = hass.states[Weather0h];
     const Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
     
+    //get sun position
+    const sunstate = hass.states[sun.sun];
+    const sunstatestr = sunstate ? sunstate.state 'unavailable';
+    
+    if (Weather0h_stateStr === "clear" && sunstatestr === "above_horizon") {
+       Weather0h_stateStr = "clear_day 
+    }
+    elseif (Weather0h_stateStr === "clear" && sunstatestr === "below_horizon") {
+      Weather0h_stateStr = "clear_night"
+    }
+    
     //temperature
     const Temp0h = this.config.entity + '_temperature_0h';
     const Temp0h_state = hass.states[Temp0h];
