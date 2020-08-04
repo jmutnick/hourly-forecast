@@ -28,11 +28,13 @@ class HourlyForecast extends HTMLElement {
     const Weather0h = this.config.entity + '_weather_condition_0h';
     const Weather0h_state = hass.states[Weather0h];
     var Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
-    console.log(Weather0h_stateStr);
+    //console.log(Weather0h_stateStr);
     
     //get sun position
     const sunpos = this.config.sun;
+    console.log(sunpos);
     const sunstate = hass.states[sunpos];
+    console.log(sunstate);
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
     console.log(sunstatestr);
     
