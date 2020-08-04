@@ -47,6 +47,12 @@ class HourlyForecast extends HTMLElement {
     else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon") {
       Weather0h_stateStr = "clear_night";
     }
+    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
+      Weather0h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
+      Weather0h_stateStr = "mostly_clear_night";
+    }
     
     //time of forecast
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
@@ -81,6 +87,12 @@ class HourlyForecast extends HTMLElement {
     else if (Weather1h_stateStr == "clear" && sunstatestr == "below_horizon") {
       Weather1h_stateStr = "clear_night";
     }
+        else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
+      Weather1h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
+      Weather1h_stateStr = "mostly_clear_night";
+    }
     
     //time of forecast
     const My1hDateTimeStr = hass.states[Precip1h].attributes.observation_time;
@@ -113,6 +125,12 @@ class HourlyForecast extends HTMLElement {
     }
     else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon") {
       Weather2h_stateStr = "clear_night";
+    }
+        else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
+      Weather2h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
+      Weather2h_stateStr = "mostly_clear_night";
     }
     
     //time of forecast
@@ -147,6 +165,12 @@ class HourlyForecast extends HTMLElement {
     }
     else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon") {
       Weather3h_stateStr = "clear_night";
+    }
+        else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
+      Weather3h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
+      Weather3h_stateStr = "mostly_clear_night";
     }
     
     //time of forecast
