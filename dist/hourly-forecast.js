@@ -122,6 +122,39 @@ class HourlyForecast extends HTMLElement {
     //end 2h
 
     
+        // begin 3h
+    //precip 
+    const Precip3h = this.config.entity + '_precipitation_3h';
+    const Precip3h_state = hass.states[Precip3h];
+    const Precip3h_stateStr = Precip3h_state ? Precip3h_state.state : 'unavailable';
+   
+    //precip prob
+    const Precip3hprob = this.config.entity + '_precipitation_probability_3h';
+    const Precip3hprob_state = hass.states[Precip3hprob];
+    const Precip3hprob_stateStr = Precip3hprob_state ? Precip3hprob_state.state : 'unavailable';
+   
+     //temperature
+    const Temp3h = this.config.entity + '_temperature_3h';
+    const Temp3h_state = hass.states[Temp3h];
+    const Temp3h_stateStr = Temp3h_state ? Temp3h_state.state : 'unavailable';
+  
+    //weather condition
+    const Weather3h = this.config.entity + '_weather_condition_3h';
+    const Weather3h_state = hass.states[Weather3h];
+    var Weather3h_stateStr = Weather3h_state ? Weather3h_state.state : 'unavailable';
+    if (Weather3h_stateStr == "clear" && sunstatestr == "above_horizon") {
+       Weather3h_stateStr = "clear_day";
+    }
+    else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon") {
+      Weather3h_stateStr = "clear_night";
+    }
+    
+    //time of forecast
+    const My3hDateTimeStr = hass.states[Precip3h].attributes.observation_time;
+    const event3 = new Date(My3hDateTimeStr);  //convert to date, didn't need to use the ${} 
+    const Hour3H = event3.toLocaleTimeString('en-US', uiDateOptions);  //do it  
+    //end 3h
+    
     //construct html
     this.content.innerHTML = `
       <table border=1>
@@ -141,7 +174,12 @@ class HourlyForecast extends HTMLElement {
           <td style="text-align:center"> ${Precip2hprob_stateStr} % </td>
           <td style="text-align:center">${Precip2h_stateStr} in/hr</td>
       </tr>
-      </table>
+      <tr><td style="text-align:center"><IMG SRC="/local/community/hourly-forecast/icons/${Weather3h_stateStr}.svg" width=50 height=50><br>${Hour3H}</td>
+          <td style="text-align:center"> ${Temp3h_stateStr} F</td>
+          <td style="text-align:center"> ${Precip3hprob_stateStr} % </td>
+          <td style="text-align:center">${Precip3h_stateStr} in/hr</td>
+      </tr>
+</table>
 `;
   }
 
