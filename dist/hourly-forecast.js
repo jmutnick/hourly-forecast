@@ -31,12 +31,12 @@ class HourlyForecast extends HTMLElement {
     //console.log(Weather0h_stateStr);
     
     //get sun position
-    const sunpos = this.config.sun_object;
-    console.log(this.config.sun_object);
-    const sunstate = hass.states[sunpos];
-    //console.log(sunstate);
+    //const sunpos = this.config.sun_object;
+    //console.log(this.config.sun_object);
+    const sunstate = hass.states[sun.sun];
+    console.log(sunstate);
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
-    //console.log(sunstatestr);
+    console.log(sunstatestr);
     
     // if daytime and clear
     if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon") {
