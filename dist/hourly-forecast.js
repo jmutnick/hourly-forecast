@@ -37,7 +37,7 @@ class HourlyForecast extends HTMLElement {
     const event = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
     const Hour0H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
     
-    //construct html with images for conditions
+    //construct html with images for conditions, now checking locally without a path
     this.content.innerHTML = `
       <table border=1>
       <tr><th>Time</th><th>Condition</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
