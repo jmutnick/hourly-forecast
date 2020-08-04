@@ -11,7 +11,7 @@
     "custom-cards"
   ],
   "module": "hourly-forecast.js",
-  "repository": "git@github.com/jmutnick/hourly-forecase",
+  "repository": "git@github.com/jmutnick/hourly-forecast",
   "author": "Jonathan Mutnick <jmutnick@umich.edu>"
   }
 }
