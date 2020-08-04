@@ -17,9 +17,10 @@ class HourlyForecast extends HTMLElement {
     
     const uiDateOptions = {  
       hour: 'numeric',
-    };
+    };  //pluck out hour with options
     
-    const Hour0H = My0hDateTimeStr.toLocaleTimeString('en-US', uiDateOptions);
+    const event = new Date(${My0hDateTimeStr});  //convert to date
+    const Hour0H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
     
     this.content.innerHTML = `
       <table border=1>
