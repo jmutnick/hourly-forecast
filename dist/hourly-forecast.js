@@ -22,7 +22,7 @@ class HourlyForecast extends HTMLElement {
     //weather condition
     const Weather0h = this.config.entity + '_weather_condition_0h';
     const Weather0h_state = hass.states[Weather0h];
-    const Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
+    var Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
     
     //get sun position
     const sunpos = this.config.sun;
@@ -31,12 +31,12 @@ class HourlyForecast extends HTMLElement {
     
     // if daytime and clear
     if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon") {
-       Weather0h_stateStr = "clear_day"
+       Weather0h_stateStr = "clear_day";
     }
     // if nighttime and clear
     //fixed elseif to else if
     else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon") {
-      Weather0h_stateStr = "clear_night"
+      Weather0h_stateStr = "clear_night";
     }
     
     //temperature
