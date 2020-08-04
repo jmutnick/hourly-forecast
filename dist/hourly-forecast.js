@@ -31,12 +31,10 @@ class HourlyForecast extends HTMLElement {
     //console.log(Weather0h_stateStr);
     
     //get sun position
-    //const sunpos = this.config.sun_object;
-    //console.log(this.config.sun_object);
     const sunstate = hass.states[sun.sun];
-    console.log(sunstate);
+    //console.log(sunstate);
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
-    console.log(sunstatestr);
+    //console.log(sunstatestr);
     
     // if daytime and clear
     if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon") {
@@ -65,8 +63,8 @@ class HourlyForecast extends HTMLElement {
     //construct html with images for conditions, now checking locally without a path
     this.content.innerHTML = `
       <table border=1>
-      <tr><th>Time</th><th>Condition</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
-      <tr><td> ${Hour0H} </td><td><IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg"></td><td> ${Temp0h_stateStr} </td><td> ${Precip0hprob_stateStr} % </td><td>${Precip0h_stateStr} in/hr</td></tr>
+      <tr><th>Condition/Time</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
+      <tr><td><IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg"><br>${Hour0H}</td><td> ${Temp0h_stateStr} F</td><td> ${Precip0hprob_stateStr} % </td><td>${Precip0h_stateStr} in/hr</td></tr>
       </table>
 `;
   }
