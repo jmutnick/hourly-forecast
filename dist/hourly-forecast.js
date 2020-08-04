@@ -30,12 +30,12 @@ class HourlyForecast extends HTMLElement {
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
     
     // if daytime and clear
-    if (Weather0h_stateStr === "clear" && sunstatestr === "above_horizon") {
+    if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon") {
        Weather0h_stateStr = "clear_day"
     }
     // if nighttime and clear
     //fixed elseif to else if
-    else if (Weather0h_stateStr === "clear" && sunstatestr === "below_horizon") {
+    else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon") {
       Weather0h_stateStr = "clear_night"
     }
     
@@ -56,7 +56,7 @@ class HourlyForecast extends HTMLElement {
     this.content.innerHTML = `
       <table border=1>
       <tr><th>Time</th><th>Condition</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
-      <tr><td> ${Hour0H} </td><td><IMG SRC="icons/${Weather0h_stateStr}.svg"></td><td> ${Temp0h_stateStr} </td><td> ${Precip0hprob_stateStr} % </td><td>${Precip0h_stateStr} in/hr</td></tr>
+      <tr><td> ${Hour0H} </td><td><IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg"></td><td> ${Temp0h_stateStr} </td><td> ${Precip0hprob_stateStr} % </td><td>${Precip0h_stateStr} in/hr</td></tr>
       </table>
 `;
   }
