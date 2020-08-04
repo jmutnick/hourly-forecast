@@ -25,7 +25,7 @@ class HourlyForecast extends HTMLElement {
     this.content.innerHTML = `
       <table border=1>
       <tr><th>Time</th><th>Precipitation</th></tr>
-      <tr><td> ${My0hDateTimeStr} </td><td>${Hour0H}</td></tr>
+      <tr><td> ${Hour0H} </td><td>${Precip0h_state}</td></tr>
       </table>
 `;
   }
