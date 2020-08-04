@@ -47,8 +47,8 @@ class HourlyForecast extends HTMLElement {
     else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon") {
       Weather0h_stateStr = "clear_night";
     }
-    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
-      Weather0h_stateStr = "mostly_clear_night";
+    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "above_horizon") {
+      Weather0h_stateStr = "mostly_clear_day";
     }
     else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
       Weather0h_stateStr = "mostly_clear_night";
@@ -87,8 +87,8 @@ class HourlyForecast extends HTMLElement {
     else if (Weather1h_stateStr == "clear" && sunstatestr == "below_horizon") {
       Weather1h_stateStr = "clear_night";
     }
-        else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
-      Weather1h_stateStr = "mostly_clear_night";
+        else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "above_horizon") {
+      Weather1h_stateStr = "mostly_clear_day";
     }
     else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
       Weather1h_stateStr = "mostly_clear_night";
@@ -126,8 +126,8 @@ class HourlyForecast extends HTMLElement {
     else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon") {
       Weather2h_stateStr = "clear_night";
     }
-        else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
-      Weather2h_stateStr = "mostly_clear_night";
+        else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "above_horizon") {
+      Weather2h_stateStr = "mostly_clear_day";
     }
     else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
       Weather2h_stateStr = "mostly_clear_night";
@@ -166,8 +166,8 @@ class HourlyForecast extends HTMLElement {
     else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon") {
       Weather3h_stateStr = "clear_night";
     }
-        else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
-      Weather3h_stateStr = "mostly_clear_night";
+        else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "above_horizon") {
+      Weather3h_stateStr = "mostly_clear_day";
     }
     else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
       Weather3h_stateStr = "mostly_clear_night";
