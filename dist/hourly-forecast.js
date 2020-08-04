@@ -19,8 +19,8 @@ class HourlyForecast extends HTMLElement {
   
     //  this is start of repeat
     
-    import "./day0.js"
-
+    import "./hour0.js"
+    import "./hour1.js"
     // this is end of repeat
     
     
