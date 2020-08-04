@@ -56,7 +56,6 @@ class HourlyForecast extends HTMLElement {
     // this is end of 0h
     
     // begin 1h
-
     //precip 
     const Precip1h = this.config.entity + '_precipitation_1h';
     const Precip1h_state = hass.states[Precip1h];
@@ -65,7 +64,7 @@ class HourlyForecast extends HTMLElement {
     //precip prob
     const Precip1hprob = this.config.entity + '_precipitation_probability_1h';
     const Precip1hprob_state = hass.states[Precip1hprob];
-    const Precip1hprob_stateStr = Precip0hprob_state ? Precip1hprob_state.state : 'unavailable';
+    const Precip1hprob_stateStr = Precip1hprob_state ? Precip1hprob_state.state : 'unavailable';
    
      //temperature
     const Temp1h = this.config.entity + '_temperature_1h';
@@ -86,10 +85,42 @@ class HourlyForecast extends HTMLElement {
     //time of forecast
     const My1hDateTimeStr = hass.states[Precip1h].attributes.observation_time;
     const event1 = new Date(My1hDateTimeStr);  //convert to date, didn't need to use the ${} 
-    const Hour1H = event1.toLocaleTimeString('en-US', uiDateOptions);  //do it
-
-    
+    const Hour1H = event1.toLocaleTimeString('en-US', uiDateOptions);  //do it  
     //end 1h
+
+        // begin 2h
+    //precip 
+    const Precip2h = this.config.entity + '_precipitation_2h';
+    const Precip2h_state = hass.states[Precip2h];
+    const Precip2h_stateStr = Precip2h_state ? Precip2h_state.state : 'unavailable';
+   
+    //precip prob
+    const Precip2hprob = this.config.entity + '_precipitation_probability_2h';
+    const Precip2hprob_state = hass.states[Precip2hprob];
+    const Precip2hprob_stateStr = Precip2hprob_state ? Precip2hprob_state.state : 'unavailable';
+   
+     //temperature
+    const Temp2h = this.config.entity + '_temperature_2h';
+    const Temp2h_state = hass.states[Temp2h];
+    const Temp2h_stateStr = Temp2h_state ? Temp2h_state.state : 'unavailable';
+  
+    //weather condition
+    const Weather2h = this.config.entity + '_weather_condition_2h';
+    const Weather2h_state = hass.states[Weather2h];
+    var Weather2h_stateStr = Weather2h_state ? Weather2h_state.state : 'unavailable';
+    if (Weather2h_stateStr == "clear" && sunstatestr == "above_horizon") {
+       Weather2h_stateStr = "clear_day";
+    }
+    else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon") {
+      Weather2h_stateStr = "clear_night";
+    }
+    
+    //time of forecast
+    const My2hDateTimeStr = hass.states[Precip1h].attributes.observation_time;
+    const event2 = new Date(My2hDateTimeStr);  //convert to date, didn't need to use the ${} 
+    const Hour2H = event2.toLocaleTimeString('en-US', uiDateOptions);  //do it  
+    //end 2h
+
     
     //construct html
     this.content.innerHTML = `
@@ -104,6 +135,11 @@ class HourlyForecast extends HTMLElement {
           <td style="text-align:center"> ${Temp1h_stateStr} F</td>
           <td style="text-align:center"> ${Precip1hprob_stateStr} % </td>
           <td style="text-align:center">${Precip1h_stateStr} in/hr</td>
+      </tr>
+      <tr><td style="text-align:center"><IMG SRC="/local/community/hourly-forecast/icons/${Weather2h_stateStr}.svg" width=50 height=50><br>${Hour2H}</td>
+          <td style="text-align:center"> ${Temp2h_stateStr} F</td>
+          <td style="text-align:center"> ${Precip2hprob_stateStr} % </td>
+          <td style="text-align:center">${Precip2h_stateStr} in/hr</td>
       </tr>
       </table>
 `;
