@@ -16,6 +16,9 @@ class HourlyForecast extends HTMLElement {
     const sunpos = this.config.sun_object;
     const sunstate = hass.states[sunpos];
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
+    
+    // date format
+    const uiDateOptions = { hour: 'numeric', };  
   
     //  this is start of 0h
     
@@ -47,9 +50,6 @@ class HourlyForecast extends HTMLElement {
     
     //time of forecast
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
-    const uiDateOptions = {  
-      hour: 'numeric',
-    };  //pluck out hour with options
     const event = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
     const Hour0H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
     
@@ -85,9 +85,6 @@ class HourlyForecast extends HTMLElement {
     
     //time of forecast
     const My1hDateTimeStr = hass.states[Precip1h].attributes.observation_time;
-    const uiDateOptions = {  
-      hour: 'numeric',
-    };  //pluck out hour with options
     const event = new Date(My1hDateTimeStr);  //convert to date, didn't need to use the ${} 
     const Hour1H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
 
