@@ -28,9 +28,11 @@ class HourlyForecast extends HTMLElement {
     const sunstate = hass.states[sun.sun];
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
     
+    // if daytime and clear
     if (Weather0h_stateStr === "clear" && sunstatestr === "above_horizon") {
        Weather0h_stateStr = "clear_day 
     }
+    // if nighttime and clear
     elseif (Weather0h_stateStr === "clear" && sunstatestr === "below_horizon") {
       Weather0h_stateStr = "clear_night"
     }
