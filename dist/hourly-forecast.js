@@ -85,8 +85,8 @@ class HourlyForecast extends HTMLElement {
     
     //time of forecast
     const My1hDateTimeStr = hass.states[Precip1h].attributes.observation_time;
-    const event = new Date(My1hDateTimeStr);  //convert to date, didn't need to use the ${} 
-    const Hour1H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
+    const event1 = new Date(My1hDateTimeStr);  //convert to date, didn't need to use the ${} 
+    const Hour1H = event1.toLocaleTimeString('en-US', uiDateOptions);  //do it
 
     
     //end 1h
