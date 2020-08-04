@@ -33,7 +33,8 @@ class HourlyForecast extends HTMLElement {
        Weather0h_stateStr = "clear_day"
     }
     // if nighttime and clear
-    elseif (Weather0h_stateStr === "clear" && sunstatestr === "below_horizon") {
+    //fixed elseif to else if
+    else if (Weather0h_stateStr === "clear" && sunstatestr === "below_horizon") {
       Weather0h_stateStr = "clear_night"
     }
     
