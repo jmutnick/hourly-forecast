@@ -19,13 +19,13 @@ class HourlyForecast extends HTMLElement {
       hour: 'numeric',
     };  //pluck out hour with options
     
-    const event = new Date(${My0hDateTimeStr});  //convert to date
+    const event = new Date(My0hDateTimeStr);  //convert to date
     const Hour0H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
     
     this.content.innerHTML = `
       <table border=1>
       <tr><th>Time</th><th>Precipitation</th></tr>
-      <tr><td> ${My0hDateTimeStr} </td><td>${Precip0h_stateStr}</td></tr>
+      <tr><td> ${My0hDateTimeStr} </td><td>${Hour0H}</td></tr>
       </table>
 `;
   }
