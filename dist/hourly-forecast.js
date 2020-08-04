@@ -1,3 +1,6 @@
+// Project by Jonathan Mutnick to use the Climacell data provider to display an hourly forecast
+// Work in process
+
 class HourlyForecast extends HTMLElement {
   set hass(hass) {
     if (!this.content) {
