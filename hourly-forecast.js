@@ -15,6 +15,12 @@ class HourlyForecast extends HTMLElement {
     
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
     
+    const uiDateOptions = {  
+      hour: 'numeric',
+    };
+    
+    const Hour0H = My0hDateTimeStr.toLocaleTimeString('en-US', uiDateOptions);
+    
     this.content.innerHTML = `
       <table border=1>
       <tr><th>Time</th><th>Precipitation</th></tr>
