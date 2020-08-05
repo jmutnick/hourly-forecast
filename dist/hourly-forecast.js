@@ -17,6 +17,12 @@ class HourlyForecast extends HTMLElement {
     const sunstate = hass.states[sunpos];
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
     
+    //time of next sunrise
+    const sunrisedt = new Date(hass.states[sunpos].attributes.next_rising);
+    
+    //time of next sunset
+    const sunsetdt = new Date(hass.states[sunpos].attributes.next_setting);
+    
     // date format
     const uiDateOptions = { hour: 'numeric', };  
   
@@ -37,6 +43,17 @@ class HourlyForecast extends HTMLElement {
     const Temp0h_state = hass.states[Temp0h];
     const Temp0h_stateStr = Temp0h_state ? Temp0h_state.state : 'unavailable';
   
+     //time of forecast
+    const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
+    const event = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
+    const Hour0H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
+    
+    //time of next sunrise
+    const sunrisestr = hass.states[sunpos].attributes.next_rising;
+    //time of next sunset
+    const sunsetstr = hass.states[sunpos].attributes.next_sessing;
+    
+    
     //weather condition
     const Weather0h = this.config.entity + '_weather_condition_0h';
     const Weather0h_state = hass.states[Weather0h];
@@ -54,10 +71,7 @@ class HourlyForecast extends HTMLElement {
       Weather0h_stateStr = "mostly_clear_night";
     }
     
-    //time of forecast
-    const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
-    const event = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
-    const Hour0H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
+   
     
     // this is end of 0h
     
