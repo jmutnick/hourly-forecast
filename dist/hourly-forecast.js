@@ -45,32 +45,39 @@ class HourlyForecast extends HTMLElement {
   
      //time of forecast
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
-    const event = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
-    const Hour0H = event.toLocaleTimeString('en-US', uiDateOptions);  //do it
-    
-    //time of next sunrise
-    const sunrisestr = hass.states[sunpos].attributes.next_rising;
-    //time of next sunset
-    const sunsetstr = hass.states[sunpos].attributes.next_sessing;
+    const event0 = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
+    const Hour0H = event0.toLocaleTimeString('en-US', uiDateOptions);  //do it
     
     
     //weather condition
     const Weather0h = this.config.entity + '_weather_condition_0h';
     const Weather0h_state = hass.states[Weather0h];
     var Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
-    if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon") {
+    
+    if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon" && event0 < sunsetdt) {
        Weather0h_stateStr = "clear_day";
     }
-    else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon") {
+    else if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon" && event0 > sunsetdt) {
+       Weather0h_stateStr = "clear_night";
+    }
+    else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon" && event0 < sunrisedt) {
       Weather0h_stateStr = "clear_night";
     }
-    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "above_horizon") {
+    else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon" && event0 > sunrisedt) {
+      Weather0h_stateStr = "clear_day";
+    }  
+    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event0 > sunrisedt) {
       Weather0h_stateStr = "mostly_clear_day";
     }
-    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
+      else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event0 > sunrisedt) {
       Weather0h_stateStr = "mostly_clear_night";
     }
-    
+    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event0  > sunsetdt) {
+      Weather0h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event0  < sunsetdt) {
+      Weather0h_stateStr = "mostly_clear_day";
+    }
    
     
     // this is end of 0h
@@ -90,28 +97,43 @@ class HourlyForecast extends HTMLElement {
     const Temp1h = this.config.entity + '_temperature_1h';
     const Temp1h_state = hass.states[Temp1h];
     const Temp1h_stateStr = Temp1h_state ? Temp1h_state.state : 'unavailable';
-  
-    //weather condition
-    const Weather1h = this.config.entity + '_weather_condition_1h';
-    const Weather1h_state = hass.states[Weather1h];
-    var Weather1h_stateStr = Weather1h_state ? Weather1h_state.state : 'unavailable';
-    if (Weather1h_stateStr == "clear" && sunstatestr == "above_horizon") {
-       Weather1h_stateStr = "clear_day";
-    }
-    else if (Weather1h_stateStr == "clear" && sunstatestr == "below_horizon") {
-      Weather1h_stateStr = "clear_night";
-    }
-        else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "above_horizon") {
-      Weather1h_stateStr = "mostly_clear_day";
-    }
-    else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
-      Weather1h_stateStr = "mostly_clear_night";
-    }
     
     //time of forecast
     const My1hDateTimeStr = hass.states[Precip1h].attributes.observation_time;
     const event1 = new Date(My1hDateTimeStr);  //convert to date, didn't need to use the ${} 
-    const Hour1H = event1.toLocaleTimeString('en-US', uiDateOptions);  //do it  
+    const Hour1H = event1.toLocaleTimeString('en-US', uiDateOptions);  //do it 
+    
+    //weather condition
+    const Weather1h = this.config.entity + '_weather_condition_1h';
+    const Weather1h_state = hass.states[Weather1h];
+    var Weather1h_stateStr = Weather1h_state ? Weather1h_state.state : 'unavailable';
+    
+    if (Weather1h_stateStr == "clear" && sunstatestr == "above_horizon" && event1 < sunsetdt) {
+       Weather1h_stateStr = "clear_day";
+    }
+    else if (Weather1h_stateStr == "clear" && sunstatestr == "above_horizon" && event1 > sunsetdt) {
+       Weather1h_stateStr = "clear_night";
+    }
+    else if (Weather1h_stateStr == "clear" && sunstatestr == "below_horizon" && event1 < sunrisedt) {
+      Weather1h_stateStr = "clear_night";
+    }
+    else if (Weather1h_stateStr == "clear" && sunstatestr == "below_horizon" && event1 > sunrisedt) {
+      Weather1h_stateStr = "clear_day";
+    }  
+    else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event1 > sunrisedt) {
+      Weather1h_stateStr = "mostly_clear_day";
+    }
+      else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event1 > sunrisedt) {
+      Weather1h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event1  > sunsetdt) {
+      Weather1h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event1  < sunsetdt) {
+      Weather1h_stateStr = "mostly_clear_day";
+    }
+    
+ 
     //end 1h
 
         // begin 2h
@@ -129,28 +151,42 @@ class HourlyForecast extends HTMLElement {
     const Temp2h = this.config.entity + '_temperature_2h';
     const Temp2h_state = hass.states[Temp2h];
     const Temp2h_stateStr = Temp2h_state ? Temp2h_state.state : 'unavailable';
-  
-    //weather condition
-    const Weather2h = this.config.entity + '_weather_condition_2h';
-    const Weather2h_state = hass.states[Weather2h];
-    var Weather2h_stateStr = Weather2h_state ? Weather2h_state.state : 'unavailable';
-    if (Weather2h_stateStr == "clear" && sunstatestr == "above_horizon") {
-       Weather2h_stateStr = "clear_day";
-    }
-    else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon") {
-      Weather2h_stateStr = "clear_night";
-    }
-        else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "above_horizon") {
-      Weather2h_stateStr = "mostly_clear_day";
-    }
-    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
-      Weather2h_stateStr = "mostly_clear_night";
-    }
     
     //time of forecast
     const My2hDateTimeStr = hass.states[Precip2h].attributes.observation_time;
     const event2 = new Date(My2hDateTimeStr);  //convert to date, didn't need to use the ${} 
-    const Hour2H = event2.toLocaleTimeString('en-US', uiDateOptions);  //do it  
+    const Hour2H = event2.toLocaleTimeString('en-US', uiDateOptions);  //do it 
+    
+    //weather condition
+    const Weather2h = this.config.entity + '_weather_condition_2h';
+    const Weather2h_state = hass.states[Weather2h];
+    var Weather2h_stateStr = Weather2h_state ? Weather2h_state.state : 'unavailable';
+    
+    if (Weather2h_stateStr == "clear" && sunstatestr == "above_horizon" && event2 < sunsetdt) {
+       Weather2h_stateStr = "clear_day";
+    }
+    else if (Weather2h_stateStr == "clear" && sunstatestr == "above_horizon" && event2 > sunsetdt) {
+       Weather2h_stateStr = "clear_night";
+    }
+    else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon" && event2 < sunrisedt) {
+      Weather2h_stateStr = "clear_night";
+    }
+    else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon" && event2 > sunrisedt) {
+      Weather2h_stateStr = "clear_day";
+    }  
+    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event2 > sunrisedt) {
+      Weather2h_stateStr = "mostly_clear_day";
+    }
+      else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event2 > sunrisedt) {
+      Weather2h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event2  > sunsetdt) {
+      Weather2h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event2  < sunsetdt) {
+      Weather2h_stateStr = "mostly_clear_day";
+    }
+ 
     //end 2h
 
     
@@ -169,28 +205,43 @@ class HourlyForecast extends HTMLElement {
     const Temp3h = this.config.entity + '_temperature_3h';
     const Temp3h_state = hass.states[Temp3h];
     const Temp3h_stateStr = Temp3h_state ? Temp3h_state.state : 'unavailable';
-  
-    //weather condition
-    const Weather3h = this.config.entity + '_weather_condition_3h';
-    const Weather3h_state = hass.states[Weather3h];
-    var Weather3h_stateStr = Weather3h_state ? Weather3h_state.state : 'unavailable';
-    if (Weather3h_stateStr == "clear" && sunstatestr == "above_horizon") {
-       Weather3h_stateStr = "clear_day";
-    }
-    else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon") {
-      Weather3h_stateStr = "clear_night";
-    }
-        else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "above_horizon") {
-      Weather3h_stateStr = "mostly_clear_day";
-    }
-    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon") {
-      Weather3h_stateStr = "mostly_clear_night";
-    }
-    
+
     //time of forecast
     const My3hDateTimeStr = hass.states[Precip3h].attributes.observation_time;
     const event3 = new Date(My3hDateTimeStr);  //convert to date, didn't need to use the ${} 
     const Hour3H = event3.toLocaleTimeString('en-US', uiDateOptions);  //do it  
+    
+    //weather condition
+    const Weather3h = this.config.entity + '_weather_condition_3h';
+    const Weather3h_state = hass.states[Weather3h];
+    var Weather3h_stateStr = Weather3h_state ? Weather3h_state.state : 'unavailable';
+    
+    if (Weather3h_stateStr == "clear" && sunstatestr == "above_horizon" && event3 < sunsetdt) {
+       Weather3h_stateStr = "clear_day";
+    }
+    else if (Weather3h_stateStr == "clear" && sunstatestr == "above_horizon" && event3 > sunsetdt) {
+       Weather3h_stateStr = "clear_night";
+    }
+    else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon" && event3 < sunrisedt) {
+      Weather3h_stateStr = "clear_night";
+    }
+    else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon" && event3 > sunrisedt) {
+      Weather3h_stateStr = "clear_day";
+    }  
+    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event3 > sunrisedt) {
+      Weather3h_stateStr = "mostly_clear_day";
+    }
+      else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event3 > sunrisedt) {
+      Weather3h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event3  > sunsetdt) {
+      Weather3h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event3  < sunsetdt) {
+      Weather3h_stateStr = "mostly_clear_day";
+    }
+    
+
     //end 3h
     
     //construct html
