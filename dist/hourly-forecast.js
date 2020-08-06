@@ -241,7 +241,12 @@ class HourlyForecast extends HTMLElement {
       Weather3h_stateStr = "mostly_clear_day";
     }
     
-
+    console.log("Weather3h_stateStr=" Weather3h_stateStr);
+    console.log("sunstatestr=" sunstatestr);
+    console.log("event3=" event3);
+    console.log("sunrisedt=" sunrisedt);
+    console.log("sunsetdt=" sunsetdt);
+    
     //end 3h
     
     //construct html
