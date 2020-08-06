@@ -286,7 +286,8 @@ class HourlyForecast extends HTMLElement {
           <div class="tooltip">
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather1h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather1h_stateStr}</span>
-          </div><br>${Hour1H}</td>
+          </div>
+          <br><br>${Hour1H}</td>
           <td style="text-align:center"> ${Temp1h_stateStr} F</td>
           <td style="text-align:center"> ${Precip1hprob_stateStr} % </td>
           <td style="text-align:center">${Precip1h_stateStr} in/hr</td>
@@ -296,7 +297,7 @@ class HourlyForecast extends HTMLElement {
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather2h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather2h_stateStr}</span>
           </div>
-          <br>${Hour2H}</td>
+          <br><br>${Hour2H}</td>
           <td style="text-align:center"> ${Temp2h_stateStr} F</td>
           <td style="text-align:center"> ${Precip2hprob_stateStr} % </td>
           <td style="text-align:center">${Precip2h_stateStr} in/hr</td>
@@ -306,7 +307,7 @@ class HourlyForecast extends HTMLElement {
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather3h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather3h_stateStr}</span>
           </div>
-          <br>${Hour3H}</td>
+          <br><br>${Hour3H}</td>
           <td style="text-align:center"> ${Temp3h_stateStr} F</td>
           <td style="text-align:center"> ${Precip3hprob_stateStr} % </td>
           <td style="text-align:center">${Precip3h_stateStr} in/hr</td>
