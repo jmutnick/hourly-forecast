@@ -246,24 +246,67 @@ class HourlyForecast extends HTMLElement {
     
     //construct html
     this.content.innerHTML = `
+<style>
+.tooltip {
+  position: absolute;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+</style>
       <table border=1>
       <tr><th>Condition/Time</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
-      <tr><td style="text-align:center"><IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50><br>${Hour0H}</td>
+      <tr><td style="text-align:center">
+          <div class="tooltip">
+            <IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50>
+            <span class="tooltiptext">${Weather0h_stateStr}</span>
+          </div>
+          <br>${Hour0H}</td>
           <td style="text-align:center"> ${Temp0h_stateStr} F</td>
           <td style="text-align:center"> ${Precip0hprob_stateStr} % </td>
           <td style="text-align:center">${Precip0h_stateStr} in/hr</td>
       </tr>
-      <tr><td style="text-align:center"><IMG SRC="/local/community/hourly-forecast/icons/${Weather1h_stateStr}.svg" width=50 height=50><br>${Hour1H}</td>
+      <tr><td style="text-align:center">
+          <div class="tooltip">
+            <IMG SRC="/local/community/hourly-forecast/icons/${Weather1h_stateStr}.svg" width=50 height=50>
+            <span class="tooltiptext">${Weather1h_stateStr}</span>
+          </div><br>${Hour1H}</td>
           <td style="text-align:center"> ${Temp1h_stateStr} F</td>
           <td style="text-align:center"> ${Precip1hprob_stateStr} % </td>
           <td style="text-align:center">${Precip1h_stateStr} in/hr</td>
       </tr>
-      <tr><td style="text-align:center"><IMG SRC="/local/community/hourly-forecast/icons/${Weather2h_stateStr}.svg" width=50 height=50><br>${Hour2H}</td>
+      <tr><td style="text-align:center">
+          <div class="tooltip">
+            <IMG SRC="/local/community/hourly-forecast/icons/${Weather2h_stateStr}.svg" width=50 height=50>
+            <span class="tooltiptext">${Weather2h_stateStr}</span>
+          </div>
+          <br>${Hour2H}</td>
           <td style="text-align:center"> ${Temp2h_stateStr} F</td>
           <td style="text-align:center"> ${Precip2hprob_stateStr} % </td>
           <td style="text-align:center">${Precip2h_stateStr} in/hr</td>
       </tr>
-      <tr><td style="text-align:center"><IMG SRC="/local/community/hourly-forecast/icons/${Weather3h_stateStr}.svg" width=50 height=50><br>${Hour3H}</td>
+      <tr><td style="text-align:center">
+          <div class="tooltip">
+            <IMG SRC="/local/community/hourly-forecast/icons/${Weather3h_stateStr}.svg" width=50 height=50>
+            <span class="tooltiptext">${Weather3h_stateStr}</span>
+          </div>
+          <br>${Hour3H}</td>
           <td style="text-align:center"> ${Temp3h_stateStr} F</td>
           <td style="text-align:center"> ${Precip3hprob_stateStr} % </td>
           <td style="text-align:center">${Precip3h_stateStr} in/hr</td>
