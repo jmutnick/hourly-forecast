@@ -78,17 +78,17 @@ class HourlyForecast extends HTMLElement {
     else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event0  < sunsetdt) {
       Weather0h_stateStr = "mostly_clear_day";
     }
-       else if (Weather0h_stateStr == "mostly_cloudy" && sunstatestr == "above_horizon" && event0 < sunrisedt) {
-      Weather0h_stateStr = "mostly_cloudy_day";
+       else if (Weather0h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event0 < sunrisedt) {
+      Weather0h_stateStr = "partly_cloudy_day";
     }
-      else if (Weather0h_stateStr == "mostly_cloudy" && sunstatestr == "above_horizon" && event0 > sunrisedt) {
-      Weather0h_stateStr = "mostly_cloudy_night";
+      else if (Weather0h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event0 > sunrisedt) {
+      Weather0h_stateStr = "partly_cloudy_night";
     }
-    else if (Weather0h_stateStr == "mostly_cloudy" && sunstatestr == "below_horizon" && event0  > sunsetdt) {
-      Weather0h_stateStr = "mostly_cloudy_night";
+    else if (Weather0h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event0  > sunsetdt) {
+      Weather0h_stateStr = "partly_cloudy_night";
     }
-    else if (Weather0h_stateStr == "mostly_cloudy" && sunstatestr == "below_horizon" && event0  < sunsetdt) {
-      Weather0h_stateStr = "mostly_cloudy_day";
+    else if (Weather0h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event0  < sunsetdt) {
+      Weather0h_stateStr = "partly_cloudy_day";
     }
     
     // this is end of 0h
@@ -143,17 +143,17 @@ class HourlyForecast extends HTMLElement {
     else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event1  < sunsetdt) {
       Weather1h_stateStr = "mostly_clear_day";
     }
-    else if (Weather1h_stateStr == "mostly_cloudy" && sunstatestr == "above_horizon" && event1 < sunrisedt) {
-      Weather1h_stateStr = "mostly_cloudy_day";
+    else if (Weather1h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event1 < sunrisedt) {
+      Weather1h_stateStr = "partly_cloudy_day";
     }
-      else if (Weather1h_stateStr == "mostly_cloudy" && sunstatestr == "above_horizon" && event1 > sunrisedt) {
-      Weather1h_stateStr = "mostly_cloudy_night";
+      else if (Weather1h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event1 > sunrisedt) {
+      Weather1h_stateStr = "partly_cloudy_night";
     }
-    else if (Weather1h_stateStr == "mostly_cloudy" && sunstatestr == "below_horizon" && event1  > sunsetdt) {
-      Weather1h_stateStr = "mostly_cloudy_night";
+    else if (Weather1h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event1  > sunsetdt) {
+      Weather1h_stateStr = "partly_cloudy_night";
     }
-    else if (Weather1h_stateStr == "mostly_cloudy" && sunstatestr == "below_horizon" && event1  < sunsetdt) {
-      Weather1h_stateStr = "mostly_cloudy_day";
+    else if (Weather1h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event1  < sunsetdt) {
+      Weather1h_stateStr = "partly_cloudy_day";
     }
     
  
@@ -209,17 +209,17 @@ class HourlyForecast extends HTMLElement {
     else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event2  < sunsetdt) {
       Weather2h_stateStr = "mostly_clear_day";
     }
-           else if (Weather2h_stateStr == "mostly_cloudy" && sunstatestr == "above_horizon" && event2 < sunrisedt) {
-      Weather2h_stateStr = "mostly_cloudy_day";
+           else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event2 < sunrisedt) {
+      Weather2h_stateStr = "partly_cloudy_day";
     }
-      else if (Weather2h_stateStr == "mostly_cloudy" && sunstatestr == "above_horizon" && event2 > sunrisedt) {
-      Weather2h_stateStr = "mostly_cloudy_night";
+      else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event2 > sunrisedt) {
+      Weather2h_stateStr = "partly_cloudy_night";
     }
-    else if (Weather2h_stateStr == "mostly_cloudy" && sunstatestr == "below_horizon" && event2  > sunsetdt) {
-      Weather2h_stateStr = "mostly_cloudy_night";
+    else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event2  > sunsetdt) {
+      Weather2h_stateStr = "partly_cloudy_night";
     }
-    else if (Weather2h_stateStr == "mostly_cloudy" && sunstatestr == "below_horizon" && event2  < sunsetdt) {
-      Weather2h_stateStr = "mostly_cloudy_day";
+    else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event2  < sunsetdt) {
+      Weather2h_stateStr = "partly_cloudy_day";
     }
  
     //end 2h
@@ -275,17 +275,17 @@ class HourlyForecast extends HTMLElement {
     else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event3  < sunsetdt) {
       Weather3h_stateStr = "mostly_clear_day";
     }
-            else if (Weather3h_stateStr == "mostly_cloudy" && sunstatestr == "above_horizon" && event3 < sunrisedt) {
-      Weather3h_stateStr = "mostly_cloudy_day";
+            else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event3 < sunrisedt) {
+      Weather3h_stateStr = "partly_cloudy_day";
     }
-      else if (Weather3h_stateStr == "mostly_cloudy" && sunstatestr == "above_horizon" && event3 > sunrisedt) {
-      Weather3h_stateStr = "mostly_cloudy_night";
+      else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event3 > sunrisedt) {
+      Weather3h_stateStr = "partly_cloudy_night";
     }
-    else if (Weather3h_stateStr == "mostly_cloudy" && sunstatestr == "below_horizon" && event3  > sunsetdt) {
-      Weather3h_stateStr = "mostly_cloudy_night";
+    else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event3  > sunsetdt) {
+      Weather3h_stateStr = "partly_cloudy_night";
     }
-    else if (Weather3h_stateStr == "mostly_cloudy" && sunstatestr == "below_horizon" && event3  < sunsetdt) {
-      Weather3h_stateStr = "mostly_cloudy_day";
+    else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event3  < sunsetdt) {
+      Weather3h_stateStr = "partly_cloudy_day";
     }
     
     //console.log("Weather3h_stateStr=" + Weather3h_stateStr);
