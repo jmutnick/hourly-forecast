@@ -246,6 +246,30 @@ class HourlyForecast extends HTMLElement {
     
     //construct html
     this.content.innerHTML = `
+<style>
+.tooltip {
+  position: absolute;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+</style>
       <table border=1>
       <tr><th>Condition/Time</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
       <tr><td style="text-align:center"><IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50><br>${Hour0H}</td>
