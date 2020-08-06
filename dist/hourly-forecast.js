@@ -277,7 +277,7 @@ class HourlyForecast extends HTMLElement {
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather0h_stateStr}</span>
           </div>
-          <br>${Hour0H}</td>
+          <p>${Hour0H}</p></td>
           <td style="text-align:center"> ${Temp0h_stateStr} F</td>
           <td style="text-align:center"> ${Precip0hprob_stateStr} % </td>
           <td style="text-align:center">${Precip0h_stateStr} in/hr</td>
@@ -287,7 +287,7 @@ class HourlyForecast extends HTMLElement {
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather1h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather1h_stateStr}</span>
           </div>
-          <br><br>${Hour1H}</td>
+          <p>${Hour1H}</p></td>
           <td style="text-align:center"> ${Temp1h_stateStr} F</td>
           <td style="text-align:center"> ${Precip1hprob_stateStr} % </td>
           <td style="text-align:center">${Precip1h_stateStr} in/hr</td>
@@ -297,7 +297,7 @@ class HourlyForecast extends HTMLElement {
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather2h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather2h_stateStr}</span>
           </div>
-          <br><br>${Hour2H}</td>
+          <p>${Hour2H}</p></td>
           <td style="text-align:center"> ${Temp2h_stateStr} F</td>
           <td style="text-align:center"> ${Precip2hprob_stateStr} % </td>
           <td style="text-align:center">${Precip2h_stateStr} in/hr</td>
@@ -307,7 +307,7 @@ class HourlyForecast extends HTMLElement {
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather3h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather3h_stateStr}</span>
           </div>
-          <br><br>${Hour3H}</td>
+          <p>${Hour3H}<p></td>
           <td style="text-align:center"> ${Temp3h_stateStr} F</td>
           <td style="text-align:center"> ${Precip3hprob_stateStr} % </td>
           <td style="text-align:center">${Precip3h_stateStr} in/hr</td>
