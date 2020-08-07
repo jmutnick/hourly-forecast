@@ -1,7 +1,7 @@
 // Project by Jonathan Mutnick to use the Climacell data provider to display an hourly forecast
 // Work in process
 
-import "https://cdn.jsdelivr.net/npm/chart.js@2.8.0?module";
+import "https://cdn.jsdelivr.net/npm/chart.js@2.8.0";
 
 class HourlyForecast extends HTMLElement {
   set hass(hass) {
