@@ -367,7 +367,7 @@ class HourlyForecast extends HTMLElement {
           <td style="text-align:center">${Precip3h_stateStr} in/hr</td>
       </tr>
 </table> 
-<script src="helpers/Chart.js"></script> 	  
+<script src="/local/community/hourly-forecast/helpers/Chart.js"></script> 	  
 <canvas id="myChart"></canvas>
 
 <script>
