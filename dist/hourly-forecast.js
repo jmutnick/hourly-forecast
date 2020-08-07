@@ -367,12 +367,13 @@ class HourlyForecast extends HTMLElement {
           <td style="text-align:center">${Precip3h_stateStr} in/hr</td>
       </tr>
 </table> 
+<canvas id="myChart"></canvas>
 `;
   }
-<script src="/local/community/hourly-forecast/helpers/Chart.js"></script> 	  
-<canvas id="myChart"></canvas>
+	
+import "/local/community/hourly-forecast/helpers/Chart.js"	  
 
-<script>
+
   var ctx = document.getElementById('myChart');
   var myChart = new Chart(ctx, {
     type: 'line',
