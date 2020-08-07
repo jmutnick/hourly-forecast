@@ -1,6 +1,8 @@
 // Project by Jonathan Mutnick to use the Climacell data provider to display an hourly forecast
 // Work in process
 
+import "https://cdn.jsdelivr.net/npm/chart.js@2.8.0?module";
+
 class HourlyForecast extends HTMLElement {
   set hass(hass) {
     if (!this.content) {
@@ -364,9 +366,7 @@ class HourlyForecast extends HTMLElement {
           <td style="text-align:center"> ${Precip3hprob_stateStr} % </td>
           <td style="text-align:center">${Precip3h_stateStr} in/hr</td>
       </tr>
-</table>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>    
+</table> 
 	  
 <canvas id="myChart"></canvas>
 
