@@ -1,7 +1,7 @@
 // Project by Jonathan Mutnick to use the Climacell data provider to display an hourly forecast
 // Work in process
 
-//import "https://cdn.jsdelivr.net/npm/chart.js@2.8.0";
+import "/local/community/hourly-forecast/helpers/Chart.js"; 
 
 class HourlyForecast extends HTMLElement {
   set hass(hass) {
@@ -369,11 +369,8 @@ class HourlyForecast extends HTMLElement {
 </table> 
 <canvas id="myChart"></canvas>
 `;
-  }
+  
 	
-import "/local/community/hourly-forecast/helpers/Chart.js"	  
-
-
   var ctx = document.getElementById('myChart');
   var myChart = new Chart(ctx, {
     type: 'line',
@@ -415,7 +412,7 @@ import "/local/community/hourly-forecast/helpers/Chart.js"
 myChart.canvas.parentNode.style.height = '250px';
 myChart.canvas.parentNode.style.width = '500px';
 
-
+  }
 
   //make sure an entity is set
   setConfig(config) {
