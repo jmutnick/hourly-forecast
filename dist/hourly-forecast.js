@@ -367,6 +367,8 @@ class HourlyForecast extends HTMLElement {
           <td style="text-align:center">${Precip3h_stateStr} in/hr</td>
       </tr>
 </table> 
+`;
+  }
 <script src="/local/community/hourly-forecast/helpers/Chart.js"></script> 	  
 <canvas id="myChart"></canvas>
 
@@ -411,10 +413,8 @@ class HourlyForecast extends HTMLElement {
 });
 myChart.canvas.parentNode.style.height = '250px';
 myChart.canvas.parentNode.style.width = '500px';
-</script>
-Test
-`;
-  }
+
+
 
   //make sure an entity is set
   setConfig(config) {
