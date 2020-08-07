@@ -375,10 +375,10 @@ class HourlyForecast extends HTMLElement {
   var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: [${Temp0h_stateStr}, ${Temp1h_stateStr}, ${Temp2h_stateStr}, ${Temp3h_stateStr}],
+        labels: [Hour0H, Hour1H, Hour2H, Hour3H],
         datasets: [{
             label: 'Temperature F',
-            data: [84.6, 86.83, 82.17, 85.64],
+            data: [Temp0h_stateStr, Temp1h_stateStr, Temp2h_stateStr, Temp3h_stateStr],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
