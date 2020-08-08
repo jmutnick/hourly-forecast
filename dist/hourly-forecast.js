@@ -1,7 +1,7 @@
 // Project by Jonathan Mutnick to use the Climacell data provider to display an hourly forecast
 // Work in process
 
-import "/local/community/hourly-forecast/helpers/Chart.js"; 
+//import "/local/community/hourly-forecast/helpers/Chart.js"; 
 
 class HourlyForecast extends HTMLElement {
   set hass(hass) {
@@ -373,46 +373,46 @@ Graph below
 `;
   
 	
-  var ctx = document.getElementById('myChart');
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [Hour0H, Hour1H, Hour2H, Hour3H],
-        datasets: [{
-            label: 'Temperature F',
-            data: [Temp0h_stateStr, Temp1h_stateStr, Temp2h_stateStr, Temp3h_stateStr],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1,
+//  var ctx = document.getElementById('myChart');
+//  var myChart = new Chart(ctx, {
+//    type: 'line',
+ //   data: {
+  //      labels: [Hour0H, Hour1H, Hour2H, Hour3H],
+ //       datasets: [{
+   //         label: 'Temperature F',
+     //       data: [Temp0h_stateStr, Temp1h_stateStr, Temp2h_stateStr, Temp3h_stateStr],
+       //     backgroundColor: [
+         //       'rgba(255, 99, 132, 0.2)',
+ //               'rgba(54, 162, 235, 0.2)',
+   //             'rgba(255, 206, 86, 0.2)',
+     //           'rgba(75, 192, 192, 0.2)',
+       //         'rgba(153, 102, 255, 0.2)',
+         //       'rgba(255, 159, 64, 0.2)'
+    //        ],
+      //      borderColor: [
+        //        'rgba(255, 99, 132, 1)',
+          //      'rgba(54, 162, 235, 1)',
+            //    'rgba(255, 206, 86, 1)',
+              //  'rgba(75, 192, 192, 1)',
+   //             'rgba(153, 102, 255, 1)',
+     //           'rgba(255, 159, 64, 1)'
+       //     ],
+         //   borderWidth: 1,
 			fill: false
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: false
-                }
-            }]
-        }
-    }
-});
-myChart.canvas.parentNode.style.height = '250px';
-myChart.canvas.parentNode.style.width = '500px';
+//        }]
+ //   },
+   // options: {
+     //   scales: {
+       //     yAxes: [{
+         //       ticks: {
+           //         beginAtZero: false
+          /      }
+       //     }]
+    //    }
+ //   }
+//});
+//myChart.canvas.parentNode.style.height = '250px';
+//myChart.canvas.parentNode.style.width = '500px';
 
   }
 
