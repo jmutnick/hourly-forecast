@@ -398,7 +398,7 @@ Graph below
      //           'rgba(255, 159, 64, 1)'
        //     ],
          //   borderWidth: 1,
-			fill: false
+	//		fill: false
 //        }]
  //   },
    // options: {
@@ -406,7 +406,7 @@ Graph below
        //     yAxes: [{
          //       ticks: {
            //         beginAtZero: false
-          /      }
+          //      }
        //     }]
     //    }
  //   }
