@@ -372,8 +372,7 @@ Graph below
 <canvas id="myChart"></canvas>
 `;
   
-	
-//  var ctx = document.getElementById('myChart');
+var ctx = document.getElementById('myChart');
 //  var myChart = new Chart(ctx, {
 //    type: 'line',
  //   data: {
