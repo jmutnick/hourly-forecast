@@ -370,9 +370,10 @@ class HourlyForecast extends HTMLElement {
 <br>
 Graph below
 <canvas id="myChart"></canvas>
-`;
+
   
-var ctx = document.getElementById('myChart');
+<script>
+	  var ctx = document.getElementById('myChart');
 //var 
 myChart = new Chart(ctx, {
   type: 'line',
@@ -411,6 +412,7 @@ myChart = new Chart(ctx, {
         }
     }
 });
+`;
 //myChart.canvas.parentNode.style.height = '250px';
 //myChart.canvas.parentNode.style.width = '500px';
 
