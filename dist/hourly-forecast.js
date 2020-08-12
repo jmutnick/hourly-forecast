@@ -377,7 +377,7 @@ var ctx = document.getElementById('myChart');
 myChart = new Chart(ctx, {
   type: 'line',
   data: {
-      labels: [Hour0H, Hour1H, Hour2H, Hour3H],
+      labels: ["H0", "Hour1H", "Hour2H", "Hour3H"],
       datasets: [{
         label: 'Temperature F',
         data: [1,2,3,4],
