@@ -375,7 +375,7 @@ Graph below
 <script>
 var ctx = document.getElementById('myChart');
  
-myChart = new Chart(ctx, {
+new Chart(ctx, {
   type: 'line',
   data: {
       labels: ["H0", "Hour1H", "Hour2H", "Hour3H"],
