@@ -380,7 +380,7 @@ myChart = new Chart(ctx, {
       labels: [Hour0H, Hour1H, Hour2H, Hour3H],
       datasets: [{
         label: 'Temperature F',
-        data: [Temp0h_stateStr, Temp1h_stateStr, Temp2h_stateStr, Temp3h_stateStr],
+        data: [1,2,3,4],
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
