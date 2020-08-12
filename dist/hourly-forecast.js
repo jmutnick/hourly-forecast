@@ -412,6 +412,7 @@ myChart = new Chart(ctx, {
         }
     }
 });
+</script>
 `;
 //myChart.canvas.parentNode.style.height = '250px';
 //myChart.canvas.parentNode.style.width = '500px';
