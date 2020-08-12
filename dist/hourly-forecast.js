@@ -373,7 +373,8 @@ Graph below
 `;
   
 var ctx = document.getElementById('myChart');
-var myChart = new Chart(ctx, {
+//var 
+myChart = new Chart(ctx, {
   type: 'line',
   data: {
       labels: [Hour0H, Hour1H, Hour2H, Hour3H],
