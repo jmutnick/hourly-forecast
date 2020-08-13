@@ -13,9 +13,9 @@ Configure a custom repository as follows:
 * Category: Plugin
 
 ## Dependancies
-* The Climacell weather provider is required.  This can be found in the HACS store.  More information is here:  https://github.com/r-renato/ha-climacell-weather
+* The Climacell weather provider is required.  This can be found in the HACS store.  More information is [here](https://github.com/r-renato/ha-climacell-weather).
 
-* The sun integration is required to detemine you local sunrise and sunset so that the hourly forecast can display the correct icons.  More information about this integration can be found here.  https://www.home-assistant.io/integrations/sun/
+* The sun integration is required to detemine you local sunrise and sunset so that the hourly forecast can display the correct icons.  More information about this integration can be found [here](https://www.home-assistant.io/integrations/sun/).
 
 ## Configuration
 
