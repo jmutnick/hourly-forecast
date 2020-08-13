@@ -33,7 +33,7 @@ class HourlyForecast extends HTMLElement {
     for (i = 0; i < 1; i++) {
 	    
     //precip 
-    const window['Precip'+i+'h'] = this.config.entity + '_precipitation_' + i +'h';
+    const Precip0h = this.config.entity + '_precipitation_0h';
     const Precip0h_state = hass.states[Precip0h];
     const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
     
