@@ -1,7 +1,7 @@
-![GitHub Release](https://img.shields.io/github/v/release/jmutnick/hourly-forecast)
-![Project Maintenance](https://img.shields.io/badge/maintainer-jmutnick-blue?logo=javascript)
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
-[![License: MIT](https://img.shields.io/github/license/jmutnick/hourly-forecast)](LICENSE)
+![GitHub Release][releases-shield]
+![Project Maintenance][maintainer-shield]
+[![hacs_badge][hacs-shield]](https://github.com/custom-components/hacs)
+[![License][license-shield]](LICENSE)
 # Hourly Forecast Card
 
 This card provides for the display of the hourly forecast in the climacell provider.
@@ -22,3 +22,7 @@ This is an example config.  The entity is the prefix for the climacell provider.
 
 ![config](config.png)
 
+[license-shield]: https://img.shields.io/github/license/jmutnick/hourly-forecast
+[releases-shield]: https://img.shields.io/github/v/release/jmutnick/hourly-forecast
+[hacs-shield]: https://img.shields.io/badge/HACS-Default-orange.svg
+[maintainer-shield]: https://img.shields.io/badge/maintainer-jmutnick-blue?logo=javascript]
