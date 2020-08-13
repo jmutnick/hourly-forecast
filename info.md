@@ -1,8 +1,3 @@
-![GitHub Release][releases-shield]
-[![Project Maintenance][maintainer-shield]](maintainer)
-[![hacs_badge][hacs-shield]][hacs]
-[![License][license-shield]](LICENSE)
-
 # Hourly Forecast Card
 
 This card provides for the display of the hourly forecast in the climacell provider.
@@ -22,10 +17,3 @@ Configure a custom repository as follows:
 This is an example config.  The entity is the prefix for the climacell provider.
 
 ![config](config.png)
-
-[license-shield]: https://img.shields.io/github/license/jmutnick/hourly-forecast
-[releases-shield]: https://img.shields.io/github/v/release/jmutnick/hourly-forecast
-[hacs-shield]: https://img.shields.io/badge/HACS-Default-orange.svg
-[maintainer-shield]: https://img.shields.io/badge/maintainer-jmutnick-blue?logo=javascript]
-[mainatiner]: https://github.com/jmutnick
-[hacs]: https://github.com/custom-components/hacs
