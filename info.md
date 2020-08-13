@@ -1,5 +1,5 @@
 ![GitHub Release](https://img.shields.io/github/v/release/jmutnick/hourly-forecast)
-![Project Maintenance](https://img.shields.io/badge/Maintainer-jmutnick-blue)
+![Project Maintenance](https://img.shields.io/badge/maintainer-jmutnick-blue)
 
 # Hourly Forecast Card
 
