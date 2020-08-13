@@ -1,6 +1,6 @@
 ![GitHub Release][releases-shield]
-![Project Maintenance][maintainer-shield]
-[![hacs_badge][hacs-shield]](https://github.com/custom-components/hacs)
+[![Project Maintenance][maintainer-shield]](maintainer)
+[![hacs_badge][hacs-shield]][hacs]
 [![License][license-shield]](LICENSE)
 # Hourly Forecast Card
 
@@ -26,3 +26,5 @@ This is an example config.  The entity is the prefix for the climacell provider.
 [releases-shield]: https://img.shields.io/github/v/release/jmutnick/hourly-forecast
 [hacs-shield]: https://img.shields.io/badge/HACS-Default-orange.svg
 [maintainer-shield]: https://img.shields.io/badge/maintainer-jmutnick-blue?logo=javascript]
+[mainatiner]: https://github.com/jmutnick
+[hacs]: https://github.com/custom-components/hacs
