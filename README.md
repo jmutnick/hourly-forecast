@@ -1,4 +1,4 @@
-[![GitHub Release](https://img.shields.io/github/v/tag/jmutnick/hourly-forecast?style=for-the-badge)
+![GitHub Release](https://img.shields.io/github/v/tag/jmutnick/hourly-forecast?style=for-the-badge)
 
 # Hourly Forecast Card
 
