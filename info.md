@@ -2,11 +2,6 @@
 
 This card provides for the display of the hourly forecast in the climacell provider.
 
-## Installation
-Configure a custom repository as follows:
-* URL: https://github.com/jmutnick/hourly-forecast
-* Category: Plugin
-
 ## Dependancies
 * The Climacell weather provider is required.  This can be found in the HACS store.  More information is [here](https://github.com/r-renato/ha-climacell-weather)
 
