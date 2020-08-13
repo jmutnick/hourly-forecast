@@ -1,5 +1,7 @@
 ![GitHub Release](https://img.shields.io/github/v/release/jmutnick/hourly-forecast)
-![Project Maintenance](https://img.shields.io/badge/maintainer-jmutnick-blue)
+![Project Maintenance](https://img.shields.io/badge/maintainer-jmutnick-blue?logo=javascript)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
+[![License: MIT](https://img.shields.io/github/license/jmutnick/hourly-forecast)](LICENSE)
 
 # Hourly Forecast Card
 
