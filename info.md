@@ -1,3 +1,5 @@
+[![Downloads for latest release](https://img.shields.io/github/downloads/hacs/integration/latest/total.svg)](https://github.com/jmutnick/hourly-forecast/releases/latest)
+
 # Hourly Forecast Card
 
 This card provides for the display of the hourly forecast in the climacell provider.
