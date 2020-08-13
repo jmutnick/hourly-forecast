@@ -1,12 +1,10 @@
 {
   "name": "hourly-forecast",
-  "version": "0.0.1",
   "description": "Hourly Forecast Card",
   "keywords": [
     "home-assistant",
     "homeassistant",
     "hass",
-    "automation",
     "lovelace",
     "custom-cards"
   ],
