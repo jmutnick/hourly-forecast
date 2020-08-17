@@ -11,7 +11,7 @@ jobs:
       - uses: fabasoad/linguist-action@v1.0.0
         id: linguist
         with:
-          path: './'
+          path: './dist/'
           percentage: true
       - name: Print linguist result
         run: echo "${{ steps.linguist.outputs.data }}"
