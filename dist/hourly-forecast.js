@@ -1,7 +1,11 @@
 // Project by Jonathan Mutnick to use the Climacell data provider to display an hourly forecast
 // Work in process
 
+<<<<<<< Updated upstream
 import "/local/community/hourly-forecast/helpers/Chart.js"; 
+=======
+//import "/local/community/hourly-forecast/helpers/Chart.js"; 
+>>>>>>> Stashed changes
 
 class HourlyForecast extends HTMLElement {
   set hass(hass) {
@@ -29,12 +33,20 @@ class HourlyForecast extends HTMLElement {
     const uiDateOptions = { hour: 'numeric', };  
   
     //  this is start of 0h
+<<<<<<< Updated upstream
   	    
+=======
+    
+>>>>>>> Stashed changes
     //precip 
     const Precip0h = this.config.entity + '_precipitation_0h';
     const Precip0h_state = hass.states[Precip0h];
     const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
+<<<<<<< Updated upstream
     
+=======
+   
+>>>>>>> Stashed changes
     //precip prob
     const Precip0hprob = this.config.entity + '_precipitation_probability_0h';
     const Precip0hprob_state = hass.states[Precip0hprob];
@@ -186,6 +198,7 @@ class HourlyForecast extends HTMLElement {
     const Weather2h = this.config.entity + '_weather_condition_2h';
     const Weather2h_state = hass.states[Weather2h];
     var Weather2h_stateStr = Weather2h_state ? Weather2h_state.state : 'unavailable';
+<<<<<<< Updated upstream
     
     if (Weather2h_stateStr == "clear" && sunstatestr == "above_horizon" && event2 < sunsetdt) {
        Weather2h_stateStr = "clear_day";
@@ -227,6 +240,49 @@ class HourlyForecast extends HTMLElement {
     //end 2h
 
     
+=======
+    
+    if (Weather2h_stateStr == "clear" && sunstatestr == "above_horizon" && event2 < sunsetdt) {
+       Weather2h_stateStr = "clear_day";
+    }
+    else if (Weather2h_stateStr == "clear" && sunstatestr == "above_horizon" && event2 > sunsetdt) {
+       Weather2h_stateStr = "clear_night";
+    }
+    else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon" && event2 < sunrisedt) {
+      Weather2h_stateStr = "clear_night";
+    }
+    else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon" && event2 > sunrisedt) {
+      Weather2h_stateStr = "clear_day";
+    }  
+    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event2 < sunrisedt) {
+      Weather2h_stateStr = "mostly_clear_day";
+    }
+      else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event2 > sunrisedt) {
+      Weather2h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event2  > sunsetdt) {
+      Weather2h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event2  < sunsetdt) {
+      Weather2h_stateStr = "mostly_clear_day";
+    }
+           else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event2 < sunrisedt) {
+      Weather2h_stateStr = "partly_cloudy_day";
+    }
+      else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event2 > sunrisedt) {
+      Weather2h_stateStr = "partly_cloudy_night";
+    }
+    else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event2  > sunsetdt) {
+      Weather2h_stateStr = "partly_cloudy_night";
+    }
+    else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event2  < sunsetdt) {
+      Weather2h_stateStr = "partly_cloudy_day";
+    }
+ 
+    //end 2h
+
+    
+>>>>>>> Stashed changes
     // begin 3h
     //precip 
     const Precip3h = this.config.entity + '_precipitation_3h';
@@ -247,6 +303,7 @@ class HourlyForecast extends HTMLElement {
     const My3hDateTimeStr = hass.states[Precip3h].attributes.observation_time;
     const event3 = new Date(My3hDateTimeStr);  //convert to date, didn't need to use the ${} 
     const Hour3H = event3.toLocaleTimeString('en-US', uiDateOptions);  //do it  
+<<<<<<< Updated upstream
     
     //weather condition
     const Weather3h = this.config.entity + '_weather_condition_3h';
@@ -296,6 +353,57 @@ class HourlyForecast extends HTMLElement {
     //console.log("sunrisedt=" + sunrisedt);
     //console.log("sunsetdt=" + sunsetdt);
     
+=======
+    
+    //weather condition
+    const Weather3h = this.config.entity + '_weather_condition_3h';
+    const Weather3h_state = hass.states[Weather3h];
+    var Weather3h_stateStr = Weather3h_state ? Weather3h_state.state : 'unavailable';
+    
+    if (Weather3h_stateStr == "clear" && sunstatestr == "above_horizon" && event3 < sunsetdt) {
+       Weather3h_stateStr = "clear_day";
+    }
+    else if (Weather3h_stateStr == "clear" && sunstatestr == "above_horizon" && event3 > sunsetdt) {
+       Weather3h_stateStr = "clear_night";
+    }
+    else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon" && event3 < sunrisedt) {
+      Weather3h_stateStr = "clear_night";
+    }
+    else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon" && event3 > sunrisedt) {
+      Weather3h_stateStr = "clear_day";
+    }  
+    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event3 < sunrisedt) {
+      Weather3h_stateStr = "mostly_clear_day";
+    }
+      else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event3 > sunrisedt) {
+      Weather3h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event3  > sunsetdt) {
+      Weather3h_stateStr = "mostly_clear_night";
+    }
+    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event3  < sunsetdt) {
+      Weather3h_stateStr = "mostly_clear_day";
+    }
+            else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event3 < sunrisedt) {
+      Weather3h_stateStr = "partly_cloudy_day";
+    }
+      else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event3 > sunrisedt) {
+      Weather3h_stateStr = "partly_cloudy_night";
+    }
+    else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event3  > sunsetdt) {
+      Weather3h_stateStr = "partly_cloudy_night";
+    }
+    else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event3  < sunsetdt) {
+      Weather3h_stateStr = "partly_cloudy_day";
+    }
+    
+    //console.log("Weather3h_stateStr=" + Weather3h_stateStr);
+    //console.log("sunstatestr=" + sunstatestr);
+    //console.log("event3=" + event3);
+    //console.log("sunrisedt=" + sunrisedt);
+    //console.log("sunsetdt=" + sunsetdt);
+    
+>>>>>>> Stashed changes
     //end 3h
     
     //construct html
@@ -370,6 +478,7 @@ class HourlyForecast extends HTMLElement {
 <br>
 Graph below
 <canvas id="myChart"></canvas>
+<<<<<<< Updated upstream
 
   
 <script>
@@ -390,6 +499,49 @@ new Chart(ctx, {
 });
 </script>
 `;
+=======
+`;
+  
+	
+//  var ctx = document.getElementById('myChart');
+//  var myChart = new Chart(ctx, {
+//    type: 'line',
+ //   data: {
+  //      labels: [Hour0H, Hour1H, Hour2H, Hour3H],
+ //       datasets: [{
+   //         label: 'Temperature F',
+     //       data: [Temp0h_stateStr, Temp1h_stateStr, Temp2h_stateStr, Temp3h_stateStr],
+       //     backgroundColor: [
+         //       'rgba(255, 99, 132, 0.2)',
+ //               'rgba(54, 162, 235, 0.2)',
+   //             'rgba(255, 206, 86, 0.2)',
+     //           'rgba(75, 192, 192, 0.2)',
+       //         'rgba(153, 102, 255, 0.2)',
+         //       'rgba(255, 159, 64, 0.2)'
+    //        ],
+      //      borderColor: [
+        //        'rgba(255, 99, 132, 1)',
+          //      'rgba(54, 162, 235, 1)',
+            //    'rgba(255, 206, 86, 1)',
+              //  'rgba(75, 192, 192, 1)',
+   //             'rgba(153, 102, 255, 1)',
+     //           'rgba(255, 159, 64, 1)'
+       //     ],
+         //   borderWidth: 1,
+	//		fill: false
+//        }]
+ //   },
+   // options: {
+     //   scales: {
+       //     yAxes: [{
+         //       ticks: {
+           //         beginAtZero: false
+          //      }
+       //     }]
+    //    }
+ //   }
+//});
+>>>>>>> Stashed changes
 //myChart.canvas.parentNode.style.height = '250px';
 //myChart.canvas.parentNode.style.width = '500px';
 
