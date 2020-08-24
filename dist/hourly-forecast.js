@@ -42,9 +42,11 @@ class HourlyForecast extends HTMLElement {
    
      //temperature
     const Temp0h = this.config.entity + '_temperature_0h';
-    const Temp0h_state = Number(hass.states[Temp0h]);
-    console.log("Temp as number: " + Temp0h_state)
-    const Temp0h_stateStr = Temp0h_state ? Temp0h_state.state : 'unavailable';
+    const Temp0h_state = hass.states[Temp0h];
+    
+    var Temp0h_stateStr = Temp0h_state ? Temp0h_state.state : 'unavailable';
+    Temp0h_stateStr = String(Math.round(Number(Temp0h_stateStr)));
+    console.log("Temp as string: " + Temp0h_stateStr);
   
      //time of forecast
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
