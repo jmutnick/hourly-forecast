@@ -341,7 +341,9 @@ class HourlyForecast extends HTMLElement {
             <span class="tooltiptext">${Weather0h_stateStr}</span>
           </div>
           ${Hour0H}</td>
-          <td style="text-align:center"> <div>${Temp0h_stateStr} &degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
+          <td style="text-align:center"> <div>${Temp0h_stateStr} &degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
+                                         <div>50<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
+          </td>
           <td style="text-align:center"> ${Precip0hprob_stateStr} % </td>
           <td style="text-align:center">${Precip0h_stateStr} in/hr</td>
       </tr>
