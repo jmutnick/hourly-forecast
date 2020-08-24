@@ -46,7 +46,6 @@ class HourlyForecast extends HTMLElement {
     
     var Temp0h_stateStr = Temp0h_state ? Temp0h_state.state : 'unavailable';
     Temp0h_stateStr = String(Math.round(Number(Temp0h_stateStr)));
-    console.log("Temp as string: " + Temp0h_stateStr);
   
      //time of forecast
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
@@ -112,7 +111,8 @@ class HourlyForecast extends HTMLElement {
      //temperature
     const Temp1h = this.config.entity + '_temperature_1h';
     const Temp1h_state = hass.states[Temp1h];
-    const Temp1h_stateStr = Temp1h_state ? Temp1h_state.state : 'unavailable';
+    var Temp1h_stateStr = Temp1h_state ? Temp1h_state.state : 'unavailable';
+    Temp1h_stateStr = String(Math.round(Number(Temp1h_stateStr)));
     
     //time of forecast
     const My1hDateTimeStr = hass.states[Precip1h].attributes.observation_time;
@@ -178,7 +178,8 @@ class HourlyForecast extends HTMLElement {
      //temperature
     const Temp2h = this.config.entity + '_temperature_2h';
     const Temp2h_state = hass.states[Temp2h];
-    const Temp2h_stateStr = Temp2h_state ? Temp2h_state.state : 'unavailable';
+    var Temp2h_stateStr = Temp2h_state ? Temp2h_state.state : 'unavailable';
+    Temp2h_stateStr = String(Math.round(Number(Temp2h_stateStr)));
     
     //time of forecast
     const My2hDateTimeStr = hass.states[Precip2h].attributes.observation_time;
@@ -244,7 +245,8 @@ class HourlyForecast extends HTMLElement {
      //temperature
     const Temp3h = this.config.entity + '_temperature_3h';
     const Temp3h_state = hass.states[Temp3h];
-    const Temp3h_stateStr = Temp3h_state ? Temp3h_state.state : 'unavailable';
+    var Temp3h_stateStr = Temp3h_state ? Temp3h_state.state : 'unavailable';
+    Temp3h_stateStr = String(Math.round(Number(Temp3h_stateStr)));
 
     //time of forecast
     const My3hDateTimeStr = hass.states[Precip3h].attributes.observation_time;
