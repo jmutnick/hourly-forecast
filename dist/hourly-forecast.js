@@ -305,6 +305,11 @@ class HourlyForecast extends HTMLElement {
     
     //construct html
     this.content.innerHTML = `
+  <head>
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/474d671c46.js" crossorigin="anonymous"></script>
+  </head>    
+    
 <style>
 .tooltip {
   position: bottom;
@@ -337,7 +342,7 @@ class HourlyForecast extends HTMLElement {
             <span class="tooltiptext">${Weather0h_stateStr}</span>
           </div>
           ${Hour0H}</td>
-          <td style="text-align:center"> ${Temp0h_stateStr} &degF</td>
+          <td style="text-align:center"> ${Temp0h_stateStr} &degF <i class="fas fa-thermometer-half"></i></td>
           <td style="text-align:center"> ${Precip0hprob_stateStr} % </td>
           <td style="text-align:center">${Precip0h_stateStr} in/hr</td>
       </tr>
