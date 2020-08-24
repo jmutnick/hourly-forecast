@@ -334,7 +334,7 @@ class HourlyForecast extends HTMLElement {
 
 </style>
       <table border=1>
-      <tr><th>Condition/Time</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
+      <tr><th>Condition/Time</th><th width=100>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
       <tr><td style="text-align:center">
           <div class="tooltip">
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50>
