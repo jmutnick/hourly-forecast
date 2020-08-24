@@ -330,6 +330,8 @@ class HourlyForecast extends HTMLElement {
   visibility: visible;
 }
 
+.invert { filter: invert(100%); }
+
 </style>
       <table border=1>
       <tr><th>Condition/Time</th><th>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
@@ -339,7 +341,7 @@ class HourlyForecast extends HTMLElement {
             <span class="tooltiptext">${Weather0h_stateStr}</span>
           </div>
           ${Hour0H}</td>
-          <td style="text-align:center"> ${Temp0h_stateStr} &degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" width=25 height=50></td>
+          <td style="text-align:center"> ${Temp0h_stateStr} &degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" class="invert" style="width:25px"0></td>
           <td style="text-align:center"> ${Precip0hprob_stateStr} % </td>
           <td style="text-align:center">${Precip0h_stateStr} in/hr</td>
       </tr>
