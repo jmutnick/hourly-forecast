@@ -336,16 +336,16 @@ class HourlyForecast extends HTMLElement {
 </style>
       <table border=1>
       <!-- <tr><th>Condition/Time</th><th width=100>Temp</th><th>Rain</th></tr> -->
-      <tr><td style="text-align:center">
+      <tr><td style="text-align:center" width="33%">
           <div class="tooltip">
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather0h_stateStr}</span>
           </div>
           ${Hour0H}</td>
-          <td style="text-align:center"> <div>${Temp0h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
+          <td style="text-align:center" width="33%"> <div>${Temp0h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
                                          <div>${Humid0hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
           </td>
-          <td style="text-align:center"> <div>${Precip0hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
+          <td style="text-align:center" width="33%"> <div>${Precip0hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
                                         <div>${Precip0h_stateStr} in/hr</div></td>
       </tr>
       <tr><td style="text-align:center">
