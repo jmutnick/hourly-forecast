@@ -335,11 +335,18 @@ class HourlyForecast extends HTMLElement {
 
 table {
   width: 100%; 
+
+table tr {
+    border-bottom: 1px solid black;
+}​
+
+table tr:last-child { 
+    border-bottom: none; 
+}  
 }
 
 </style>
-      <table border=1>
-      <!-- <tr><th>Condition/Time</th><th width=100>Temp</th><th>Rain</th></tr> -->
+      <table>
       <tr><td style="text-align:center">
           <div class="tooltip">
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50>
