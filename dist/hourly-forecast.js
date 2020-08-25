@@ -14,12 +14,19 @@ class HourlyForecast extends HTMLElement {
       this.appendChild(card);
     }
     
-    const sunstate = hass.states[this.config.sun_object];  //get sun position
-    const sunstatestr = sunstate ? sunstate.state : 'unavailable';    
+    //get sun position
+    const sunpos = this.config.sun_object;
+    const sunstate = hass.states[sunpos];
+    const sunstatestr = sunstate ? sunstate.state : 'unavailable';
     
-    const sunrisedt = new Date(hass.states[sunpos].attributes.next_rising);   //time of next sunrise
-    const sunsetdt = new Date(hass.states[sunpos].attributes.next_setting);   //time of next sunset
-    const uiDateOptions = { hour: 'numeric', };                               // date format
+    //time of next sunrise
+    const sunrisedt = new Date(hass.states[sunpos].attributes.next_rising);
+    
+    //time of next sunset
+    const sunsetdt = new Date(hass.states[sunpos].attributes.next_setting);
+    
+    // date format
+    const uiDateOptions = { hour: 'numeric', };  
   
     //  this is start of 0h
   	    
@@ -45,7 +52,8 @@ class HourlyForecast extends HTMLElement {
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
     const event0 = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
     const Hour0H = event0.toLocaleTimeString('en-US', uiDateOptions);  //do it
-       
+    
+    
     //weather condition
     const Weather0h_state = hass.states[this.config.entity + '_weather_condition_0h'];
     var Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
