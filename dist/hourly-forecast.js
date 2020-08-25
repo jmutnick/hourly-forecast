@@ -15,8 +15,8 @@ class HourlyForecast extends HTMLElement {
     }
     
     //get sun position
-    const sunpos = this.config.sun_object;
-    const sunstate = hass.states[sunpos];
+    //const sunpos = this.config.sun_object;
+    const sunstate = hass.states[this.config.sun_object];
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
     
     //time of next sunrise
@@ -49,12 +49,13 @@ class HourlyForecast extends HTMLElement {
     Humid0hstr = String(Math.round(Number(Humid0hstr)));  
   
      //time of forecast
-    const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
-    const event0 = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
+    const My0hDateTimeStr = hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time;
+    const event0 = new Date(My0hDateTimeStr);  //convert to date
     const Hour0H = event0.toLocaleTimeString('en-US', uiDateOptions);  //do it
     
     
     //weather condition
+    const Weather0h = this.config.entity + '_weather_condition_0h';
     const Weather0h_state = hass.states[this.config.entity + '_weather_condition_0h'];
     var Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
     
