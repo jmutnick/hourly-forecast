@@ -43,9 +43,12 @@ class HourlyForecast extends HTMLElement {
      //temperature
     const Temp0h = this.config.entity + '_temperature_0h';
     const Temp0h_state = hass.states[Temp0h];
-    
     var Temp0h_stateStr = Temp0h_state ? Temp0h_state.state : 'unavailable';
     Temp0h_stateStr = String(Math.round(Number(Temp0h_stateStr)));
+    
+    //humidity
+    const Humid0h_state = hass.states[this.config.entity + '_humidity_percentage_0h']  
+    const Humid0hstr = Humid0h_state ? Humid0h_state.state : 'unavailable';
   
      //time of forecast
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
@@ -334,18 +337,17 @@ class HourlyForecast extends HTMLElement {
 
 </style>
       <table border=1>
-      <tr><th>Condition/Time</th><th width=100>Temp</th><th>Rain Probability</th><th>Precipitation</th></tr>
+      <tr><th>Condition/Time</th><th width=100>Temp</th><th>Rain</th></tr>
       <tr><td style="text-align:center">
           <div class="tooltip">
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather0h_stateStr}</span>
           </div>
           ${Hour0H}</td>
-          <td style="text-align:center"> <div>${Temp0h_stateStr} &degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
-                                         <div>50<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
+          <td style="text-align:center"> <div>${Temp0h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
+                                         <div>${Humid0hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
           </td>
-          <td style="text-align:center"> ${Precip0hprob_stateStr} % </td>
-          <td style="text-align:center">${Precip0h_stateStr} in/hr</td>
+          <td style="text-align:center"> ${Precip0hprob_stateStr}%<p>${Precip0h_stateStr} in/hr</td>
       </tr>
       <tr><td style="text-align:center">
           <div class="tooltip">
@@ -353,9 +355,8 @@ class HourlyForecast extends HTMLElement {
             <span class="tooltiptext">${Weather1h_stateStr}</span>
           </div>
           ${Hour1H}</td>
-          <td style="text-align:center"> <div>${Temp1h_stateStr} &degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
-          <td style="text-align:center"> ${Precip1hprob_stateStr} % </td>
-          <td style="text-align:center">${Precip1h_stateStr} in/hr</td>
+          <td style="text-align:center"> <div>${Temp1h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
+          <td style="text-align:center"> ${Precip1hprob_stateStr}%<p>${Precip1h_stateStr} in/hr</td>
       </tr>
       <tr><td style="text-align:center">
           <div class="tooltip">
@@ -363,9 +364,8 @@ class HourlyForecast extends HTMLElement {
             <span class="tooltiptext">${Weather2h_stateStr}</span>
           </div>
          ${Hour2H}</td>
-          <td style="text-align:center"> <div>${Temp2h_stateStr} &degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
-          <td style="text-align:center"> ${Precip2hprob_stateStr} % </td>
-          <td style="text-align:center">${Precip2h_stateStr} in/hr</td>
+          <td style="text-align:center"> <div>${Temp2h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
+          <td style="text-align:center"> ${Precip2hprob_stateStr}%<p>${Precip2h_stateStr} in/hr</td>
       </tr>
       <tr><td style="text-align:center">
           <div class="tooltip">
@@ -373,9 +373,8 @@ class HourlyForecast extends HTMLElement {
             <span class="tooltiptext">${Weather3h_stateStr}</span>
           </div>
           ${Hour3H}</td>
-          <td style="text-align:center"> <div>${Temp3h_stateStr} &degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
-          <td style="text-align:center"> ${Precip3hprob_stateStr} % </td>
-          <td style="text-align:center">${Precip3h_stateStr} in/hr</td>
+          <td style="text-align:center"> <div>${Temp3h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
+          <td style="text-align:center"> ${Precip3hprob_stateStr}%<p>${Precip3h_stateStr} in/hr</td>
       </tr>
 </table> 
 <br>
