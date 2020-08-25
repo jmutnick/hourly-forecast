@@ -20,10 +20,10 @@ class HourlyForecast extends HTMLElement {
     const sunstatestr = sunstate ? sunstate.state : 'unavailable';
     
     //time of next sunrise
-    const sunrisedt = new Date(hass.states[sunpos].attributes.next_rising);
+    const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     
     //time of next sunset
-    const sunsetdt = new Date(hass.states[sunpos].attributes.next_setting);
+    const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
     
     // date format
     const uiDateOptions = { hour: 'numeric', };  
