@@ -337,7 +337,7 @@ table {
   width: 100%; 
 
 table tr {
-    border-bottom: 1px solid black;
+    border-bottom: 1px white;
 }​
 
 table tr:last-child { 
