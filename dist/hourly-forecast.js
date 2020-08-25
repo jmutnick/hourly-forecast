@@ -334,7 +334,7 @@ class HourlyForecast extends HTMLElement {
 .invert { filter: invert(100%); }
 
 table {
-  max-width: 100%; 
+  width: 100%; 
 }
 
 </style>
