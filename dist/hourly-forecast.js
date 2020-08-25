@@ -14,51 +14,40 @@ class HourlyForecast extends HTMLElement {
       this.appendChild(card);
     }
     
-    //get sun position
-    const sunpos = this.config.sun_object;
-    const sunstate = hass.states[sunpos];
-    const sunstatestr = sunstate ? sunstate.state : 'unavailable';
+    const sunstate = hass.states[this.config.sun_object];  //get sun position
+    const sunstatestr = sunstate ? sunstate.state : 'unavailable';    
     
-    //time of next sunrise
-    const sunrisedt = new Date(hass.states[sunpos].attributes.next_rising);
-    
-    //time of next sunset
-    const sunsetdt = new Date(hass.states[sunpos].attributes.next_setting);
-    
-    // date format
-    const uiDateOptions = { hour: 'numeric', };  
+    const sunrisedt = new Date(hass.states[sunpos].attributes.next_rising);   //time of next sunrise
+    const sunsetdt = new Date(hass.states[sunpos].attributes.next_setting);   //time of next sunset
+    const uiDateOptions = { hour: 'numeric', };                               // date format
   
     //  this is start of 0h
   	    
     //precip 
-    const Precip0h = this.config.entity + '_precipitation_0h';
-    const Precip0h_state = hass.states[Precip0h];
+    const Precip0h_state = hass.states[this.config.entity + '_precipitation_0h'];
     const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
     
     //precip prob
-    const Precip0hprob = this.config.entity + '_precipitation_probability_0h';
-    const Precip0hprob_state = hass.states[Precip0hprob];
+    const Precip0hprob_state = hass.states[this.config.entity + '_precipitation_probability_0h'];
     const Precip0hprob_stateStr = Precip0hprob_state ? Precip0hprob_state.state : 'unavailable';
    
      //temperature
-    const Temp0h = this.config.entity + '_temperature_0h';
-    const Temp0h_state = hass.states[Temp0h];
+    const Temp0h_state = hass.states[this.config.entity + '_temperature_0h'];
     var Temp0h_stateStr = Temp0h_state ? Temp0h_state.state : 'unavailable';
     Temp0h_stateStr = String(Math.round(Number(Temp0h_stateStr)));
     
     //humidity
     const Humid0h_state = hass.states[this.config.entity + '_humidity_percentage_0h']  
-    const Humid0hstr = Humid0h_state ? Humid0h_state.state : 'unavailable';
+    var Humid0hstr = Humid0h_state ? Humid0h_state.state : 'unavailable';
+    Humid0hstr = String(Math.round(Number(Humid0hstr)));  
   
      //time of forecast
     const My0hDateTimeStr = hass.states[Precip0h].attributes.observation_time;
     const event0 = new Date(My0hDateTimeStr);  //convert to date, didn't need to use the ${} 
     const Hour0H = event0.toLocaleTimeString('en-US', uiDateOptions);  //do it
-    
-    
+       
     //weather condition
-    const Weather0h = this.config.entity + '_weather_condition_0h';
-    const Weather0h_state = hass.states[Weather0h];
+    const Weather0h_state = hass.states[this.config.entity + '_weather_condition_0h'];
     var Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
     
     if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon" && event0 < sunsetdt) {
@@ -347,7 +336,8 @@ class HourlyForecast extends HTMLElement {
           <td style="text-align:center"> <div>${Temp0h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
                                          <div>${Humid0hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
           </td>
-          <td style="text-align:center"> ${Precip0hprob_stateStr}%<p>${Precip0h_stateStr} in/hr</td>
+          <td style="text-align:center"> <div>${Precip0hprob_stateStr}%</div>
+                                        <div>${Precip0h_stateStr} in/hr</div></td>
       </tr>
       <tr><td style="text-align:center">
           <div class="tooltip">
