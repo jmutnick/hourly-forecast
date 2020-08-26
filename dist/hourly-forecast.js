@@ -356,10 +356,10 @@ tr.border_bottom  td{
             <span class="tooltiptext">${Weather0h_stateStr}</span>
           </div>
           ${Hour0H}</td>
-          <td style="text-align:center""> <div>${Temp0h_stateStr}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center class="invert" style="width:20px"></div>
-                                         <div>${Humid0hstr}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center class="invert" style="width:20px"></div>
+          <td style="text-align:center""> <div>${Temp0h_stateStr}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
+                                         <div>${Humid0hstr}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
           </td>
-          <td style="text-align:center"> <div>${Precip0hprob_stateStr}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center class="invert" style="width:20px"></div>
+          <td style="text-align:center"> <div>${Precip0hprob_stateStr}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
                                         <div>${Precip0h_stateStr} in/hr</div></td>
       </tr>
       <tr class="border_bottom"><td style="text-align:center">

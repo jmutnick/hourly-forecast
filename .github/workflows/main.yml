@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.7.1.1-beta'
-          description: '* Fixing temperature icon<br>* No other changes'
+          version: 'v0.0.7.1.2-beta'
+          description: '* Removed Invert on icons in 0h to compare'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
