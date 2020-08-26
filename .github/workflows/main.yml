@@ -14,7 +14,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           version: 'v0.0.7.1.3-beta'
-          description: '* Removed Invert on icons \s\s * Changed color of temp icon '
+          description: '* Removed Invert on icons  * Changed color of temp icon '
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
