@@ -357,7 +357,7 @@ tr.border_bottom  td{
           </div>
           ${Hour0H}</td>
           <td style="text-align:center""> <div>${Temp0h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
-                                         <div>${Humid0hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
+                                         <div>${Humid0hstr}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center class="invert" style="width:20px"></div>
           </td>
           <td style="text-align:center"> <div>${Precip0hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
                                         <div>${Precip0h_stateStr} in/hr</div></td>
@@ -369,7 +369,7 @@ tr.border_bottom  td{
           </div>
           ${Hour1H}</td>
           <td style="text-align:center""> <div>${Temp1h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
-                                         <div>${Humid1hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
+                                         <div>${Humid1hstr}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center class="invert" style="width:20px"></div>
           </td>
           <td style="text-align:center"> <div>${Precip1hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
                                         <div>${Precip1h_stateStr} in/hr</div></td>
@@ -381,7 +381,7 @@ tr.border_bottom  td{
           </div>
          ${Hour2H}</td>
           <td style="text-align:center""> <div>${Temp2h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
-                                         <div>${Humid2hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
+                                         <div>${Humid2hstr}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center class="invert" style="width:20px"></div>
           </td>
           <td style="text-align:center"> <div>${Precip2hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
                                         <div>${Precip2h_stateStr} in/hr</div></td>
@@ -393,7 +393,7 @@ tr.border_bottom  td{
           </div>
           ${Hour3H}</td>
           <td style="text-align:center""> <div>${Temp3h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
-                                         <div>${Humid3hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
+                                         <div>${Humid3hstr}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center class="invert" style="width:20px"></div>
           </td>
           <td style="text-align:center"> <div>${Precip3hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
                                         <div>${Precip3h_stateStr} in/hr</div></td>

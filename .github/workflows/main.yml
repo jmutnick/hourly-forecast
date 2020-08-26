@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.7.0.8-beta'
-          description: 'Adding humidity to the rest of the forecasts and cleaning up precip areas'
+          version: 'v0.0.7.0.9-beta'
+          description: 'Local humidity icon'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
