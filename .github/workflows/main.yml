@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.7.1.3-beta'
-          description: '* Removed Invert on icons  * Changed color of temp icon '
+          version: 'v0.0.7.1.4-beta'
+          description: '* Syncing icon colors'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
