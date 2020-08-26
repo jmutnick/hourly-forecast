@@ -1,0 +1,17 @@
+name: Release Creator
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    name: Create a release
+    steps:
+      - uses: alice-biometrics/release-creator/@v1.0.4
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version: inherit
+          description: inherit
