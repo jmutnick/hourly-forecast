@@ -335,19 +335,14 @@ class HourlyForecast extends HTMLElement {
 
 table {width: 100%}
 
-tr.bottom td {
-  border-bottom: thin solid white;
+tr.border_bottom  td{
+  border-bottom: 1px solid white;
 }
-
-tr:last-child
-{
-   border-bottom: none;
-} 
 
 
 </style>
-      <table>
-      <tr><td style="text-align:center">
+      <table cellspacing=0>
+      <tr class="border_bottom"><td style="text-align:center">
           <div class="tooltip">
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather0h_stateStr}</span>
@@ -359,7 +354,7 @@ tr:last-child
           <td style="text-align:center"> <div>${Precip0hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
                                         <div>${Precip0h_stateStr} in/hr</div></td>
       </tr>
-      <tr><td style="text-align:center">
+      <tr class="border_bottom"><td style="text-align:center">
           <div class="tooltip">
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather1h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather1h_stateStr}</span>
@@ -368,7 +363,7 @@ tr:last-child
           <td style="text-align:center"> <div>${Temp1h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
           <td style="text-align:center"> ${Precip1hprob_stateStr}%<p>${Precip1h_stateStr} in/hr</td>
       </tr>
-      <tr><td style="text-align:center">
+      <tr class="border_bottom"><td style="text-align:center">
           <div class="tooltip">
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather2h_stateStr}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather2h_stateStr}</span>
