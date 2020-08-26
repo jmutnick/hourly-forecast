@@ -13,5 +13,5 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: inherit
-          description: inherit
+          version: 'inherit'
+          description: 'inherit'
