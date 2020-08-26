@@ -116,6 +116,11 @@ class HourlyForecast extends HTMLElement {
     var Temp1h_stateStr = Temp1h_state ? Temp1h_state.state : 'unavailable';
     Temp1h_stateStr = String(Math.round(Number(Temp1h_stateStr)));
     
+    //humidity
+    const Humid1h_state = hass.states[this.config.entity + '_humidity_percentage_1h']  
+    var Humid1hstr = Humid1h_state ? Humid1h_state.state : 'unavailable';
+    Humid1hstr = String(Math.round(Number(Humid1hstr))); 
+    
     //time of forecast
     const My1hDateTimeStr = hass.states[Precip1h].attributes.observation_time;
     const event1 = new Date(My1hDateTimeStr);  //convert to date, didn't need to use the ${} 
@@ -183,6 +188,11 @@ class HourlyForecast extends HTMLElement {
     var Temp2h_stateStr = Temp2h_state ? Temp2h_state.state : 'unavailable';
     Temp2h_stateStr = String(Math.round(Number(Temp2h_stateStr)));
     
+    //humidity
+    const Humid2h_state = hass.states[this.config.entity + '_humidity_percentage_2h']  
+    var Humid2hstr = Humid2h_state ? Humid2h_state.state : 'unavailable';
+    Humid2hstr = String(Math.round(Number(Humid2hstr))); 
+    
     //time of forecast
     const My2hDateTimeStr = hass.states[Precip2h].attributes.observation_time;
     const event2 = new Date(My2hDateTimeStr);  //convert to date, didn't need to use the ${} 
@@ -249,7 +259,12 @@ class HourlyForecast extends HTMLElement {
     const Temp3h_state = hass.states[Temp3h];
     var Temp3h_stateStr = Temp3h_state ? Temp3h_state.state : 'unavailable';
     Temp3h_stateStr = String(Math.round(Number(Temp3h_stateStr)));
-
+    
+    //humidity
+    const Humid3h_state = hass.states[this.config.entity + '_humidity_percentage_3h']  
+    var Humid3hstr = Humid3h_state ? Humid3h_state.state : 'unavailable';
+    Humid3hstr = String(Math.round(Number(Humid3hstr))); 
+    
     //time of forecast
     const My3hDateTimeStr = hass.states[Precip3h].attributes.observation_time;
     const event3 = new Date(My3hDateTimeStr);  //convert to date, didn't need to use the ${} 
@@ -297,18 +312,10 @@ class HourlyForecast extends HTMLElement {
       Weather3h_stateStr = "partly_cloudy_day";
     }
     
-    //console.log("Weather3h_stateStr=" + Weather3h_stateStr);
-    //console.log("sunstatestr=" + sunstatestr);
-    //console.log("event3=" + event3);
-    //console.log("sunrisedt=" + sunrisedt);
-    //console.log("sunsetdt=" + sunsetdt);
-    
     //end 3h
     
     //construct html
     this.content.innerHTML = `
-  
-    
 <style>
 .tooltip {
   position: bottom;
@@ -361,8 +368,11 @@ tr.border_bottom  td{
             <span class="tooltiptext">${Weather1h_stateStr}</span>
           </div>
           ${Hour1H}</td>
-          <td style="text-align:center"> <div>${Temp1h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
-          <td style="text-align:center"> ${Precip1hprob_stateStr}%<p>${Precip1h_stateStr} in/hr</td>
+          <td style="text-align:center""> <div>${Temp1h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
+                                         <div>${Humid1hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
+          </td>
+          <td style="text-align:center"> <div>${Precip1hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
+                                        <div>${Precip1h_stateStr} in/hr</div></td>
       </tr>
       <tr class="border_bottom"><td style="text-align:center">
           <div class="tooltip">
@@ -370,8 +380,11 @@ tr.border_bottom  td{
             <span class="tooltiptext">${Weather2h_stateStr}</span>
           </div>
          ${Hour2H}</td>
-          <td style="text-align:center"> <div>${Temp2h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
-          <td style="text-align:center"> ${Precip2hprob_stateStr}%<p>${Precip2h_stateStr} in/hr</td>
+          <td style="text-align:center""> <div>${Temp2h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
+                                         <div>${Humid2hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
+          </td>
+          <td style="text-align:center"> <div>${Precip2hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
+                                        <div>${Precip2h_stateStr} in/hr</div></td>
       </tr>
       <tr><td style="text-align:center">
           <div class="tooltip">
@@ -379,8 +392,11 @@ tr.border_bottom  td{
             <span class="tooltiptext">${Weather3h_stateStr}</span>
           </div>
           ${Hour3H}</td>
-          <td style="text-align:center"> <div>${Temp3h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"0></div></td>
-          <td style="text-align:center"> ${Precip3hprob_stateStr}%<p>${Precip3h_stateStr} in/hr</td>
+          <td style="text-align:center""> <div>${Temp3h_stateStr}&degF<IMG SRC="https://image.flaticon.com/icons/svg/71/71296.svg" align=center class="invert" style="width:20px"></div>
+                                         <div>${Humid3hstr}%<img SRC="https://image.flaticon.com/icons/svg/727/727891.svg" align=center class="invert" style="width:20px"></div>
+          </td>
+          <td style="text-align:center"> <div>${Precip3hprob_stateStr}% <img src="https://image.flaticon.com/icons/svg/2948/2948175.svg" align=center class="invert" style="width:20px"></div>
+                                        <div>${Precip3h_stateStr} in/hr</div></td>
       </tr>
 </table> 
 <br>
