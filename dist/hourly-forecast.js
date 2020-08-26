@@ -333,17 +333,17 @@ class HourlyForecast extends HTMLElement {
 
 .invert { filter: invert(100%); }
 
-table {
-  width: 100%; 
+table {width: 100%}
 
-table tr {
-    border-bottom: 1px white;
-}​
-
-table tr:last-child { 
-    border-bottom: none; 
-}  
+tr.bottom td {
+  border-bottom: thin solid white;
 }
+
+tr:last-child
+{
+   border-bottom: none;
+} 
+
 
 </style>
       <table>
