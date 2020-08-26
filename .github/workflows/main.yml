@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'inherit'
-          description: 'inherit'
+          version: 'v0.0.7.0.7-beta'
+          description: 'Testing auto release'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
