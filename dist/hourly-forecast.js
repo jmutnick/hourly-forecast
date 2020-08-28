@@ -15,7 +15,7 @@ class HourlyForecast extends HTMLElement {
       this.appendChild(card);
     }
     
-    console.log(hass.services.async_call.get_theme);
+    //console.log(hass.services.async_call.get_theme);
     
     //get sun position
     //const sunpos = this.config.sun_object;
