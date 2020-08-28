@@ -15,6 +15,8 @@ class HourlyForecast extends HTMLElement {
       this.appendChild(card);
     }
     
+    console.log(hass.states);
+    
     //get sun position
     //const sunpos = this.config.sun_object;
     const sunstate = hass.states[this.config.sun_object];
