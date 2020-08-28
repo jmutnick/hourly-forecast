@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.7.1.5-beta'
-          description: '* Adding console logging to see what hass variables I can get'
+          version: 'v0.0.7.1.6-beta'
+          description: '* Adding console logging to see if I can get a theme '
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
