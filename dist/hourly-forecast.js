@@ -307,7 +307,7 @@ tr.border_bottom  td{
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[0]}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather_state[0]}</span>
           </div>
-          ${Hour0H}</td>
+          ${Hour[0]}</td>
           <td style="text-align:center""> <div>${Temp_state[0]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
                                          <div>Feels Like ${FeelsLikeTemp_state[0]}&degF</div>
                                          <div>${Humid_state[0]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
