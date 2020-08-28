@@ -23,7 +23,7 @@ class HourlyForecast extends HTMLElement {
     var Precip_state = new Array();
   
     //  this is start of 0h
-    const Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;
+    Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;
     const Precip0hprob_state = hass.states[this.config.entity + '_precipitation_probability_0h'].state;
     const Temp0h_state = String(Math.round(Number(hass.states[this.config.entity + '_temperature_0h'].state)));
     const Humid0h_state = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_0h'].state)));  
