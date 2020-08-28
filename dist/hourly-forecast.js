@@ -137,7 +137,7 @@ tr.border_bottom  td{
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[1]}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather_state[1]}</span>
           </div>
-          ${Hour1H}</td>
+          ${Hour[1]}</td>
           <td style="text-align:center""> <div>${Temp_state[1]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
                                          <div>${Humid_state[1]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
           </td>
@@ -149,7 +149,7 @@ tr.border_bottom  td{
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[2]}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather_state[2]}</span>
           </div>
-         ${Hour2H}</td>
+         ${Hour[2]}</td>
           <td style="text-align:center""> <div>${Temp_state[2]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
                                          <div>${Humid_state[2]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
           </td>
@@ -161,7 +161,7 @@ tr.border_bottom  td{
             <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[3]}.svg" width=50 height=50>
             <span class="tooltiptext">${Weather_state[3]}</span>
           </div>
-          ${Hour3H}</td>
+          ${Hour[3]}</td>
           <td style="text-align:center""> <div>${Temp_state[3]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
                                          <div>${Humid_state[3]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
           </td>
