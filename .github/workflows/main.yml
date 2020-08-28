@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.7.2.5-beta'
-          description: '* Adding rounding to feels like'
+          version: 'v0.0.7.2.6-beta'
+          description: '* A lot of changes to simplify code'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'

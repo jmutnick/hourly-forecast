@@ -32,75 +32,32 @@ class HourlyForecast extends HTMLElement {
     const uiDateOptions = { hour: 'numeric', };  
   
     // populate all variables from sensors
-    const Precip0h_state = hass.states[this.config.entity + '_precipitation_0h'];
-    const Precip0hprob_state = hass.states[this.config.entity + '_precipitation_probability_0h'];
-    const Temp0h_state = hass.states[this.config.entity + '_temperature_0h'];
-    const Humid0h_state = hass.states[this.config.entity + '_humidity_percentage_0h']  
-    const My0hDateTimeStr = hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time;
-    const Weather0h_state = hass.states[this.config.entity + '_weather_condition_0h'];
+    
+    //  this is start of 0h
+    const Precip0h_state = hass.states[this.config.entity + '_precipitation_0h'].state;
+    const Precip0hprob_state = hass.states[this.config.entity + '_precipitation_probability_0h'].state;
+    const Temp0h_state = String(Math.round(Number(hass.states[this.config.entity + '_temperature_0h'].state)));
+    const Humid0h_state = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_0h'].state)));  
+    const event0 = Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
+    const Weather0h_state = hass.states[this.config.entity + '_weather_condition_0h'].state;
     const FeelsLikeTemp0h_state = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_0h'].state)));
 
-  
-    //  this is start of 0h
-  	    
-    //precip 
-    const Precip0h_stateStr = Precip0h_state ? Precip0h_state.state : 'unavailable';
-    
-    //precip prob
-    const Precip0hprob_stateStr = Precip0hprob_state ? Precip0hprob_state.state : 'unavailable';
-   
-     //temperature
-    var Temp0h_stateStr = Temp0h_state ? Temp0h_state.state : 'unavailable';
-    Temp0h_stateStr = String(Math.round(Number(Temp0h_stateStr)));
-    
-    //humidity
-    var Humid0hstr = Humid0h_state ? Humid0h_state.state : 'unavailable';
-    Humid0hstr = String(Math.round(Number(Humid0hstr)));  
-  
      //time of forecast
-    const event0 = new Date(My0hDateTimeStr);  //convert to date
     const Hour0H = event0.toLocaleTimeString('en-US', uiDateOptions);  //do it
-    
-    
-    //weather condition
-    var Weather0h_stateStr = Weather0h_state ? Weather0h_state.state : 'unavailable';
-    
-    if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon" && event0 < sunsetdt) {
-       Weather0h_stateStr = "clear_day";
-    }
-    else if (Weather0h_stateStr == "clear" && sunstatestr == "above_horizon" && event0 > sunsetdt) {
-       Weather0h_stateStr = "clear_night";
-    }
-    else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon" && event0 < sunrisedt) {
-      Weather0h_stateStr = "clear_night";
-    }
-    else if (Weather0h_stateStr == "clear" && sunstatestr == "below_horizon" && event0 > sunrisedt) {
-      Weather0h_stateStr = "clear_day";
-    }  
-    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event0 < sunrisedt) {
-      Weather0h_stateStr = "mostly_clear_day";
-    }
-      else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event0 > sunrisedt) {
-      Weather0h_stateStr = "mostly_clear_night";
-    }
-    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event0  > sunsetdt) {
-      Weather0h_stateStr = "mostly_clear_night";
-    }
-    else if (Weather0h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event0  < sunsetdt) {
-      Weather0h_stateStr = "mostly_clear_day";
-    }
-       else if (Weather0h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event0 < sunrisedt) {
-      Weather0h_stateStr = "partly_cloudy_day";
-    }
-      else if (Weather0h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event0 > sunrisedt) {
-      Weather0h_stateStr = "partly_cloudy_night";
-    }
-    else if (Weather0h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event0  > sunsetdt) {
-      Weather0h_stateStr = "partly_cloudy_night";
-    }
-    else if (Weather0h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event0  < sunsetdt) {
-      Weather0h_stateStr = "partly_cloudy_day";
-    }
+        
+    //weather condition    
+    if (Weather0h_state == "clear" && sunstatestr == "above_horizon" && event0 < sunsetdt) {Weather0h_state = "clear_day";}
+    else if (Weather0h_state == "clear" && sunstatestr == "above_horizon" && event0 > sunsetdt) {Weather0h_state = "clear_night";}
+    else if (Weather0h_state == "clear" && sunstatestr == "below_horizon" && event0 < sunrisedt) {Weather0h_state = "clear_night";}
+    else if (Weather0h_state == "clear" && sunstatestr == "below_horizon" && event0 > sunrisedt) {Weather0h_state = "clear_day";}  
+    else if (Weather0h_state == "mostly_clear" && sunstatestr == "above_horizon" && event0 < sunrisedt) {Weather0h_state = "mostly_clear_day";}
+    else if (Weather0h_state == "mostly_clear" && sunstatestr == "above_horizon" && event0 > sunrisedt) {Weather0h_state = "mostly_clear_night";}
+    else if (Weather0h_state == "mostly_clear" && sunstatestr == "below_horizon" && event0  > sunsetdt) {Weather0h_state = "mostly_clear_night";}
+    else if (Weather0h_state == "mostly_clear" && sunstatestr == "below_horizon" && event0  < sunsetdt) {Weather0h_state = "mostly_clear_day";}
+    else if (Weather0h_state == "partly_cloudy" && sunstatestr == "above_horizon" && event0 < sunrisedt) {Weather0h_state = "partly_cloudy_day";}
+    else if (Weather0h_state == "partly_cloudy" && sunstatestr == "above_horizon" && event0 > sunrisedt) {Weather0h_state = "partly_cloudy_night";}
+    else if (Weather0h_state == "partly_cloudy" && sunstatestr == "below_horizon" && event0  > sunsetdt) {Weather0h_state = "partly_cloudy_night";}
+    else if (Weather0h_state == "partly_cloudy" && sunstatestr == "below_horizon" && event0  < sunsetdt) {Weather0h_state = "partly_cloudy_day";}
     
     // this is end of 0h
     
@@ -359,12 +316,12 @@ tr.border_bottom  td{
             <span class="tooltiptext">${Weather0h_stateStr}</span>
           </div>
           ${Hour0H}</td>
-          <td style="text-align:center""> <div>${Temp0h_stateStr}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
+          <td style="text-align:center""> <div>${Temp0h_state}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
                                          <div>Feels Like ${FeelsLikeTemp0h_state}&degF</div>
-                                         <div>${Humid0hstr}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
+                                         <div>${Humid0h_state}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
           </td>
-          <td style="text-align:center"> <div>${Precip0hprob_stateStr}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-                                        <div>${Precip0h_stateStr} in/hr</div></td>
+          <td style="text-align:center"> <div>${Precip0hprob_state}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
+                                        <div>${Precip0h_state} in/hr</div></td>
       </tr>
       <tr class="border_bottom"><td style="text-align:center">
           <div class="tooltip">
