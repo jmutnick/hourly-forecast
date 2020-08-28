@@ -14,38 +14,23 @@ class HourlyForecast extends HTMLElement {
       card.appendChild(this.content);
       this.appendChild(card);
     }
-    
-    //console.log(hass.services.async_call.get_theme);
-    
-    //get sun position
-    //const sunpos = this.config.sun_object;
-    const sunstate = hass.states[this.config.sun_object];
-    const sunstatestr = sunstate ? sunstate.state : 'unavailable';
-    
-    //time of next sunrise
+
+    // Global Variables
+    const sunstatestr = hass.states[this.config.sun_object].state;
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
-    
-    //time of next sunset
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
-    
-    // date format
     const uiDateOptions = { hour: 'numeric', };  
   
-    // populate all variables from sensors
-    
     //  this is start of 0h
-    const Precip0h_state = hass.states[this.config.entity + '_precipitation_0h'].state;
+    const Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;
     const Precip0hprob_state = hass.states[this.config.entity + '_precipitation_probability_0h'].state;
     const Temp0h_state = String(Math.round(Number(hass.states[this.config.entity + '_temperature_0h'].state)));
     const Humid0h_state = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_0h'].state)));  
-    const event0 = new Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
     const Weather0h_state = hass.states[this.config.entity + '_weather_condition_0h'].state;
     const FeelsLikeTemp0h_state = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_0h'].state)));
-
-     //time of forecast
+    const event0 = new Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
     const Hour0H = event0.toLocaleTimeString('en-US', uiDateOptions);  //do it
         
-    //weather condition    
     if (Weather0h_state == "clear" && sunstatestr == "above_horizon" && event0 < sunsetdt) {Weather0h_state = "clear_day";}
     else if (Weather0h_state == "clear" && sunstatestr == "above_horizon" && event0 > sunsetdt) {Weather0h_state = "clear_night";}
     else if (Weather0h_state == "clear" && sunstatestr == "below_horizon" && event0 < sunrisedt) {Weather0h_state = "clear_night";}
@@ -58,8 +43,7 @@ class HourlyForecast extends HTMLElement {
     else if (Weather0h_state == "partly_cloudy" && sunstatestr == "above_horizon" && event0 > sunrisedt) {Weather0h_state = "partly_cloudy_night";}
     else if (Weather0h_state == "partly_cloudy" && sunstatestr == "below_horizon" && event0  > sunsetdt) {Weather0h_state = "partly_cloudy_night";}
     else if (Weather0h_state == "partly_cloudy" && sunstatestr == "below_horizon" && event0  < sunsetdt) {Weather0h_state = "partly_cloudy_day";}
-    
-    // this is end of 0h
+        // this is end of 0h
     
     // begin 1h
     //precip 
@@ -321,7 +305,7 @@ tr.border_bottom  td{
                                          <div>${Humid0h_state}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
           </td>
           <td style="text-align:center"> <div>${Precip0hprob_state}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-                                        <div>${Precip0h_state} in/hr</div></td>
+                                        <div>${Precip_state[0]} in/hr</div></td>
       </tr>
       <tr class="border_bottom"><td style="text-align:center">
           <div class="tooltip">
