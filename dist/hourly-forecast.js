@@ -38,19 +38,23 @@ class HourlyForecast extends HTMLElement {
     FeelsLikeTemp_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_0h'].state)));
     event[0] = new Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
     Hour[0] = event[0].toLocaleTimeString('en-US', uiDateOptions);  //do it
-        
-    if (Weather_state[0] == "clear" && sunstatestr == "above_horizon" && event0 < sunsetdt) {Weather_state[0] = "clear_day";}
-    else if (Weather_state[0] == "clear" && sunstatestr == "above_horizon" && event0 > sunsetdt) {Weather_state[0] = "clear_night";}
-    else if (Weather_state[0] == "clear" && sunstatestr == "below_horizon" && event0 < sunrisedt) {Weather_state[0] = "clear_night";}
-    else if (Weather_state[0] == "clear" && sunstatestr == "below_horizon" && event0 > sunrisedt) {Weather_state[0] = "clear_day";}  
-    else if (Weather_state[0] == "mostly_clear" && sunstatestr == "above_horizon" && event0 < sunrisedt) {Weather_state[0] = "mostly_clear_day";}
-    else if (Weather_state[0] == "mostly_clear" && sunstatestr == "above_horizon" && event0 > sunrisedt) {Weather_state[0] = "mostly_clear_night";}
-    else if (Weather_state[0] == "mostly_clear" && sunstatestr == "below_horizon" && event0  > sunsetdt) {Weather_state[0] = "mostly_clear_night";}
-    else if (Weather_state[0] == "mostly_clear" && sunstatestr == "below_horizon" && event0  < sunsetdt) {Weather_state[0] = "mostly_clear_day";}
-    else if (Weather_state[0] == "partly_cloudy" && sunstatestr == "above_horizon" && event0 < sunrisedt) {Weather_state[0] = "partly_cloudy_day";}
-    else if (Weather_state[0] == "partly_cloudy" && sunstatestr == "above_horizon" && event0 > sunrisedt) {Weather_state[0] = "partly_cloudy_night";}
-    else if (Weather_state[0] == "partly_cloudy" && sunstatestr == "below_horizon" && event0  > sunsetdt) {Weather_state[0] = "partly_cloudy_night";}
-    else if (Weather_state[0] == "partly_cloudy" && sunstatestr == "below_horizon" && event0  < sunsetdt) {Weather_state[0] = "partly_cloudy_day";}
+    
+    
+    var i;
+    for (i=0; i<= 3; i++) {    
+    if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] < sunsetdt) {Weather_state[i] = "clear_day";}
+    else if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] > sunsetdt) {Weather_state[i] = "clear_night";}
+    else if (Weather_state[i] == "clear" && sunstatestr == "below_horizon" && event[i] < sunrisedt) {Weather_state[i] = "clear_night";}
+    else if (Weather_state[i] == "clear" && sunstatestr == "below_horizon" && event[i] > sunrisedt) {Weather_state[i] = "clear_day";}  
+    else if (Weather_state[i] == "mostly_clear" && sunstatestr == "above_horizon" && event[i] < sunrisedt) {Weather_state[i] = "mostly_clear_day";}
+    else if (Weather_state[i] == "mostly_clear" && sunstatestr == "above_horizon" && event[i] > sunrisedt) {Weather_state[i] = "mostly_clear_night";}
+    else if (Weather_state[i] == "mostly_clear" && sunstatestr == "below_horizon" && event[i]  > sunsetdt) {Weather_state[i] = "mostly_clear_night";}
+    else if (Weather_state[i] == "mostly_clear" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[i] = "mostly_clear_day";}
+    else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "above_horizon" && event[i] < sunrisedt) {Weather_state[i] = "partly_cloudy_day";}
+    else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "above_horizon" && event[i] > sunrisedt) {Weather_state[i] = "partly_cloudy_night";}
+    else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  > sunsetdt) {Weather_state[i] = "partly_cloudy_night";}
+    else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[i] = "partly_cloudy_day";}
+    }
         // this is end of 0h
     
     // begin 1h
@@ -85,44 +89,6 @@ class HourlyForecast extends HTMLElement {
     const Weather1h_state = hass.states[Weather1h];
     var Weather1h_stateStr = Weather1h_state ? Weather1h_state.state : 'unavailable';
     
-    if (Weather1h_stateStr == "clear" && sunstatestr == "above_horizon" && event1 < sunsetdt) {
-       Weather1h_stateStr = "clear_day";
-    }
-    else if (Weather1h_stateStr == "clear" && sunstatestr == "above_horizon" && event1 > sunsetdt) {
-       Weather1h_stateStr = "clear_night";
-    }
-    else if (Weather1h_stateStr == "clear" && sunstatestr == "below_horizon" && event1 < sunrisedt) {
-      Weather1h_stateStr = "clear_night";
-    }
-    else if (Weather1h_stateStr == "clear" && sunstatestr == "below_horizon" && event1 > sunrisedt) {
-      Weather1h_stateStr = "clear_day";
-    }  
-    else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event1 < sunrisedt) {
-      Weather1h_stateStr = "mostly_clear_day";
-    }
-      else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event1 > sunrisedt) {
-      Weather1h_stateStr = "mostly_clear_night";
-    }
-    else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event1  > sunsetdt) {
-      Weather1h_stateStr = "mostly_clear_night";
-    }
-    else if (Weather1h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event1  < sunsetdt) {
-      Weather1h_stateStr = "mostly_clear_day";
-    }
-    else if (Weather1h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event1 < sunrisedt) {
-      Weather1h_stateStr = "partly_cloudy_day";
-    }
-      else if (Weather1h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event1 > sunrisedt) {
-      Weather1h_stateStr = "partly_cloudy_night";
-    }
-    else if (Weather1h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event1  > sunsetdt) {
-      Weather1h_stateStr = "partly_cloudy_night";
-    }
-    else if (Weather1h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event1  < sunsetdt) {
-      Weather1h_stateStr = "partly_cloudy_day";
-    }
-    
- 
     //end 1h
 
         // begin 2h
@@ -156,43 +122,6 @@ class HourlyForecast extends HTMLElement {
     const Weather2h = this.config.entity + '_weather_condition_2h';
     const Weather2h_state = hass.states[Weather2h];
     var Weather2h_stateStr = Weather2h_state ? Weather2h_state.state : 'unavailable';
-    
-    if (Weather2h_stateStr == "clear" && sunstatestr == "above_horizon" && event2 < sunsetdt) {
-       Weather2h_stateStr = "clear_day";
-    }
-    else if (Weather2h_stateStr == "clear" && sunstatestr == "above_horizon" && event2 > sunsetdt) {
-       Weather2h_stateStr = "clear_night";
-    }
-    else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon" && event2 < sunrisedt) {
-      Weather2h_stateStr = "clear_night";
-    }
-    else if (Weather2h_stateStr == "clear" && sunstatestr == "below_horizon" && event2 > sunrisedt) {
-      Weather2h_stateStr = "clear_day";
-    }  
-    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event2 < sunrisedt) {
-      Weather2h_stateStr = "mostly_clear_day";
-    }
-      else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event2 > sunrisedt) {
-      Weather2h_stateStr = "mostly_clear_night";
-    }
-    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event2  > sunsetdt) {
-      Weather2h_stateStr = "mostly_clear_night";
-    }
-    else if (Weather2h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event2  < sunsetdt) {
-      Weather2h_stateStr = "mostly_clear_day";
-    }
-           else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event2 < sunrisedt) {
-      Weather2h_stateStr = "partly_cloudy_day";
-    }
-      else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event2 > sunrisedt) {
-      Weather2h_stateStr = "partly_cloudy_night";
-    }
-    else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event2  > sunsetdt) {
-      Weather2h_stateStr = "partly_cloudy_night";
-    }
-    else if (Weather2h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event2  < sunsetdt) {
-      Weather2h_stateStr = "partly_cloudy_day";
-    }
  
     //end 2h
 
@@ -228,43 +157,6 @@ class HourlyForecast extends HTMLElement {
     const Weather3h = this.config.entity + '_weather_condition_3h';
     const Weather3h_state = hass.states[Weather3h];
     var Weather3h_stateStr = Weather3h_state ? Weather3h_state.state : 'unavailable';
-    
-    if (Weather3h_stateStr == "clear" && sunstatestr == "above_horizon" && event3 < sunsetdt) {
-       Weather3h_stateStr = "clear_day";
-    }
-    else if (Weather3h_stateStr == "clear" && sunstatestr == "above_horizon" && event3 > sunsetdt) {
-       Weather3h_stateStr = "clear_night";
-    }
-    else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon" && event3 < sunrisedt) {
-      Weather3h_stateStr = "clear_night";
-    }
-    else if (Weather3h_stateStr == "clear" && sunstatestr == "below_horizon" && event3 > sunrisedt) {
-      Weather3h_stateStr = "clear_day";
-    }  
-    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event3 < sunrisedt) {
-      Weather3h_stateStr = "mostly_clear_day";
-    }
-      else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "above_horizon" && event3 > sunrisedt) {
-      Weather3h_stateStr = "mostly_clear_night";
-    }
-    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event3  > sunsetdt) {
-      Weather3h_stateStr = "mostly_clear_night";
-    }
-    else if (Weather3h_stateStr == "mostly_clear" && sunstatestr == "below_horizon" && event3  < sunsetdt) {
-      Weather3h_stateStr = "mostly_clear_day";
-    }
-            else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event3 < sunrisedt) {
-      Weather3h_stateStr = "partly_cloudy_day";
-    }
-      else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "above_horizon" && event3 > sunrisedt) {
-      Weather3h_stateStr = "partly_cloudy_night";
-    }
-    else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event3  > sunsetdt) {
-      Weather3h_stateStr = "partly_cloudy_night";
-    }
-    else if (Weather3h_stateStr == "partly_cloudy" && sunstatestr == "below_horizon" && event3  < sunsetdt) {
-      Weather3h_stateStr = "partly_cloudy_day";
-    }
     
     //end 3h
     
@@ -317,8 +209,8 @@ tr.border_bottom  td{
       </tr>
       <tr class="border_bottom"><td style="text-align:center">
           <div class="tooltip">
-            <IMG SRC="/local/community/hourly-forecast/icons/${Weather1h_stateStr}.svg" width=50 height=50>
-            <span class="tooltiptext">${Weather1h_stateStr}</span>
+            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[1]}.svg" width=50 height=50>
+            <span class="tooltiptext">${Weather_state[1]}</span>
           </div>
           ${Hour1H}</td>
           <td style="text-align:center""> <div>${Temp1h_stateStr}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
@@ -329,8 +221,8 @@ tr.border_bottom  td{
       </tr>
       <tr class="border_bottom"><td style="text-align:center">
           <div class="tooltip">
-            <IMG SRC="/local/community/hourly-forecast/icons/${Weather2h_stateStr}.svg" width=50 height=50>
-            <span class="tooltiptext">${Weather2h_stateStr}</span>
+            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[2]}.svg" width=50 height=50>
+            <span class="tooltiptext">${Weather_state[2]}</span>
           </div>
          ${Hour2H}</td>
           <td style="text-align:center""> <div>${Temp2h_stateStr}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
@@ -341,8 +233,8 @@ tr.border_bottom  td{
       </tr>
       <tr><td style="text-align:center">
           <div class="tooltip">
-            <IMG SRC="/local/community/hourly-forecast/icons/${Weather3h_stateStr}.svg" width=50 height=50>
-            <span class="tooltiptext">${Weather3h_stateStr}</span>
+            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[3]}.svg" width=50 height=50>
+            <span class="tooltiptext">${Weather_state[3]}</span>
           </div>
           ${Hour3H}</td>
           <td style="text-align:center""> <div>${Temp3h_stateStr}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>

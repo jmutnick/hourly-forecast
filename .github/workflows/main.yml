@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.7.3.4-beta'
-          description: '* Missed one in Extending arrays to all 0H'
+          version: 'v0.0.7.3.5-beta'
+          description: '* consolidate weather icon logic into array'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
