@@ -312,8 +312,8 @@ tr.border_bottom  td{
       <table cellspacing=0>
       <tr class="border_bottom"><td style="text-align:center">
           <div class="tooltip">
-            <IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_stateStr}.svg" width=50 height=50>
-            <span class="tooltiptext">${Weather0h_stateStr}</span>
+            <IMG SRC="/local/community/hourly-forecast/icons/${Weather0h_state}.svg" width=50 height=50>
+            <span class="tooltiptext">${Weather0h_state}</span>
           </div>
           ${Hour0H}</td>
           <td style="text-align:center""> <div>${Temp0h_state}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
