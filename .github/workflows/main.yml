@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.7.2.1-beta'
-          description: '* Adding .state to variable definition'
+          version: 'v0.0.7.2.2-beta'
+          description: '* Adding .state to html output'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
