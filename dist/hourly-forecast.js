@@ -38,7 +38,7 @@ class HourlyForecast extends HTMLElement {
     const Precip0hprob_state = hass.states[this.config.entity + '_precipitation_probability_0h'].state;
     const Temp0h_state = String(Math.round(Number(hass.states[this.config.entity + '_temperature_0h'].state)));
     const Humid0h_state = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_0h'].state)));  
-    const event0 = Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
+    const event0 = new Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
     const Weather0h_state = hass.states[this.config.entity + '_weather_condition_0h'].state;
     const FeelsLikeTemp0h_state = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_0h'].state)));
 
