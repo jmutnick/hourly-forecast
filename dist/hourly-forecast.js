@@ -20,6 +20,7 @@ class HourlyForecast extends HTMLElement {
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
     const uiDateOptions = { hour: 'numeric', };  
+    var Precip_state = new Array();
   
     //  this is start of 0h
     const Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;

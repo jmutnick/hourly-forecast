@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.7.3.0-beta'
-          description: '* Trying an array'
+          version: 'v0.0.7.3.1-beta'
+          description: '* Defining array'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
