@@ -38,8 +38,7 @@ class HourlyForecast extends HTMLElement {
     const Humid0h_state = hass.states[this.config.entity + '_humidity_percentage_0h']  
     const My0hDateTimeStr = hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time;
     const Weather0h_state = hass.states[this.config.entity + '_weather_condition_0h'];
-    const FeelsLikeTemp0h_state = hass.states[this.config.entity + 'feels_like_0h'];
-
+    const FeelsLikeTemp0h_state = hass.states[this.config.entity + '_feels_like_0h'];
 
   
     //  this is start of 0h
@@ -361,7 +360,7 @@ tr.border_bottom  td{
           </div>
           ${Hour0H}</td>
           <td style="text-align:center""> <div>${Temp0h_stateStr}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-                                         <div>Feels Like ${FeelsLikeTemp0h_state.state}&degF</div>
+                                         <div>Feels Like ${FeelsLikeTemp0h_state}&degF</div>
                                          <div>${Humid0hstr}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
           </td>
           <td style="text-align:center"> <div>${Precip0hprob_stateStr}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
