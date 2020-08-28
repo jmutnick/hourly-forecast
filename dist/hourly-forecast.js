@@ -141,7 +141,7 @@ tr.border_bottom  td{
           <td style="text-align:center""> <div>${Temp_state[1]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
                                          <div>${Humid_state[1]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
           </td>
-          <td style="text-align:center"> <div>${Precipprob_state[1]% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
+          <td style="text-align:center"> <div>${Precipprob_state[1]} <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
                                         <div>${Precip_state[1]} in/hr</div></td>
       </tr>
       <tr class="border_bottom"><td style="text-align:center">
