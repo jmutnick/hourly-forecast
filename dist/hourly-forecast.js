@@ -136,14 +136,14 @@ tr.border_bottom  td{
    html1 += x;
    html1 += ']}.svg" width=50 height=50><span class="tooltiptext">${Weather_state[;
    html1 += x;
-   html1 = ']}</span></div>${Hour[';
+   html1 += ']}</span></div>${Hour[';
    html1 += x;
    html1 += ']}</td><td style="text-align:center""> <div>${Temp_state[0]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div><div>Feels Like ${FeelsLikeTemp_state[';
    html1 += x;
    html1 += ']}&degF</div><div>${Humid_state[';
    html1 += x;
-   html1+= ']}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div></td><td style="text-align:center"> <div>${Precipprob_state[';
-   html1+= x;
+   html1 += ']}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div></td><td style="text-align:center"> <div>${Precipprob_state[';
+   html1 += x;
    html1 += ']}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div><div>${Precip_state[';
    html1 += x;
    html1 += ']} in/hr</div></td></tr>';
@@ -190,7 +190,7 @@ tr.border_bottom  td{
 
 html1 += '</table>';
 
-console.log (html1);
+//console.log (html1);
 
 this.content.innerHTML = html1;
 
