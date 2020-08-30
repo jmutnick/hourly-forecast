@@ -130,7 +130,7 @@ tr.border_bottom  td{
       <table cellspacing=0>`;
   
   var x;        
-  for (x=0; i < numF; x++) { 
+  for (x=0; x < numF; x++) { 
    
    html1 += '<tr class="border_bottom"><td style="text-align:center"><div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[';
    html1 += x;
