@@ -132,9 +132,9 @@ tr.border_bottom  td{
   var x;        
   for (x=0; i < numF; x++) { 
    
-   html1 += '<tr class="border_bottom"><td style="text-align:center"><div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[;
+   html1 += '<tr class="border_bottom"><td style="text-align:center"><div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[';
    html1 += x;
-   html1 += ']}.svg" width=50 height=50><span class="tooltiptext">${Weather_state[;
+   html1 += ']}.svg" width=50 height=50><span class="tooltiptext">${Weather_state[';
    html1 += x;
    html1 += ']}</span></div>${Hour[';
    html1 += x;
