@@ -1,8 +1,5 @@
 // Project by Jonathan Mutnick to use the Climacell data provider to display an hourly forecast
 // Work in process
-// testing a commit
-
-import "/local/community/hourly-forecast/helpers/Chart.js"; 
 
 class HourlyForecast extends HTMLElement {
   set hass(hass) {
@@ -28,6 +25,9 @@ class HourlyForecast extends HTMLElement {
     var FeelsLikeTemp_state = new Array();
     var event = new Array();  
     var Hour = new Array();
+    var numF=4;
+    var html1;
+    
   
     //  this is start of 0h
     Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;
@@ -68,9 +68,19 @@ class HourlyForecast extends HTMLElement {
     FeelsLikeTemp_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_3h'].state)));
     event[3] = new Date(hass.states[this.config.entity + '_temperature_3h'].attributes.observation_time);
     Hour[3] = event[3].toLocaleTimeString('en-US', uiDateOptions);  //do it
+
+    //  this is start of 4h
+    Precip_state[4] = hass.states[this.config.entity + '_precipitation_4h'].state;
+    Precipprob_state[4] = hass.states[this.config.entity + '_precipitation_probability_4h'].state;
+    Temp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_4h'].state)));
+    Humid_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_4h'].state)));  
+    Weather_state[4] = hass.states[this.config.entity + '_weather_condition_4h'].state;
+    FeelsLikeTemp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_4h'].state)));
+    event[4] = new Date(hass.states[this.config.entity + '_temperature_4h'].attributes.observation_time);
+    Hour[4] = event[4].toLocaleTimeString('en-US', uiDateOptions);  //do it
     
     var i;
-    for (i=0; i< 4; i++) {    
+    for (i=0; i< numF; i++) {    
     if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] < sunsetdt) {Weather_state[i] = "clear_day";}
     else if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] > sunsetdt) {Weather_state[i] = "clear_night";}
     else if (Weather_state[i] == "clear" && sunstatestr == "below_horizon" && event[i] < sunrisedt) {Weather_state[i] = "clear_night";}
@@ -86,7 +96,7 @@ class HourlyForecast extends HTMLElement {
     }
         
     //construct html
-    this.content.innerHTML = `
+    html1 = `
 <style>
 .tooltip {
   position: bottom;
@@ -116,15 +126,18 @@ tr.border_bottom  td{
   border-bottom: 1px solid white;
 }
 
-
 </style>
-      <table cellspacing=0>
-      <tr class="border_bottom"><td style="text-align:center">
-          <div class="tooltip">
-            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[0]}.svg" width=50 height=50>
-            <span class="tooltiptext">${Weather_state[0]}</span>
-          </div>
-          ${Hour[0]}</td>
+      <table cellspacing=0>`;
+  
+  var x;        
+  for (x=0; i < numF; x++) { 
+   html1 += `<tr class="border_bottom"><td style="text-align:center"><div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[`; 
+   html1 += x;
+   html1 += `]}.svg" width=50 height=50><span class="tooltiptext">${Weather_state[`
+   html1 += x;
+   html1 += `]}</span></div>${Hour[`
+   html1 += x;
+   html1 += `]}</td>
           <td style="text-align:center""> <div>${Temp_state[0]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
                                          <div>Feels Like ${FeelsLikeTemp_state[0]}&degF</div>
                                          <div>${Humid_state[0]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
@@ -132,71 +145,53 @@ tr.border_bottom  td{
           <td style="text-align:center"> <div>${Precipprob_state[0]}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
                                         <div>${Precip_state[0]} in/hr</div></td>
       </tr>
-      <tr class="border_bottom"><td style="text-align:center">
-          <div class="tooltip">
-            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[1]}.svg" width=50 height=50>
-            <span class="tooltiptext">${Weather_state[1]}</span>
-          </div>
-          ${Hour[1]}</td>
-          <td style="text-align:center""> <div>${Temp_state[1]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-                                         <div>${Humid_state[1]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
-          </td>
-          <td style="text-align:center"> <div>${Precipprob_state[1]} <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-                                        <div>${Precip_state[1]} in/hr</div></td>
-      </tr>
-      <tr class="border_bottom"><td style="text-align:center">
-          <div class="tooltip">
-            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[2]}.svg" width=50 height=50>
-            <span class="tooltiptext">${Weather_state[2]}</span>
-          </div>
-         ${Hour[2]}</td>
-          <td style="text-align:center""> <div>${Temp_state[2]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-                                         <div>${Humid_state[2]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
-          </td>
-          <td style="text-align:center"> <div>${Precipprob_state[2]}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-                                        <div>${Precip_state[2]} in/hr</div></td>
-      </tr>
-      <tr><td style="text-align:center">
-          <div class="tooltip">
-            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[3]}.svg" width=50 height=50>
-            <span class="tooltiptext">${Weather_state[3]}</span>
-          </div>
-          ${Hour[3]}</td>
-          <td style="text-align:center""> <div>${Temp_state[3]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-                                         <div>${Humid_state[3]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
-          </td>
-          <td style="text-align:center"> <div>${Precipprob_state[3]}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-                                        <div>${Precip_state[3]} in/hr</div></td>
-      </tr>
-</table> 
-<br>
+      `
+      };
+      
+      
+//      <tr class="border_bottom"><td style="text-align:center">
+//          <div class="tooltip">
+//            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[1]}.svg" width=50 height=50>
+//            <span class="tooltiptext">${Weather_state[1]}</span>
+//          </div>
+//          ${Hour[1]}</td>
+//          <td style="text-align:center""> <div>${Temp_state[1]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
+//                                         <div>${Humid_state[1]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
+//         </td>
+//          <td style="text-align:center"> <div>${Precipprob_state[1]} <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
+//                                        <div>${Precip_state[1]} in/hr</div></td>
+//      </tr>
+//      <tr class="border_bottom"><td style="text-align:center">
+//          <div class="tooltip">
+//            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[2]}.svg" width=50 height=50>
+//            <span class="tooltiptext">${Weather_state[2]}</span>
+//          </div>
+//         ${Hour[2]}</td>
+//          <td style="text-align:center""> <div>${Temp_state[2]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
+//                                         <div>${Humid_state[2]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
+//          </td>
+//          <td style="text-align:center"> <div>${Precipprob_state[2]}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
+//                                        <div>${Precip_state[2]} in/hr</div></td>
+//      </tr>
+//      <tr><td style="text-align:center">
+//          <div class="tooltip">
+//            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[3]}.svg" width=50 height=50>
+//            <span class="tooltiptext">${Weather_state[3]}</span>
+//          </div>
+//          ${Hour[3]}</td>
+//          <td style="text-align:center""> <div>${Temp_state[3]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
+//                                         <div>${Humid_state[3]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
+//          </td>
+//          <td style="text-align:center"> <div>${Precipprob_state[3]}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
 
-<!--
-Graph below
-<canvas id="myChart"></canvas>
+//                                        <div>${Precip_state[3]} in/hr</div></td>
+//      </tr>
 
-  
-<script>
-var ctx = document.getElementById('myChart');
- 
-new Chart(ctx, {
-  type: 'line',
-  data: {
-      labels: ["H0", "Hour1H", "Hour2H", "Hour3H"],
-      datasets: [{
-        label: 'Temperature F',
-        data: [1,2,3,4],       
-        borderWidth: 1,
-	  fill: false
-        }]
-    },
-    
-});
-</script>
--->
-`;
-//myChart.canvas.parentNode.style.height = '250px';
-//myChart.canvas.parentNode.style.width = '500px';
+html1 += `</table>`;
+
+console.log (html1);
+
+this.content.innerHTML = html1;
 
   }
 
