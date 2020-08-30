@@ -131,21 +131,22 @@ tr.border_bottom  td{
   
   var x;        
   for (x=0; i < numF; x++) { 
-   html1 += `<tr class="border_bottom"><td style="text-align:center"><div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[`; 
+   
+   html1 += '<tr class="border_bottom"><td style="text-align:center"><div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[;
    html1 += x;
-   html1 += `]}.svg" width=50 height=50><span class="tooltiptext">${Weather_state[`
+   html1 += ']}.svg" width=50 height=50><span class="tooltiptext">${Weather_state[;
    html1 += x;
-   html1 += `]}</span></div>${Hour[`
+   html1 = ']}</span></div>${Hour[';
    html1 += x;
-   html1 += `]}</td>
-          <td style="text-align:center""> <div>${Temp_state[0]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-                                         <div>Feels Like ${FeelsLikeTemp_state[0]}&degF</div>
-                                         <div>${Humid_state[0]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
-          </td>
-          <td style="text-align:center"> <div>${Precipprob_state[0]}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-                                        <div>${Precip_state[0]} in/hr</div></td>
-      </tr>
-      `
+   html1 += ']}</td><td style="text-align:center""> <div>${Temp_state[0]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div><div>Feels Like ${FeelsLikeTemp_state[';
+   html1 += x;
+   html1 += ']}&degF</div><div>${Humid_state[';
+   html1 += x;
+   html1+= ']}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div></td><td style="text-align:center"> <div>${Precipprob_state[';
+   html1+= x;
+   html1 += ']}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div><div>${Precip_state[';
+   html1 += x;
+   html1 += ']} in/hr</div></td></tr>';
       };
       
       
@@ -187,7 +188,7 @@ tr.border_bottom  td{
 //                                        <div>${Precip_state[3]} in/hr</div></td>
 //      </tr>
 
-html1 += `</table>`;
+html1 += '</table>';
 
 console.log (html1);
 
