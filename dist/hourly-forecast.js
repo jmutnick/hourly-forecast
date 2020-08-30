@@ -190,7 +190,7 @@ tr.border_bottom  td{
 
 html1 += '</table>';
 
-//console.log (html1);
+console.log (html1);
 
 this.content.innerHTML = html1;
 
