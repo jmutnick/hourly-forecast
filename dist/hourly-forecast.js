@@ -12,23 +12,16 @@ class HourlyForecast extends HTMLElement {
       this.appendChild(card);
     }
 
-    // Global Variables
+    // Variables Defined from Config
+    
     const sunstatestr = hass.states[this.config.sun_object].state;
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
-    const uiDateOptions = { hour: 'numeric', };  
-    var Precip_state = new Array();
-    var Precipprob_state = new Array();
-    var Temp_state = new Array();
-    var Humid_state = new Array()
-    var Weather_state = new Array();
-    var FeelsLikeTemp_state = new Array();
-    var event = new Array();  
-    var Hour = new Array();
-    var numF=4;
-    var html1;
     
-  
+    // Variable Declarations
+    import 'variables.js';
+    
+    
     //  this is start of 0h
     Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;
     Precipprob_state[0] = hass.states[this.config.entity + '_precipitation_probability_0h'].state;
@@ -129,63 +122,31 @@ tr.border_bottom  td{
 </style>
       <table cellspacing=0>`;
   
+  
   var x;        
   for (x=0; x < numF; x++) { 
-   
-   html1 += `<tr class="border_bottom">
-   <td style="text-align:center">
-     <div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[$x]}.svg" width=50 height=50><span class="tooltiptext">${Weather_state[$x]}</span></div>
-     ${Hour[$x]}</td>
+    Weather = Weather_state[x];
+    HourNum = Hour[x];
+    Temp = Temp_state[x];
+    FeelsLike = FeelsLikeTemp_state[x];
+    Humid = HumidState[x];
+    Precip = Precip_state[x];
+    PrecipProb = Precipprob_state[x];
+    
+    
+    html1 += `<tr class="border_bottom">
+     <td style="text-align:center">
+     <div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather}.svg" width=50 height=50><span class="tooltiptext">${Weather}</span></div>
+     ${HourNum}</td>
      <td style="text-align:center"">
-     <div>${Temp_state[$x]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-     <div>Feels Like ${FeelsLikeTemp_state[$x]}&degF</div>
-     <div>${Humid_state[$x]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
-     </td><td style="text-align:center"> <div>${Precipprob_state[$x]}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-     <div>${Precip_state[$x]} in/hr</div></td></tr>`;
+     <div>${Temp}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
+     <div>Feels Like ${FeelsLike}&degF</div>
+     <div>${Humid}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
+     </td><td style="text-align:center"> <div>${PrecipProb}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
+     <div>${Precip} in/hr</div></td></tr>`;
       };
       
-      
-//      <tr class="border_bottom"><td style="text-align:center">
-//          <div class="tooltip">
-//            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[1]}.svg" width=50 height=50>
-//            <span class="tooltiptext">${Weather_state[1]}</span>
-//          </div>
-//          ${Hour[1]}</td>
-//          <td style="text-align:center""> <div>${Temp_state[1]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-//                                         <div>${Humid_state[1]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
-//         </td>
-//          <td style="text-align:center"> <div>${Precipprob_state[1]} <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-//                                        <div>${Precip_state[1]} in/hr</div></td>
-//      </tr>
-//      <tr class="border_bottom"><td style="text-align:center">
-//          <div class="tooltip">
-//            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[2]}.svg" width=50 height=50>
-//            <span class="tooltiptext">${Weather_state[2]}</span>
-//          </div>
-//         ${Hour[2]}</td>
-//          <td style="text-align:center""> <div>${Temp_state[2]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-//                                         <div>${Humid_state[2]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
-//          </td>
-//          <td style="text-align:center"> <div>${Precipprob_state[2]}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-//                                        <div>${Precip_state[2]} in/hr</div></td>
-//      </tr>
-//      <tr><td style="text-align:center">
-//          <div class="tooltip">
-//            <IMG SRC="/local/community/hourly-forecast/icons/${Weather_state[3]}.svg" width=50 height=50>
-//            <span class="tooltiptext">${Weather_state[3]}</span>
-//          </div>
-//          ${Hour[3]}</td>
-//          <td style="text-align:center""> <div>${Temp_state[3]}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-//                                         <div>${Humid_state[3]}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
-//          </td>
-//          <td style="text-align:center"> <div>${Precipprob_state[3]}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-
-//                                        <div>${Precip_state[3]} in/hr</div></td>
-//      </tr>
-
 html1 += '</table>';
-
-//console.log (html1);
 
 this.content.innerHTML = html1;
 
