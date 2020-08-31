@@ -41,7 +41,7 @@ class HourlyForecast extends HTMLElement {
     Weather_state[0] = hass.states[this.config.entity + '_weather_condition_0h'].state;
     FeelsLikeTemp_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_0h'].state)));
     event[0] = new Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
-    Hour[0] = event[0].toLocaleTimeString('en-US', uiDateOptions);  //do it
+    Hour[0] = event[0].toLocaleTimeString('en-US', uiDateOptions);
     
     //  this is start of 1h
     Precip_state[1] = hass.states[this.config.entity + '_precipitation_1h'].state;
@@ -51,7 +51,7 @@ class HourlyForecast extends HTMLElement {
     Weather_state[1] = hass.states[this.config.entity + '_weather_condition_1h'].state;
     FeelsLikeTemp_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_1h'].state)));
     event[1] = new Date(hass.states[this.config.entity + '_temperature_1h'].attributes.observation_time);
-    Hour[1] = event[1].toLocaleTimeString('en-US', uiDateOptions);  //do it
+    Hour[1] = event[1].toLocaleTimeString('en-US', uiDateOptions);
     
     //  this is start of 2h
     Precip_state[2] = hass.states[this.config.entity + '_precipitation_2h'].state;
@@ -61,7 +61,7 @@ class HourlyForecast extends HTMLElement {
     Weather_state[2] = hass.states[this.config.entity + '_weather_condition_2h'].state;
     FeelsLikeTemp_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_2h'].state)));
     event[2] = new Date(hass.states[this.config.entity + '_temperature_2h'].attributes.observation_time);
-    Hour[2] = event[2].toLocaleTimeString('en-US', uiDateOptions);  //do it
+    Hour[2] = event[2].toLocaleTimeString('en-US', uiDateOptions);
 
     //  this is start of 3h
     Precip_state[3] = hass.states[this.config.entity + '_precipitation_3h'].state;
@@ -71,7 +71,7 @@ class HourlyForecast extends HTMLElement {
     Weather_state[3] = hass.states[this.config.entity + '_weather_condition_3h'].state;
     FeelsLikeTemp_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_3h'].state)));
     event[3] = new Date(hass.states[this.config.entity + '_temperature_3h'].attributes.observation_time);
-    Hour[3] = event[3].toLocaleTimeString('en-US', uiDateOptions);  //do it
+    Hour[3] = event[3].toLocaleTimeString('en-US', uiDateOptions);
 
     //  this is start of 4h
     Precip_state[4] = hass.states[this.config.entity + '_precipitation_4h'].state;
@@ -81,10 +81,10 @@ class HourlyForecast extends HTMLElement {
     Weather_state[4] = hass.states[this.config.entity + '_weather_condition_4h'].state;
     FeelsLikeTemp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_4h'].state)));
     event[4] = new Date(hass.states[this.config.entity + '_temperature_4h'].attributes.observation_time);
-    Hour[4] = event[4].toLocaleTimeString('en-US', uiDateOptions);  //do it
+    Hour[4] = event[4].toLocaleTimeString('en-US', uiDateOptions);
     
     var i;
-    for (i=0; i< numF; i++) {    
+    for (i=0; i<= numF; i++) {    
     if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] < sunsetdt) {Weather_state[i] = "clear_day";}
     else if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] > sunsetdt) {Weather_state[i] = "clear_night";}
     else if (Weather_state[i] == "clear" && sunstatestr == "below_horizon" && event[i] < sunrisedt) {Weather_state[i] = "clear_night";}
@@ -133,9 +133,8 @@ tr.border_bottom  td{
 </style>
       <table cellspacing=0>`;
   
-  
   var x;        
-  for (x=0; x < numF; x++) { 
+  for (x=0; x <= numF; x++) { 
     Weather = Weather_state[x];
     HourNum = Hour[x];
     Temp = Temp_state[x];
@@ -143,7 +142,6 @@ tr.border_bottom  td{
     Humid = Humid_state[x];
     Precip = Precip_state[x];
     PrecipProb = Precipprob_state[x];
-    
     
     html1 += `<tr class="border_bottom">
      <td style="text-align:center">
@@ -159,8 +157,7 @@ tr.border_bottom  td{
     	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/WindChill.jpeg" align=center style="width:20px"></div>`;
      } 
      ;
-     
-     
+          
      html1 += `<div>${Humid}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
      </td><td style="text-align:center"> <div>${PrecipProb}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
      <div>${Precip} in/hr</div></td></tr>`;
