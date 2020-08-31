@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.7.4.9-beta'
-          description: '* Fix external file path'
+          version: 'v0.0.7.4.9.1-beta'
+          description: '* Variables no longer external'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
