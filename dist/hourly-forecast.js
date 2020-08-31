@@ -140,7 +140,7 @@ tr.border_bottom  td{
     HourNum = Hour[x];
     Temp = Temp_state[x];
     FeelsLike = FeelsLikeTemp_state[x];
-    Humid = HumidState[x];
+    Humid = Humid_state[x];
     Precip = Precip_state[x];
     PrecipProb = Precipprob_state[x];
     
