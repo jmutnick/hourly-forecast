@@ -150,9 +150,18 @@ tr.border_bottom  td{
      <div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather}.svg" width=50 height=50><span class="tooltiptext">${Weather}</span></div>
      ${HourNum}</td>
      <td style="text-align:center"">
-     <div>${Temp}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>
-     <div>Feels Like ${FeelsLike}&degF</div>
-     <div>${Humid}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
+     <div>${Temp}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>`
+     
+     if (FeelsLike > Temp) {
+	 	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/heatindex.jpeg" align=center style="width:20px"></div>`;
+     }
+     else if (FeelsLike < Temp) {
+    	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/WindChill.jpeg" align=center style="width:20px"></div>`;
+     } 
+     ;
+     
+     
+     html1 += `<div>${Humid}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
      </td><td style="text-align:center"> <div>${PrecipProb}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
      <div>${Precip} in/hr</div></td></tr>`;
       };
