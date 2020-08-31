@@ -153,7 +153,7 @@ tr.border_bottom  td{
      <div>${Temp}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>`
      
      if (FeelsLike > Temp) {
-	 	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/heatindex.jpeg" align=center style="width:20px"></div>`;
+	 	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/heatindex.png" align=center style="width:20px"></div>`;
      }
      else if (FeelsLike < Temp) {
     	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/WindChill.jpeg" align=center style="width:20px"></div>`;
