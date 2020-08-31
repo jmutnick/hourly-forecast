@@ -19,7 +19,7 @@ class HourlyForecast extends HTMLElement {
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
     
     // Variable Declarations
-    import 'variables.js';
+    import './variables.js';
     
     
     //  this is start of 0h
