@@ -9,6 +9,50 @@ This card provides for the display of the hourly forecast in the climacell provi
 
 ## Configuration
 
+Because of a problem with hourly forecasts, a separate  sensor is needed for the weather_condition monitored condition.
+
+This is the first sensor:
+
+- platform: climacell
+  api_key: !secret climacell_api
+  name: weather2
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  monitored_conditions:
+    hourly:
+      forecast_observations: 8
+      conditions:
+        - temperature
+        - precipitation
+        - precipitation_probability
+        - humidity
+        - feels_like
+  scan_interval:
+    days: 0
+    hours: 0
+    minutes: 5
+    seconds: 0
+    milliseconds: 0
+
+This is the second sensor:
+
+- platform: climacell
+  api_key: !secret climacell_api
+  name: weather2
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  monitored_conditions:
+    hourly:
+      forecast_observations: 8
+      conditions:
+        - weather_condition
+  scan_interval:
+    days: 0
+    hours: 0
+    minutes: 5
+    seconds: 0
+    milliseconds: 0
+
 This is an example config.  The entity is the prefix for the climacell provider.
 
 ![config](config.png)

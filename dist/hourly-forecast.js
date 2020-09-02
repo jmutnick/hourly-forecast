@@ -206,7 +206,7 @@ if (graph == true) {
       </script>`
     };
 
-console.info(html1);
+//console.info(html1);
 
 this.content.innerHTML = html1;
 
