@@ -104,10 +104,10 @@ class HourlyForecast extends HTMLElement {
     }
         
     //construct html
-    console.log(graph);
+    //console.log(graph);
     if (graph == true) {
       	html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;
-    	console.log("Inside the graph logic");
+    	//console.log("Inside the graph logic");
     }
     
     html1 += `
@@ -180,7 +180,7 @@ tr.border_bottom  td{
       
 html1 += `</table>`;
 
-if (graph == 'true') {
+if (graph == true) {
       html1 += `
       <div>
       	<canvas id="canvas"></canvas>
@@ -211,7 +211,7 @@ if (graph == 'true') {
       </script>`
     }
 
-//console.info(html1);
+console.info(html1);
 
 this.content.innerHTML = html1;
 
