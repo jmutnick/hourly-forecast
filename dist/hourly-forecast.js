@@ -32,7 +32,7 @@ class HourlyForecast extends HTMLElement {
 	var event = new Array();  
 	var Hour = new Array();
 	var numF=4;
-	var html1 '';
+	var html1;
 	var Precip, PrecipProb, Temp, Humid, Weather, FeelsLike, HourNum;
     
     //  this is start of 0h
@@ -100,6 +100,8 @@ class HourlyForecast extends HTMLElement {
     else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  > sunsetdt) {Weather_state[i] = "partly_cloudy_night";}
     else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[i] = "partly_cloudy_day";}
     }
+    
+    html = '';
         
     //construct html
     if (graph == true) {html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;};
