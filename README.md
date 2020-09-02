@@ -22,10 +22,10 @@ Because of a problem with hourly forecasts, a separate  sensor is needed for the
 
 This is the first sensor:
 
-`- platform: climacell
-  api_key: !secret climacell_api
-  name: weather2
-  latitude: !secret home_latitude
+`- platform: climacell`
+`  api_key: !secret climacell_api`
+`  name: weather2`
+`  latitude: !secret home_latitude
   longitude: !secret home_longitude
   monitored_conditions:
     hourly:

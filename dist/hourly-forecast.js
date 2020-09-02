@@ -181,7 +181,8 @@ if (graph == true) {
       	<canvas id="canvas"></canvas>
       </div>
       <script>
-        var config = {
+      	var ctx = document.getElementById('canvas').getContext('2d');
+        var myLineChart = new Chart(ctx, {
         	type: 'line',
         	data: {
         		labels:['0h','1h','2h','3h','4h'],
@@ -198,11 +199,8 @@ if (graph == true) {
         			fill: false,
         			}] 		
         		}        
-        }
-        window.onload = function() {
-        	var ctx = document.getElementById('canvas').getContext('2d');
-        	window.myLine = new Chart(ctx, config);};
-      
+        });
+              
       </script>`
     };
 
