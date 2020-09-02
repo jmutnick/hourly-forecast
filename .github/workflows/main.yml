@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.8.0.2-beta'
-          description: '* Clean up'
+          version: 'v0.0.8.0.3-beta'
+          description: '* Removing weather state as it changes data - waiting to contact Climacell'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
