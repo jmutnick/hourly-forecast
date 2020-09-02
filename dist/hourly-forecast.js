@@ -10,7 +10,7 @@ class HourlyForecast extends HTMLElement {
       this.content.style.padding = '0 16px 16px';
       card.appendChild(this.content);
       this.appendChild(card);
-      console.log("%cHOURLY-FORECAST", "color=blue; background: white; font-weight: bold;");
+      console.log("%cHOURLY-FORECAST", "color=white; background: blue;");
     }
 	
     // Variables Defined from Config
@@ -101,7 +101,7 @@ class HourlyForecast extends HTMLElement {
     else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[i] = "partly_cloudy_day";}
     }
     
-    html = '';
+    html1 = '';
         
     //construct html
     if (graph == true) {html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;};
