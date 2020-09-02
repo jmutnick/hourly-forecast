@@ -13,7 +13,7 @@ Because of a problem with hourly forecasts, a separate  sensor is needed for the
 
 This is the first sensor:
 
-- platform: climacell
+`- platform: climacell
   api_key: !secret climacell_api
   name: weather2
   latitude: !secret home_latitude
@@ -33,10 +33,10 @@ This is the first sensor:
     minutes: 5
     seconds: 0
     milliseconds: 0
-
+`
 This is the second sensor:
 
-- platform: climacell
+`- platform: climacell
   api_key: !secret climacell_api
   name: weather2
   latitude: !secret home_latitude
@@ -52,6 +52,7 @@ This is the second sensor:
     minutes: 5
     seconds: 0
     milliseconds: 0
+`
 
 This is an example config.  The entity is the prefix for the climacell provider.
 
