@@ -10,7 +10,7 @@ class HourlyForecast extends HTMLElement {
       this.content.style.padding = '0 16px 16px';
       card.appendChild(this.content);
       this.appendChild(card);
-      console.info("%cHOURLY-FORECAST", "color=white, background=blue");
+      console.info("%cHOURLY-FORECAST", "color=white; background=blue");
 
     }
 
@@ -106,7 +106,7 @@ class HourlyForecast extends HTMLElement {
     }
         
     //construct html
-    
+    console.log(graph);
     if (graph == 'true') {
       	html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;
     	console.log("Inside the graph logic");
