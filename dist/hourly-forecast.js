@@ -10,17 +10,18 @@ class HourlyForecast extends HTMLElement {
       this.content.style.padding = '0 16px 16px';
       card.appendChild(this.content);
       this.appendChild(card);
+      console.info("%cHOURLY-FORECAST", "color=blue, background=white");
+
     }
 
-	console.info("%cHOURLY-FORECAST", "color=blue, background=white");
-
+	
     // Variables Defined from Config
     
     const sunstatestr = hass.states[this.config.sun_object].state;
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
     const graph = this.config.graph;
-    console.log("HOURLY FORECAST: graph=" + graph);
+    //console.log("HOURLY FORECAST: graph=" + graph);
     
     // Variable Declarations
     const uiDateOptions = { hour: 'numeric', };  
@@ -42,7 +43,7 @@ class HourlyForecast extends HTMLElement {
     Precipprob_state[0] = hass.states[this.config.entity + '_precipitation_probability_0h'].state;
     Temp_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_0h'].state)));
     Humid_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_0h'].state)));  
-    //Weather_state[0] = hass.states[this.config.entity + '_weather_condition_0h'].state;
+    Weather_state[0] = hass.states[this.config.entity + '2_weather_condition_0h'].state;
     FeelsLikeTemp_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_0h'].state)));
     event[0] = new Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
     Hour[0] = event[0].toLocaleTimeString('en-US', uiDateOptions);
@@ -52,7 +53,7 @@ class HourlyForecast extends HTMLElement {
     Precipprob_state[1] = hass.states[this.config.entity + '_precipitation_probability_1h'].state;
     Temp_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_1h'].state)));
     Humid_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_1h'].state)));  
-    //Weather_state[1] = hass.states[this.config.entity + '_weather_condition_1h'].state;
+    Weather_state[1] = hass.states[this.config.entity + '2_weather_condition_1h'].state;
     FeelsLikeTemp_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_1h'].state)));
     event[1] = new Date(hass.states[this.config.entity + '_temperature_1h'].attributes.observation_time);
     Hour[1] = event[1].toLocaleTimeString('en-US', uiDateOptions);
@@ -62,7 +63,7 @@ class HourlyForecast extends HTMLElement {
     Precipprob_state[2] = hass.states[this.config.entity + '_precipitation_probability_2h'].state;
     Temp_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_2h'].state)));
     Humid_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_2h'].state)));  
-    //Weather_state[2] = hass.states[this.config.entity + '_weather_condition_2h'].state;
+    Weather_state[2] = hass.states[this.config.entity + '2_weather_condition_2h'].state;
     FeelsLikeTemp_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_2h'].state)));
     event[2] = new Date(hass.states[this.config.entity + '_temperature_2h'].attributes.observation_time);
     Hour[2] = event[2].toLocaleTimeString('en-US', uiDateOptions);
@@ -72,7 +73,7 @@ class HourlyForecast extends HTMLElement {
     Precipprob_state[3] = hass.states[this.config.entity + '_precipitation_probability_3h'].state;
     Temp_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_3h'].state)));
     Humid_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_3h'].state)));  
-    //Weather_state[3] = hass.states[this.config.entity + '_weather_condition_3h'].state;
+    Weather_state[3] = hass.states[this.config.entity + '2_weather_condition_3h'].state;
     FeelsLikeTemp_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_3h'].state)));
     event[3] = new Date(hass.states[this.config.entity + '_temperature_3h'].attributes.observation_time);
     Hour[3] = event[3].toLocaleTimeString('en-US', uiDateOptions);
@@ -82,27 +83,27 @@ class HourlyForecast extends HTMLElement {
     Precipprob_state[4] = hass.states[this.config.entity + '_precipitation_probability_4h'].state;
     Temp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_4h'].state)));
     Humid_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_4h'].state)));  
-    //Weather_state[4] = hass.states[this.config.entity + '_weather_condition_4h'].state;
+    Weather_state[4] = hass.states[this.config.entity + '2_weather_condition_4h'].state;
     FeelsLikeTemp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_4h'].state)));
     event[4] = new Date(hass.states[this.config.entity + '_temperature_4h'].attributes.observation_time);
     Hour[4] = event[4].toLocaleTimeString('en-US', uiDateOptions);
     
     
-//     var i;
-//     for (i=0; i<= numF; i++) {    
-//     if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] < sunsetdt) {Weather_state[i] = "clear_day";}
-//     else if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] > sunsetdt) {Weather_state[i] = "clear_night";}
-//     else if (Weather_state[i] == "clear" && sunstatestr == "below_horizon" && event[i] < sunrisedt) {Weather_state[i] = "clear_night";}
-//     else if (Weather_state[i] == "clear" && sunstatestr == "below_horizon" && event[i] > sunrisedt) {Weather_state[i] = "clear_day";}  
-//     else if (Weather_state[i] == "mostly_clear" && sunstatestr == "above_horizon" && event[i] < sunrisedt) {Weather_state[i] = "mostly_clear_day";}
-//     else if (Weather_state[i] == "mostly_clear" && sunstatestr == "above_horizon" && event[i] > sunrisedt) {Weather_state[i] = "mostly_clear_night";}
-//     else if (Weather_state[i] == "mostly_clear" && sunstatestr == "below_horizon" && event[i]  > sunsetdt) {Weather_state[i] = "mostly_clear_night";}
-//     else if (Weather_state[i] == "mostly_clear" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[i] = "mostly_clear_day";}
-//     else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "above_horizon" && event[i] < sunrisedt) {Weather_state[i] = "partly_cloudy_day";}
-//     else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "above_horizon" && event[i] > sunrisedt) {Weather_state[i] = "partly_cloudy_night";}
-//     else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  > sunsetdt) {Weather_state[i] = "partly_cloudy_night";}
-//     else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[i] = "partly_cloudy_day";}
-//     }
+    var i;
+    for (i=0; i<= numF; i++) {    
+    if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] < sunsetdt) {Weather_state[i] = "clear_day";}
+    else if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] > sunsetdt) {Weather_state[i] = "clear_night";}
+    else if (Weather_state[i] == "clear" && sunstatestr == "below_horizon" && event[i] < sunrisedt) {Weather_state[i] = "clear_night";}
+    else if (Weather_state[i] == "clear" && sunstatestr == "below_horizon" && event[i] > sunrisedt) {Weather_state[i] = "clear_day";}  
+    else if (Weather_state[i] == "mostly_clear" && sunstatestr == "above_horizon" && event[i] < sunrisedt) {Weather_state[i] = "mostly_clear_day";}
+    else if (Weather_state[i] == "mostly_clear" && sunstatestr == "above_horizon" && event[i] > sunrisedt) {Weather_state[i] = "mostly_clear_night";}
+    else if (Weather_state[i] == "mostly_clear" && sunstatestr == "below_horizon" && event[i]  > sunsetdt) {Weather_state[i] = "mostly_clear_night";}
+    else if (Weather_state[i] == "mostly_clear" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[i] = "mostly_clear_day";}
+    else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "above_horizon" && event[i] < sunrisedt) {Weather_state[i] = "partly_cloudy_day";}
+    else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "above_horizon" && event[i] > sunrisedt) {Weather_state[i] = "partly_cloudy_night";}
+    else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  > sunsetdt) {Weather_state[i] = "partly_cloudy_night";}
+    else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[i] = "partly_cloudy_day";}
+    }
         
     //construct html
     
