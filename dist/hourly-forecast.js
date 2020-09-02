@@ -166,7 +166,7 @@ tr.border_bottom  td{
    
     
     html1 += `<td style="text-align:center">`;
-//    html1 += `<div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather}.svg" width=50 height=50><span class="tooltiptext">${Weather}</span></div>`
+    html1 += `<div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather}.svg" width=50 height=50><span class="tooltiptext">${Weather}</span></div>`
     html1 += `${HourNum}</td>
      <td style="text-align:center"">
      <div>${Temp}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>`;

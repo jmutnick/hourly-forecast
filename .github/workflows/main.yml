@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.9.0.6-beta'
-          description: '* Brought back weather icons by using second sensor'
+          version: 'v0.0.9.0.7-beta'
+          description: '* Updated html to include icons'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
