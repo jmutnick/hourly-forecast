@@ -145,10 +145,11 @@ tr.border_bottom  td{
     PrecipProb = Precipprob_state[x];
     
     if (x < numF) {
-    	html1 += `<tr class="border_bottom">`;}
+    	html1 += `<tr class="border_bottom">`;
+    	}
     else {
     	html1 += `<tr>`;}
-    };
+
    
     
     html1 += `<td style="text-align:center">`;
@@ -170,7 +171,7 @@ tr.border_bottom  td{
             <div>${Precip} in/hr</div></td></tr>`;
       };
       
-html1 += '</table>';
+html1 += `</table>`;
 
 this.content.innerHTML = html1;
 
