@@ -106,7 +106,7 @@ class HourlyForecast extends HTMLElement {
         
     //construct html
     
-    if (graph = 'true') {
+    if (graph == 'true') {
       html1 += `
       <head>
       	<script src="/local/community/hourly-forecast/helpers/Chart.js"></script>
@@ -185,7 +185,7 @@ tr.border_bottom  td{
       
 html1 += `</table>`;
 
-if (graph = 'true') {
+if (graph == 'true') {
       html1 += `
       <div>
       	<canvas id="canvas"></canvas>
