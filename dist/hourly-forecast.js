@@ -145,9 +145,9 @@ tr.border_bottom  td{
     PrecipProb = Precipprob_state[x];
     
     if (x < numF) {
-    	html1 += `<tr class="border_bottom">`}
+    	html1 += `<tr class="border_bottom">`;}
     else {
-    	html1 += `<tr>`}
+    	html1 += `<tr>`;}
     }
    
     
@@ -155,7 +155,7 @@ tr.border_bottom  td{
 //    html1 += `<div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather}.svg" width=50 height=50><span class="tooltiptext">${Weather}</span></div>`
     html1 += `${HourNum}</td>
      <td style="text-align:center"">
-     <div>${Temp}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>`
+     <div>${Temp}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>`;
      
      if (FeelsLike > Temp) {
 	 	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/heatindex.png" align=center style="width:20px"></div>`;
@@ -166,8 +166,8 @@ tr.border_bottom  td{
      ;
           
      html1 += `<div>${Humid}%<img SRC="/local/community/hourly-forecast/icons/humidity.png" align=center style="width:20px"></div>
-     </td><td style="text-align:center"> <div>${PrecipProb}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
-     <div>${Precip} in/hr</div></td></tr>`;
+               </td><td style="text-align:center"> <div>${PrecipProb}% <img src="/local/community/hourly-forecast/icons/rain.png" align=center style="width:20px"></div>
+            <div>${Precip} in/hr</div></td></tr>`;
       };
       
 html1 += '</table>';
