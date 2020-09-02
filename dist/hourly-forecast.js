@@ -108,10 +108,8 @@ class HourlyForecast extends HTMLElement {
     //construct html
     
     if (graph == 'true') {
-      html1 += `
-      <head>
-      	<script src="/local/community/hourly-forecast/helpers/Chart.js"></script>
-      </head>`
+      	html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;
+    	console.log("Inside the graph logic");
     }
     
     html1 += `
@@ -215,7 +213,7 @@ if (graph == 'true') {
       </script>`
     }
 
-console.info(html1);
+//console.info(html1);
 
 this.content.innerHTML = html1;
 
