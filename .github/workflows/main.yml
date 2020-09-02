@@ -13,7 +13,7 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.8.0.5-beta'
+          version: 'v0.0.8.0.6-beta'
           description: '* Removing last border on table'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'

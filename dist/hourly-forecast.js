@@ -148,7 +148,7 @@ tr.border_bottom  td{
     	html1 += `<tr class="border_bottom">`;}
     else {
     	html1 += `<tr>`;}
-    }
+    };
    
     
     html1 += `<td style="text-align:center">`;
