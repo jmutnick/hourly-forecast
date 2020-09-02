@@ -101,7 +101,7 @@ class HourlyForecast extends HTMLElement {
     else if (Weather_state[i] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[i] = "partly_cloudy_day";}
     }
     
-    html1 = '';
+    html1 = '<body>';
         
     //construct html
     if (graph == true) {html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;};
@@ -205,7 +205,7 @@ if (graph == true) {
     };
 
 //console.info(html1);
-
+html1 += `<body>`;
 this.content.innerHTML = html1;
 
   }
