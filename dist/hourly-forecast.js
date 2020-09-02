@@ -10,7 +10,7 @@ class HourlyForecast extends HTMLElement {
       this.content.style.padding = '0 16px 16px';
       card.appendChild(this.content);
       this.appendChild(card);
-      console.info("%cHOURLY-FORECAST", "color=blue, background=white");
+      console.info("%cHOURLY-FORECAST", "color=white, background=blue");
 
     }
 
@@ -20,7 +20,7 @@ class HourlyForecast extends HTMLElement {
     const sunstatestr = hass.states[this.config.sun_object].state;
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
-    const graph = this.config.graph;
+    var graph = this.config.graph;
     //console.log("HOURLY FORECAST: graph=" + graph);
     
     // Variable Declarations
@@ -107,7 +107,7 @@ class HourlyForecast extends HTMLElement {
         
     //construct html
     
-    if (graph === 'true') {
+    if (graph == 'true') {
       html1 += `
       <head>
       	<script src="/local/community/hourly-forecast/helpers/Chart.js"></script>
@@ -184,7 +184,7 @@ tr.border_bottom  td{
       
 html1 += `</table>`;
 
-if (graph === 'true') {
+if (graph == 'true') {
       html1 += `
       <div>
       	<canvas id="canvas"></canvas>
