@@ -144,11 +144,16 @@ tr.border_bottom  td{
     Precip = Precip_state[x];
     PrecipProb = Precipprob_state[x];
     
-    html1 += `<tr class="border_bottom">
-     <td style="text-align:center">
-`;
-//     <div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather}.svg" width=50 height=50><span class="tooltiptext">${Weather}</span></div>
-     html1 += `${HourNum}</td>
+    if (x < numF) {
+    	html1 += `<tr class="border_bottom">`}
+    else {
+    	html1 += `<tr>`}
+    }
+   
+    
+    html1 += `<td style="text-align:center">`;
+//    html1 += `<div class="tooltip"><IMG SRC="/local/community/hourly-forecast/icons/${Weather}.svg" width=50 height=50><span class="tooltiptext">${Weather}</span></div>`
+    html1 += `${HourNum}</td>
      <td style="text-align:center"">
      <div>${Temp}&degF<IMG SRC="/local/community/hourly-forecast/icons/temperature.png" align=center style="width:20px"></div>`
      
