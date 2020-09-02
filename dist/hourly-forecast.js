@@ -10,7 +10,7 @@ class HourlyForecast extends HTMLElement {
       this.content.style.padding = '0 16px 16px';
       card.appendChild(this.content);
       this.appendChild(card);
-      console.info("%cHOURLY-FORECAST", "color=white; background-color=blue");
+      console.log("%cHOURLY-FORECAST", "color=blue; background: white; font-weight: bold;");
     }
 	
     // Variables Defined from Config
@@ -32,9 +32,8 @@ class HourlyForecast extends HTMLElement {
 	var event = new Array();  
 	var Hour = new Array();
 	var numF=4;
-	var html1;
+	var html1 '';
 	var Precip, PrecipProb, Temp, Humid, Weather, FeelsLike, HourNum;
-    
     
     //  this is start of 0h
     Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;
@@ -105,8 +104,7 @@ class HourlyForecast extends HTMLElement {
     //construct html
     if (graph == true) {html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;};
     
-    html1 += `
-<style>
+    html1 += `<style>
 .tooltip {
   position: bottom;
 }
