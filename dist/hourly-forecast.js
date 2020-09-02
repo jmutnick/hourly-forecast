@@ -17,7 +17,7 @@ class HourlyForecast extends HTMLElement {
     const sunstatestr = hass.states[this.config.sun_object].state;
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
-    const graph = hass.states[this.config.graph].state;
+    const graph = this.config.graph;
     console.log("HOURLY FORECAST: graph=" + graph);
     
     // Variable Declarations
