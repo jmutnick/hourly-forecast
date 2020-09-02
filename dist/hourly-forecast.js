@@ -12,6 +12,8 @@ class HourlyForecast extends HTMLElement {
       this.appendChild(card);
     }
 
+	console.info("%cHOURLY-FORECAST", "color=blue, background=white");
+
     // Variables Defined from Config
     
     const sunstatestr = hass.states[this.config.sun_object].state;
@@ -103,7 +105,15 @@ class HourlyForecast extends HTMLElement {
 //     }
         
     //construct html
-    html1 = `
+    
+    if (graph = true) {
+      html += `
+      <head>
+      	<script src="/local/community/hourly-forecast/helpers/Chart.js"></script>
+      </head>`
+    }
+    
+    html1 += `
 <style>
 .tooltip {
   position: bottom;
@@ -174,6 +184,39 @@ tr.border_bottom  td{
       };
       
 html1 += `</table>`;
+
+if (graph = true) {
+      html += `
+      <div>
+      	<canvas id="canvas"></canvas>
+      </div>
+      <script>
+        var config = {
+        	type: 'line',
+        	data: {
+        		labels:['0h','1h','2h','3h','4h'],
+        		datasets: [{
+        			label:'Forecast Temps',
+        			backgroundColor: window.chartColors.red,
+        			borderColor: window.chartColors.red,
+        			data: [
+        				85,
+        				90,
+        				87,
+        				86,
+        				85],
+        			fill: false,
+        			}] 		
+        		}        
+        }
+        window.onload = function() {
+        	var ctx = document.getElementById('canvas').getContext('2d');
+        	window.myLine = new Chart(ctx, config);};
+      
+      </script>`
+    }
+
+
 
 this.content.innerHTML = html1;
 
