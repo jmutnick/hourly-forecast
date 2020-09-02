@@ -85,8 +85,7 @@ class HourlyForecast extends HTMLElement {
     FeelsLikeTemp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_4h'].state)));
     event[4] = new Date(hass.states[this.config.entity + '_temperature_4h'].attributes.observation_time);
     Hour[4] = event[4].toLocaleTimeString('en-US', uiDateOptions);
-    
-    
+        
     var i;
     for (i=0; i<= numF; i++) {    
     if (Weather_state[i] == "clear" && sunstatestr == "above_horizon" && event[i] < sunsetdt) {Weather_state[i] = "clear_day";}
@@ -104,11 +103,7 @@ class HourlyForecast extends HTMLElement {
     }
         
     //construct html
-    //console.log(graph);
-    if (graph == true) {
-      	html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;
-    	//console.log("Inside the graph logic");
-    }
+    if (graph == true) {html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;};
     
     html1 += `
 <style>
@@ -209,7 +204,7 @@ if (graph == true) {
         	window.myLine = new Chart(ctx, config);};
       
       </script>`
-    }
+    };
 
 console.info(html1);
 
