@@ -178,11 +178,11 @@ html1 += `</table>`;
 if (graph == true) {
       html1 += `
       <div>
-      	<canvas id="canvas"></canvas>
+      	<canvas id="myChart"></canvas>
       </div>
       <script>
-      	var ctx = document.getElementById('canvas').getContext('2d');
-        var myLineChart = new Chart(ctx, {
+      	var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
         	type: 'line',
         	data: {
         		labels:['0h','1h','2h','3h','4h'],
