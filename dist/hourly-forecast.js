@@ -204,7 +204,7 @@ if (graph == true) {
 
 //console.info(html1);
 html1 += `</body>`;
-this.content.innerHTML = html1;
+this.content.outerHTML = html1;
 
   }
 
