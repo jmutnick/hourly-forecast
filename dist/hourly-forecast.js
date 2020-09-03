@@ -181,7 +181,7 @@ if (graph == true) {
       <div>
       	<canvas id="myChart" width="100%" height="250""></canvas>
       </div>`;
-      	var ctx = document.getElementById('myChart').getContext('2d');
+      	var ctx = document.getElementById('myChart');
         var chart = new Chart(ctx, {
         	type: 'line',
         	data: {

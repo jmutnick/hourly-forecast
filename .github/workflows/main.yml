@@ -14,7 +14,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           version: 'v0.0.9.3.7-beta'
-          description: '* Moved import to top'
+          description: '* remove getcontext'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
