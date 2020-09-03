@@ -177,6 +177,7 @@ html1 += `</table>`;
 
 if (graph == true) {
       html1 += `
+	  Hello Chart!	
       <div>
       	<canvas id="myChart"></canvas>
       </div>
@@ -199,8 +200,7 @@ if (graph == true) {
         			fill: false,
         			}] 		
         		}        
-        });
-          echo 'test';    
+        });   
       </script>`
     };
 
