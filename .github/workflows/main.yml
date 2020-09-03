@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.9.4.8-beta'
-          description: '* Added back variable declaration'
+          version: 'v0.0.9.4.9-beta'
+          description: '* Still trying to create a canvas'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'

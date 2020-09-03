@@ -178,12 +178,12 @@ html1 += `</table>`;
 
 if (graph == true) {
 
-      var canvas = document.createElement("MyCanvas");      
-      var ctx = document.getElementById("canvas");
+      var canvas = document.createElement("MyCanvas");  
+      canvas.setAttribute("id","canvasID");
+      console.log("CanvasID=" + canvas.id);
+          
+      var ctx = document.getElementById("canvasID");
       console.log('ctx= ' + ctx);
-      
-      var myctx = document.getElementById("MyCanvas");
-      console.log('myctx= ' + myctx);
       
 // 	  new Chart(ctx, {
 //         	type: 'line',
