@@ -176,8 +176,9 @@ html1 += `</table>`;
 
 if (graph == true) {
       html1 += `
-	  Hello Chart!	
-	  <script src="/local/community/hourly-forecast/helpers/Chart.js"></script>
+      <head>
+	  	<script src="/local/community/hourly-forecast/helpers/Chart.js"></script>
+      </head>
       <div>
       	<canvas id="myChart"></canvas>
       </div>
@@ -204,7 +205,7 @@ if (graph == true) {
 
 //console.info(html1);
 html1 += `</body>`;
-this.content.outerHTML = html1;
+this.content.innerHTML = html1;
 
   }
 
