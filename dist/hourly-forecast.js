@@ -164,7 +164,7 @@ tr.border_bottom  td{
 	 	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/heatindex.png" align=center style="width:20px"></div>`;
      }
      else if (FeelsLike < Temp) {
-    	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/WindChill.jpeg" align=center style="width:20px"></div>`;
+    	html1 += `<div>Feels Like ${FeelsLike}&degF<IMG SRC="/local/community/hourly-forecast/icons/windchill.jpeg" align=center style="width:20px"></div>`;
      } 
      ;
           
