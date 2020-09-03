@@ -181,24 +181,28 @@ if (graph == true) {
       <div>
       	<canvas id="myChart" width="100%" height="250""></canvas>
       </div>`;
-      	var ctx = document.getElementById("myChart");
-        new Chart(ctx, {
-        	type: 'line',
-        	data: {
-        		labels:['0h','1h','2h','3h','4h'],
-        		datasets: [{
-        			label:'Forecast Temps',
-        			data: [
-        				85,
-        				90,
-        				87,
-        				86,
-        				85],
-        			fill: false,
-        			}] 		
-        		}        
-        });   
-    };
+      
+      var c = document.getElementById("div").childNodes.length;
+      console.log(c + ' child nodes');
+      
+      var ctx = document.getElementById("myChart");
+// 	  new Chart(ctx, {
+//         	type: 'line',
+//         	data: {
+//         		labels:['0h','1h','2h','3h','4h'],
+//         		datasets: [{
+//         			label:'Forecast Temps',
+//         			data: [
+//         				85,
+//         				90,
+//         				87,
+//         				86,
+//         				85],
+//         			fill: false,
+//         			}] 		
+//         		}        
+//         });   
+//     };
 
 //console.info(html1);
 html1 += `</body>`;
