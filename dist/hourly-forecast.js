@@ -104,7 +104,7 @@ class HourlyForecast extends HTMLElement {
     html1 = '<body>';
         
     //construct html
-    if (graph == true) {html1 += `<head><script src="/local/community/hourly-forecast/helpers/Chart.js"></script></head>`;};
+    if (graph == true) {html1 += `<script src="/local/community/hourly-forecast/helpers/Chart.js"></script>`;};
     
     html1 += `<style>
 .tooltip {
