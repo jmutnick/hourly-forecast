@@ -180,9 +180,9 @@ if (graph == true) {
 	  	<script src="/local/community/hourly-forecast/helpers/Chart.js"></script>
       </head>
       <div>
-      	<canvas id="myChart"></canvas>
+      	<canvas id="myChart" width="100%" height="250""></canvas>
       </div>
-      <script>
+      <script type="text/javascript">
       	var ctx = document.getElementById('myChart').getContext('2d');
         var chart = new Chart(ctx, {
         	type: 'line',
