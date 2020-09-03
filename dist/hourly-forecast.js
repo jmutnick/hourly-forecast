@@ -182,7 +182,7 @@ if (graph == true) {
       canvas.setAttribute("id","canvasID");
       console.log("CanvasID=" + canvas.id);
           
-      var ctx = document.getElementById("canvasID");
+      var ctx = document.getElementById(canvas.id);
       console.log('ctx= ' + ctx);
       
 // 	  new Chart(ctx, {
