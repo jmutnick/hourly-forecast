@@ -182,7 +182,7 @@ if (graph == true) {
       	<canvas id="myChart" width="100%" height="250""></canvas>
       </div>`;
       
-      var c = document.getElementById("div").childNodes.length;
+      var c = document.getElementById("ha-card").childNodes.length;
       console.log(c + ' child nodes');
       
       var ctx = document.getElementById("myChart");
