@@ -104,7 +104,6 @@ class HourlyForecast extends HTMLElement {
     html1 = '<body>';
         
     //construct html
-    if (graph == true) {html1 += `<script src="/local/community/hourly-forecast/helpers/Chart.js"></script>`;};
     
     html1 += `<style>
 .tooltip {
@@ -178,6 +177,7 @@ html1 += `</table>`;
 if (graph == true) {
       html1 += `
 	  Hello Chart!	
+	  <script src="/local/community/hourly-forecast/helpers/Chart.js"></script>
       <div>
       	<canvas id="myChart"></canvas>
       </div>
@@ -189,8 +189,6 @@ if (graph == true) {
         		labels:['0h','1h','2h','3h','4h'],
         		datasets: [{
         			label:'Forecast Temps',
-        			backgroundColor: window.chartColors.red,
-        			borderColor: window.chartColors.red,
         			data: [
         				85,
         				90,
