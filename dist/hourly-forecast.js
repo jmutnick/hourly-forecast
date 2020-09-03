@@ -178,7 +178,7 @@ html1 += `</table>`;
 
 if (graph == true) {
 
-      canvas = document.createElement("MyCanvas");      
+      var canvas = document.createElement("MyCanvas");      
       var ctx = document.getElementById("canvas");
       console.log('ctx= ' + ctx);
       
