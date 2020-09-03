@@ -178,28 +178,26 @@ html1 += `</table>`;
 
 if (graph == true) {
 
-      var canvas = document.createElement('canvas');
-      canvas.id = "MyCanvas"
-         
-      var ctx = document.getElementById("MyCanvas");
+      var canvas = document.createElement("canvas");      
+      var ctx = document.getElementById("canvas");
       console.log(ctx);
       
-// 	  new Chart(ctx, {
-//         	type: 'line',
-//         	data: {
-//         		labels:['0h','1h','2h','3h','4h'],
-//         		datasets: [{
-//         			label:'Forecast Temps',
-//         			data: [
-//         				85,
-//         				90,
-//         				87,
-//         				86,
-//         				85],
-//         			fill: false,
-//         			}] 		
-//         		}        
-//         });   
+	  new Chart(ctx, {
+        	type: 'line',
+        	data: {
+        		labels:['0h','1h','2h','3h','4h'],
+        		datasets: [{
+        			label:'Forecast Temps',
+        			data: [
+        				85,
+        				90,
+        				87,
+        				86,
+        				85],
+        			fill: false,
+        			}] 		
+        		}        
+        });   
 
      };
 
