@@ -182,8 +182,6 @@ if (graph == true) {
       canvas.setAttribute("id","canvasID");
       canvas.setAttribute("width","100%");
       canvas.setAttribute("height","250");
-          
-      var ctx = canvas.getContext("2d");
       
 	  new Chart(canvas.id, {
         	type: 'line',
