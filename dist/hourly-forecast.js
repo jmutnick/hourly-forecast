@@ -180,27 +180,27 @@ if (graph == true) {
 
       var canvas = document.createElement("MyCanvas");  
       canvas.setAttribute("id","canvasID");
-      console.log("CanvasID=" + canvas.id);
+      //console.log("CanvasID=" + canvas.id);
           
-      var ctx = document.getElementById(canvas.id);
-      console.log('ctx= ' + ctx);
+      //var ctx = document.getElementById(canvas.id);
+      //console.log('ctx= ' + ctx);
       
-// 	  new Chart(ctx, {
-//         	type: 'line',
-//         	data: {
-//         		labels:['0h','1h','2h','3h','4h'],
-//         		datasets: [{
-//         			label:'Forecast Temps',
-//         			data: [
-//         				85,
-//         				90,
-//         				87,
-//         				86,
-//         				85],
-//         			fill: false,
-//         			}] 		
-//         		}        
-//         });   
+	  new Chart(canvas.id, {
+        	type: 'line',
+        	data: {
+        		labels:['0h','1h','2h','3h','4h'],
+        		datasets: [{
+        			label:'Forecast Temps',
+        			data: [
+        				85,
+        				90,
+        				87,
+        				86,
+        				85],
+        			fill: false,
+        			}] 		
+        		}        
+        });   
 
      };
 
