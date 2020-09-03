@@ -177,12 +177,14 @@ tr.border_bottom  td{
 html1 += `</table>`;
 
 if (graph == true) {
-      html1 += `
-      <div>
-      	<canvas id="myChart" width="100%" height="250""></canvas>
-      </div>`;
+
+      var canvas = document.createElement('canvas');
+      canvas.id = "CanvasLayer";
+      canvas.style.border = "1px solid";
+      var body = document.getElementByTagName("body")[0];
+      body.appendChild(canvas);
          
-      var ctx = document.getElementById("myChart");
+      var ctx = document.getElementById("CanvasLayer");
       console.log(ctx);
       
 // 	  new Chart(ctx, {
@@ -201,9 +203,9 @@ if (graph == true) {
 //         			}] 		
 //         		}        
 //         });   
+
      };
 
-//console.info(html1);
 html1 += `</body>`;
 this.content.innerHTML = html1;
 
