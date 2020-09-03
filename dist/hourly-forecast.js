@@ -1,6 +1,8 @@
 // Project by Jonathan Mutnick to use the Climacell data provider to display an hourly forecast
 // Work in process
 
+import 'https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js?module';
+
 class HourlyForecast extends HTMLElement {
   set hass(hass) {
     if (!this.content) {
@@ -175,7 +177,6 @@ tr.border_bottom  td{
 html1 += `</table>`;
 
 if (graph == true) {
-      import 'https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js?module';
       html1 += `
       <div>
       	<canvas id="myChart" width="100%" height="250""></canvas>
