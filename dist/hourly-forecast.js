@@ -202,7 +202,7 @@ if (graph == true) {
 //         			}] 		
 //         		}        
 //         });   
-//     };
+     };
 
 //console.info(html1);
 html1 += `</body>`;
