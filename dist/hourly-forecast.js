@@ -200,12 +200,12 @@ if (graph == true) {
         			}] 		
         		}        
         });
-              
+          echo 'test';    
       </script>`
     };
 
 //console.info(html1);
-html1 += `<body>`;
+html1 += `</body>`;
 this.content.innerHTML = html1;
 
   }
