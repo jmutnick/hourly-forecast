@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.9.4.4-beta'
-          description: '* Child Nodes'
+          version: 'v0.0.9.4.5-beta'
+          description: '* Dynamic Canvas'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'

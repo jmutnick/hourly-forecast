@@ -179,12 +179,9 @@ html1 += `</table>`;
 if (graph == true) {
 
       var canvas = document.createElement('canvas');
-      canvas.id = "CanvasLayer";
-      canvas.style.border = "1px solid";
-      var body = document.getElementByTagName("body")[0];
-      body.appendChild(canvas);
+      canvas.id = "MyCanvas"
          
-      var ctx = document.getElementById("CanvasLayer");
+      var ctx = document.getElementById("MyCanvas");
       console.log(ctx);
       
 // 	  new Chart(ctx, {
