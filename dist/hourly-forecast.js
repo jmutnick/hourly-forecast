@@ -180,10 +180,10 @@ if (graph == true) {
 
       var canvas = document.createElement("MyCanvas");  
       canvas.setAttribute("id","canvasID");
-      //console.log("CanvasID=" + canvas.id);
+      canvas.setAttribute("width","100%");
+      canvas.setAttribute("height","250");
           
-      //var ctx = document.getElementById(canvas.id);
-      //console.log('ctx= ' + ctx);
+      var ctx = canvas.getContext("2d");
       
 	  new Chart(canvas.id, {
         	type: 'line',
@@ -201,7 +201,7 @@ if (graph == true) {
         			}] 		
         		}        
         });   
-
+		document.body.appendChild(canvas);
      };
 
 html1 += `</body>`;
