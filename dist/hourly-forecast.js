@@ -175,10 +175,8 @@ tr.border_bottom  td{
 html1 += `</table>`;
 
 if (graph == true) {
+      import "https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js?module";
       html1 += `
-      <head>
-	  	<script src="https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js?module"></script>
-      </head>
       <div>
       	<canvas id="myChart" width="100%" height="250""></canvas>
       </div>`;
