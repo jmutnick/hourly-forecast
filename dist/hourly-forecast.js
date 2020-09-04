@@ -174,17 +174,14 @@ tr.border_bottom  td{
             <div>${Precip} in/hr</div></td></tr>`;
       };
       
-html1 += `</table>`;
+html1 += `</table><canvas id="myChart"></canvas></body>`;
 
-if (graph == true) {
+this.content.innerHTML = html1;
 
-      var canvas = document.createElement("MyCanvas");  
-      canvas.setAttribute("id","canvasID");
-      canvas.setAttribute("width","100%");
-      canvas.setAttribute("height","250");
-      
-      var ctx = document.getElementById('canvasID');
-      
+//do this after the html has been established
+
+if (graph == true) {     
+      var ctx = document.getElementById('myChart');
 	  new Chart(ctx, {
         	type: 'line',
         	data: {
@@ -201,12 +198,8 @@ if (graph == true) {
         			}] 		
         		}        
         });   
-		document.body.appendChild(canvas);
+		//document.body.appendChild(canvas);
      };
-
-html1 += `</body>`;
-this.content.innerHTML = html1;
-
   }
 
   //make sure an entity is set
