@@ -174,9 +174,9 @@ tr.border_bottom  td{
             <div>${Precip} in/hr</div></td></tr>`;
       };
       
-html1 += `</table><canvas class="MyCanvases" id="myChart" width="100%"></canvas>`;
+html1 += `</table><canvas class="MyCanvases" name"myChart" width="100%"></canvas>`;
 
-console.log(document.getElementsByClassName("MyCanvases"));
+console.log("Result: " + document.getElementsByName('MyChart'));
 
 html1 += `</body>`;
 
