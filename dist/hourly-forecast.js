@@ -183,7 +183,7 @@ if (graph == true) {
       canvas.setAttribute("width","100%");
       canvas.setAttribute("height","250");
       
-      var ctx = document.getElementById('MyCanvas');
+      var ctx = document.getElementById('canvasID');
       
 	  new Chart(ctx, {
         	type: 'line',
