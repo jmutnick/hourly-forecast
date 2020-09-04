@@ -180,26 +180,26 @@ this.content.innerHTML = html1;
 
 //do this after the html has been established
 
-if (graph == true) {     
-      var ctx = document.getElementById('myChart');
-	  new Chart(ctx, {
-        	type: 'line',
-        	data: {
-        		labels:['0h','1h','2h','3h','4h'],
-        		datasets: [{
-        			label:'Forecast Temps',
-        			data: [
-        				85,
-        				90,
-        				87,
-        				86,
-        				85],
-        			fill: false,
-        			}] 		
-        		}        
-        });   
-		//document.body.appendChild(canvas);
-     };
+// if (graph == true) {     
+//       var ctx = document.getElementById('myChart');
+// 	  new Chart(ctx, {
+//         	type: 'line',
+//         	data: {
+//         		labels:['0h','1h','2h','3h','4h'],
+//         		datasets: [{
+//         			label:'Forecast Temps',
+//         			data: [
+//         				85,
+//         				90,
+//         				87,
+//         				86,
+//         				85],
+//         			fill: false,
+//         			}] 		
+//         		}        
+//         });   
+// 		//document.body.appendChild(canvas);
+//      };
   }
 
   //make sure an entity is set
