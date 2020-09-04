@@ -176,7 +176,7 @@ tr.border_bottom  td{
       
 html1 += `</table><canvas class="MyCanvases" id="myChart" width="100%"></canvas>`;
 
-console.log(document.getElementsByClassName("MyCanvases""));
+console.log(document.getElementsByClassName("MyCanvases"));
 
 html1 += `</body>`;
 
