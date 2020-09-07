@@ -182,7 +182,7 @@ html1 += `</body>`;
 
 this.content.innerHTML = html1;
 
-console.log("Result: " + this.content.getElementById('MyCanvas'));
+console.log("Result: " + document.getElementById('MyCanvas'));
 
 //do this after the html has been established
 
