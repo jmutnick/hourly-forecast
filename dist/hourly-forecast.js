@@ -44,7 +44,7 @@ class HourlyForecast extends HTMLElement {
         Precip_string = this.config.entity + '_precipitation_' + String(l) + 'h';	
         console.log('Prefix:' + this.config.entity)
         console.log('Whole String:' + Precip_string);
-		Precip_state[l] = hass.states[`Precip_string`].state;
+		Precip_state[l] = hass.states[${Precip_string}].state;
 		
 		Precipprob_state[l] = hass.states[this.config.entity + '_precipitation_probability_' + String(l) + 'h'].state;
 		Temp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_' + String(l) + 'h'].state)));
