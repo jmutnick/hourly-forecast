@@ -36,7 +36,7 @@ class HourlyForecast extends HTMLElement {
 	var numF=8;
 	var html1;
 	var Precip, PrecipProb, Temp, Humid, Weather, FeelsLike, HourNum;
-    var Precip_string;
+    var event_time;
   
     // Loop
     var l;
@@ -47,7 +47,9 @@ class HourlyForecast extends HTMLElement {
 		Humid_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_' + String(l) + 'h'])));  
 		Weather_state[l] = hass.states[this.config.entity + '2_weather_condition_' + String(l) + 'h'];
 		FeelsLikeTemp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_' + String(l) + 'h'])));
-		event[l] = new Date(hass.states[this.config.entity + '_temperature_' + String(l) + 'h'].attributes.observation_time);
+		
+		event_time = this.config.entity + '_temperature_' + String(l) + 'h';
+		event[l] = new Date(hass.states[event_time].attributes.observation_time);
 		Hour[l] = event[l].toLocaleTimeString('en-US', uiDateOptions);
 	}
     
