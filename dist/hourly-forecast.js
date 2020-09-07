@@ -176,11 +176,13 @@ tr.border_bottom  td{
       
 html1 += `</table><canvas id="MyCanvas" name"myChart" width="100%"></canvas>`;
 
-console.log("Result: " + this.document.getElementById('MyCanvas'));
+
 
 html1 += `</body>`;
 
 this.content.innerHTML = html1;
+
+console.log("Result: " + this.content.getElementById('MyCanvas'));
 
 //do this after the html has been established
 
