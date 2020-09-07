@@ -49,7 +49,7 @@ class HourlyForecast extends HTMLElement {
 		FeelsLikeTemp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_' + String(l) + 'h'])));
 		
 	
-		event_state = hass.states[this.config.entity + '_temperature_' + String(l) + 'h']);
+		event_state = hass.states[this.config.entity + '_temperature_' + String(l) + 'h'];
         event(l) = new Date(event_state.attributes.observation_time);
 		Hour[l] = event[l].toLocaleTimeString('en-US', uiDateOptions);
 	}
