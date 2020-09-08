@@ -42,11 +42,11 @@ class HourlyForecast extends HTMLElement {
    	var l;
 	for (l=0; l<= numF; l++) {
 	    Precip = this.config.entity + '_precipitation_' + String(l) + 'h';
-    	Precip_state[l] = hass.states[Precip];
+    	Precip_state[l] = hass.states[Precip].state;
 		
 		//Precipprob_state[l] = hass.states[this.config.entity + '_precipitation_probability_' + String(l) + 'h'];
 		Temp = this.config.entity + '_temperature_' + String(l) + 'h';
-		Temp_state[l] = String(Math.round(Number(hass.states[Temp])));
+		Temp_state[l] = String(Math.round(Number(hass.states[Temp].state)));
 		//Humid_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_' + String(l) + 'h'])));  
 		//Weather_state[l] = hass.states[this.config.entity + '2_weather_condition_' + String(l) + 'h'];
 		//FeelsLikeTemp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_' + String(l) + 'h'])));
