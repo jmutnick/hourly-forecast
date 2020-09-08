@@ -63,18 +63,18 @@ class HourlyForecast extends HTMLElement {
      	event[l] = new Date(hass.states[event_state].attributes.observation_time);
     	Hour[l] = event[l].toLocaleTimeString('en-US', uiDateOptions);
  
- 		if (Weather_state[l] == "clear" && sunstatestr == "above_horizon" && event[i] < sunsetdt) {Weather_state[l] = "clear_day";}
-    		else if (Weather_state[l] == "clear" && sunstatestr == "above_horizon" && event[i] > sunsetdt) {Weather_state[l] = "clear_night";}
-    		else if (Weather_state[l] == "clear" && sunstatestr == "below_horizon" && event[i] < sunrisedt) {Weather_state[l] = "clear_night";}
-    		else if (Weather_state[l] == "clear" && sunstatestr == "below_horizon" && event[i] > sunrisedt) {Weather_state[l] = "clear_day";}  
-    		else if (Weather_state[l] == "mostly_clear" && sunstatestr == "above_horizon" && event[i] < sunrisedt) {Weather_state[l] = "mostly_clear_day";}
-    		else if (Weather_state[l] == "mostly_clear" && sunstatestr == "above_horizon" && event[i] > sunrisedt) {Weather_state[l] = "mostly_clear_night";}
-    		else if (Weather_state[l] == "mostly_clear" && sunstatestr == "below_horizon" && event[i]  > sunsetdt) {Weather_state[l] = "mostly_clear_night";}
-    		else if (Weather_state[l] == "mostly_clear" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[l] = "mostly_clear_day";}
-    		else if (Weather_state[l] == "partly_cloudy" && sunstatestr == "above_horizon" && event[i] < sunrisedt) {Weather_state[l] = "partly_cloudy_day";}
-    		else if (Weather_state[l] == "partly_cloudy" && sunstatestr == "above_horizon" && event[i] > sunrisedt) {Weather_state[l] = "partly_cloudy_night";}
-    		else if (Weather_state[l] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  > sunsetdt) {Weather_state[l] = "partly_cloudy_night";}
-    		else if (Weather_state[l] == "partly_cloudy" && sunstatestr == "below_horizon" && event[i]  < sunsetdt) {Weather_state[l] = "partly_cloudy_day";}
+ 		if (Weather_state[l] == "clear" && sunstatestr == "above_horizon" && event[l] < sunsetdt) {Weather_state[l] = "clear_day";}
+    		else if (Weather_state[l] == "clear" && sunstatestr == "above_horizon" && event[l] > sunsetdt) {Weather_state[l] = "clear_night";}
+    		else if (Weather_state[l] == "clear" && sunstatestr == "below_horizon" && event[l] < sunrisedt) {Weather_state[l] = "clear_night";}
+    		else if (Weather_state[l] == "clear" && sunstatestr == "below_horizon" && event[l] > sunrisedt) {Weather_state[l] = "clear_day";}  
+    		else if (Weather_state[l] == "mostly_clear" && sunstatestr == "above_horizon" && event[l] < sunrisedt) {Weather_state[l] = "mostly_clear_day";}
+    		else if (Weather_state[l] == "mostly_clear" && sunstatestr == "above_horizon" && event[l] > sunrisedt) {Weather_state[l] = "mostly_clear_night";}
+    		else if (Weather_state[l] == "mostly_clear" && sunstatestr == "below_horizon" && event[l]  > sunsetdt) {Weather_state[l] = "mostly_clear_night";}
+    		else if (Weather_state[l] == "mostly_clear" && sunstatestr == "below_horizon" && event[l]  < sunsetdt) {Weather_state[l] = "mostly_clear_day";}
+    		else if (Weather_state[l] == "partly_cloudy" && sunstatestr == "above_horizon" && event[l] < sunrisedt) {Weather_state[l] = "partly_cloudy_day";}
+    		else if (Weather_state[l] == "partly_cloudy" && sunstatestr == "above_horizon" && event[l] > sunrisedt) {Weather_state[l] = "partly_cloudy_night";}
+    		else if (Weather_state[l] == "partly_cloudy" && sunstatestr == "below_horizon" && event[l]  > sunsetdt) {Weather_state[l] = "partly_cloudy_night";}
+    		else if (Weather_state[l] == "partly_cloudy" && sunstatestr == "below_horizon" && event[l]  < sunsetdt) {Weather_state[l] = "partly_cloudy_day";}
 		}
 
     //construct html
