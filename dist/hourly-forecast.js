@@ -39,20 +39,22 @@ class HourlyForecast extends HTMLElement {
     var event_state;
   
     // Loop
-//    var l;
-//	for (l=0; l<= numF; l++) {
-//        Precip_state[l] = hass.states[this.config.entity + '_precipitation_' + String(l) + 'h'];
-//		Precipprob_state[l] = hass.states[this.config.entity + '_precipitation_probability_' + String(l) + 'h'];
-//		Temp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_' + String(l) + 'h'])));
-//		Humid_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_' + String(l) + 'h'])));  
-//		Weather_state[l] = hass.states[this.config.entity + '2_weather_condition_' + String(l) + 'h'];
-//		FeelsLikeTemp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_' + String(l) + 'h'])));
+   	var l;
+	for (l=0; l<= numF; l++) {
+	    Precip = this.config.entity + '_precipitation_' + String(l) + 'h';
+    	Precip_state[l] = hass.states[Precip];
+		console.log('Loop Precip 0h state=' + Precip_state[l]);
 		
-	
-//		event_state = hass.states[this.config.entity + '_temperature_' + String(l) + 'h'];
-  //      event[l] = new Date(event_state.attributes.observation_time);
-	//	Hour[l] = event[l].toLocaleTimeString('en-US', uiDateOptions);
-	//}
+		//Precipprob_state[l] = hass.states[this.config.entity + '_precipitation_probability_' + String(l) + 'h'];
+		//Temp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_' + String(l) + 'h'])));
+		//Humid_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_' + String(l) + 'h'])));  
+		//Weather_state[l] = hass.states[this.config.entity + '2_weather_condition_' + String(l) + 'h'];
+		//FeelsLikeTemp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_' + String(l) + 'h'])));
+		
+		//event_state = hass.states[this.config.entity + '_temperature_' + String(l) + 'h'];
+     	//event[l] = new Date(event_state.attributes.observation_time);
+    	//Hour[l] = event[l].toLocaleTimeString('en-US', uiDateOptions);
+	}
     
     // this is start of 0h
     Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;
