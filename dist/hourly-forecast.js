@@ -50,7 +50,7 @@ class HourlyForecast extends HTMLElement {
 		
 	
 		event_state = hass.states[this.config.entity + '_temperature_' + String(l) + 'h'];
-        event(l) = new Date(event_state.attributes.observation_time);
+        event[l] = new Date(event_state.attributes.observation_time);
 		Hour[l] = event[l].toLocaleTimeString('en-US', uiDateOptions);
 	}
     
