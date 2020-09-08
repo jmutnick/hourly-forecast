@@ -43,10 +43,10 @@ class HourlyForecast extends HTMLElement {
 	for (l=0; l<= numF; l++) {
 	    Precip = this.config.entity + '_precipitation_' + String(l) + 'h';
     	Precip_state[l] = hass.states[Precip];
-		console.log('Loop Precip state=' + Precip_state[l].state);
 		
 		//Precipprob_state[l] = hass.states[this.config.entity + '_precipitation_probability_' + String(l) + 'h'];
-		//Temp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_' + String(l) + 'h'])));
+		Temp = this.config.entity + '_temperature_' + String(l) + 'h';
+		Temp_state[l] = String(Math.round(Number(hass.states[Temp])));
 		//Humid_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_' + String(l) + 'h'])));  
 		//Weather_state[l] = hass.states[this.config.entity + '2_weather_condition_' + String(l) + 'h'];
 		//FeelsLikeTemp_state[l] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_' + String(l) + 'h'])));
@@ -57,9 +57,9 @@ class HourlyForecast extends HTMLElement {
 	}
     
     // this is start of 0h
-    Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;
+    //Precip_state[0] = hass.states[this.config.entity + '_precipitation_0h'].state;
     Precipprob_state[0] = hass.states[this.config.entity + '_precipitation_probability_0h'].state;
-    Temp_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_0h'].state)));
+    //Temp_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_0h'].state)));
     Humid_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_0h'].state)));  
     Weather_state[0] = hass.states[this.config.entity + '2_weather_condition_0h'].state;
     FeelsLikeTemp_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_0h'].state)));
@@ -67,9 +67,9 @@ class HourlyForecast extends HTMLElement {
     Hour[0] = event[0].toLocaleTimeString('en-US', uiDateOptions);
     
     // this is start of 1h
-    Precip_state[1] = hass.states[this.config.entity + '_precipitation_1h'].state;
+    //Precip_state[1] = hass.states[this.config.entity + '_precipitation_1h'].state;
     Precipprob_state[1] = hass.states[this.config.entity + '_precipitation_probability_1h'].state;
-    Temp_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_1h'].state)));
+    //Temp_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_1h'].state)));
     Humid_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_1h'].state)));  
     Weather_state[1] = hass.states[this.config.entity + '2_weather_condition_1h'].state;
     FeelsLikeTemp_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_1h'].state)));
@@ -77,9 +77,9 @@ class HourlyForecast extends HTMLElement {
     Hour[1] = event[1].toLocaleTimeString('en-US', uiDateOptions);
     
     // this is start of 2h
-    Precip_state[2] = hass.states[this.config.entity + '_precipitation_2h'].state;
+    //Precip_state[2] = hass.states[this.config.entity + '_precipitation_2h'].state;
     Precipprob_state[2] = hass.states[this.config.entity + '_precipitation_probability_2h'].state;
-    Temp_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_2h'].state)));
+    //Temp_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_2h'].state)));
     Humid_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_2h'].state)));  
     Weather_state[2] = hass.states[this.config.entity + '2_weather_condition_2h'].state;
     FeelsLikeTemp_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_2h'].state)));
@@ -87,9 +87,9 @@ class HourlyForecast extends HTMLElement {
     Hour[2] = event[2].toLocaleTimeString('en-US', uiDateOptions);
 
     // this is start of 3h
-    Precip_state[3] = hass.states[this.config.entity + '_precipitation_3h'].state;
+    //Precip_state[3] = hass.states[this.config.entity + '_precipitation_3h'].state;
     Precipprob_state[3] = hass.states[this.config.entity + '_precipitation_probability_3h'].state;
-    Temp_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_3h'].state)));
+    //Temp_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_3h'].state)));
     Humid_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_3h'].state)));  
     Weather_state[3] = hass.states[this.config.entity + '2_weather_condition_3h'].state;
     FeelsLikeTemp_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_3h'].state)));
@@ -97,9 +97,9 @@ class HourlyForecast extends HTMLElement {
     Hour[3] = event[3].toLocaleTimeString('en-US', uiDateOptions);
 
     // this is start of 4h
-    Precip_state[4] = hass.states[this.config.entity + '_precipitation_4h'].state;
+    //Precip_state[4] = hass.states[this.config.entity + '_precipitation_4h'].state;
     Precipprob_state[4] = hass.states[this.config.entity + '_precipitation_probability_4h'].state;
-    Temp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_4h'].state)));
+    //Temp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_4h'].state)));
     Humid_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_4h'].state)));  
     Weather_state[4] = hass.states[this.config.entity + '2_weather_condition_4h'].state;
     FeelsLikeTemp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_4h'].state)));
@@ -107,9 +107,9 @@ class HourlyForecast extends HTMLElement {
     Hour[4] = event[4].toLocaleTimeString('en-US', uiDateOptions);
         
     // this is start of 5h
-    Precip_state[5] = hass.states[this.config.entity + '_precipitation_5h'].state;
+    //Precip_state[5] = hass.states[this.config.entity + '_precipitation_5h'].state;
     Precipprob_state[5] = hass.states[this.config.entity + '_precipitation_probability_5h'].state;
-    Temp_state[5] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_5h'].state)));
+    //Temp_state[5] = String(Math.round(Number(hass.states[this.config.entity + '_temperature_5h'].state)));
     Humid_state[5] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_5h'].state)));  
     Weather_state[5] = hass.states[this.config.entity + '2_weather_condition_5h'].state;
     FeelsLikeTemp_state[5] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_5h'].state)));
