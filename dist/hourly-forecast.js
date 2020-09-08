@@ -59,9 +59,9 @@ class HourlyForecast extends HTMLElement {
 		FeelsLike = this.config.entity + '_feels_like_' + String(l) + 'h';
 		FeelsLikeTemp_state[l] = String(Math.round(Number(hass.states[FeelsLike].state)));
 		
-		//event_state = hass.states[this.config.entity + '_temperature_' + String(l) + 'h'];
-     	//event[l] = new Date(event_state.attributes.observation_time);
-    	//Hour[l] = event[l].toLocaleTimeString('en-US', uiDateOptions);
+		event_state = this.config.entity + '_temperature_' + String(l) + 'h';
+     	event[l] = new Date(hass.states[event_state].attributes.observation_time);
+    	Hour[l] = event[l].toLocaleTimeString('en-US', uiDateOptions);
 	}
     
     // this is start of 0h
@@ -71,8 +71,8 @@ class HourlyForecast extends HTMLElement {
     //Humid_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_0h'].state)));  
     //Weather_state[0] = hass.states[this.config.entity + '2_weather_condition_0h'].state;
     //FeelsLikeTemp_state[0] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_0h'].state)));
-    event[0] = new Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
-    Hour[0] = event[0].toLocaleTimeString('en-US', uiDateOptions);
+    //event[0] = new Date(hass.states[this.config.entity + '_temperature_0h'].attributes.observation_time);
+    //Hour[0] = event[0].toLocaleTimeString('en-US', uiDateOptions);
     
     // this is start of 1h
     //Precip_state[1] = hass.states[this.config.entity + '_precipitation_1h'].state;
@@ -81,8 +81,8 @@ class HourlyForecast extends HTMLElement {
     //Humid_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_1h'].state)));  
     //Weather_state[1] = hass.states[this.config.entity + '2_weather_condition_1h'].state;
     //FeelsLikeTemp_state[1] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_1h'].state)));
-    event[1] = new Date(hass.states[this.config.entity + '_temperature_1h'].attributes.observation_time);
-    Hour[1] = event[1].toLocaleTimeString('en-US', uiDateOptions);
+    //event[1] = new Date(hass.states[this.config.entity + '_temperature_1h'].attributes.observation_time);
+    //Hour[1] = event[1].toLocaleTimeString('en-US', uiDateOptions);
     
     // this is start of 2h
     //Precip_state[2] = hass.states[this.config.entity + '_precipitation_2h'].state;
@@ -91,8 +91,8 @@ class HourlyForecast extends HTMLElement {
     //Humid_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_2h'].state)));  
     //Weather_state[2] = hass.states[this.config.entity + '2_weather_condition_2h'].state;
     //FeelsLikeTemp_state[2] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_2h'].state)));
-    event[2] = new Date(hass.states[this.config.entity + '_temperature_2h'].attributes.observation_time);
-    Hour[2] = event[2].toLocaleTimeString('en-US', uiDateOptions);
+    //event[2] = new Date(hass.states[this.config.entity + '_temperature_2h'].attributes.observation_time);
+    //Hour[2] = event[2].toLocaleTimeString('en-US', uiDateOptions);
 
     // this is start of 3h
     //Precip_state[3] = hass.states[this.config.entity + '_precipitation_3h'].state;
@@ -101,8 +101,8 @@ class HourlyForecast extends HTMLElement {
     //Humid_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_3h'].state)));  
     //Weather_state[3] = hass.states[this.config.entity + '2_weather_condition_3h'].state;
     //FeelsLikeTemp_state[3] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_3h'].state)));
-    event[3] = new Date(hass.states[this.config.entity + '_temperature_3h'].attributes.observation_time);
-    Hour[3] = event[3].toLocaleTimeString('en-US', uiDateOptions);
+    //event[3] = new Date(hass.states[this.config.entity + '_temperature_3h'].attributes.observation_time);
+    //Hour[3] = event[3].toLocaleTimeString('en-US', uiDateOptions);
 
     // this is start of 4h
     //Precip_state[4] = hass.states[this.config.entity + '_precipitation_4h'].state;
@@ -111,8 +111,8 @@ class HourlyForecast extends HTMLElement {
     //Humid_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_4h'].state)));  
     //Weather_state[4] = hass.states[this.config.entity + '2_weather_condition_4h'].state;
     //FeelsLikeTemp_state[4] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_4h'].state)));
-    event[4] = new Date(hass.states[this.config.entity + '_temperature_4h'].attributes.observation_time);
-    Hour[4] = event[4].toLocaleTimeString('en-US', uiDateOptions);
+    //event[4] = new Date(hass.states[this.config.entity + '_temperature_4h'].attributes.observation_time);
+    //Hour[4] = event[4].toLocaleTimeString('en-US', uiDateOptions);
         
     // this is start of 5h
     //Precip_state[5] = hass.states[this.config.entity + '_precipitation_5h'].state;
@@ -121,8 +121,8 @@ class HourlyForecast extends HTMLElement {
     //Humid_state[5] = String(Math.round(Number(hass.states[this.config.entity + '_humidity_percentage_5h'].state)));  
     //Weather_state[5] = hass.states[this.config.entity + '2_weather_condition_5h'].state;
     //FeelsLikeTemp_state[5] = String(Math.round(Number(hass.states[this.config.entity + '_feels_like_5h'].state)));
-    event[5] = new Date(hass.states[this.config.entity + '_temperature_5h'].attributes.observation_time);
-    Hour[5] = event[5].toLocaleTimeString('en-US', uiDateOptions);   
+    //event[5] = new Date(hass.states[this.config.entity + '_temperature_5h'].attributes.observation_time);
+    //Hour[5] = event[5].toLocaleTimeString('en-US', uiDateOptions);   
         
     var i;
     for (i=0; i<= numF; i++) {    
