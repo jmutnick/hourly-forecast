@@ -33,7 +33,7 @@ class HourlyForecast extends HTMLElement {
 	var FeelsLikeTemp_state = new Array();
 	var event = new Array();  
 	var Hour = new Array();
-	var numF=8;
+	var numF=5;
 	var html1;
 	var Precip, PrecipProb, Temp, Humid, Weather, FeelsLike, HourNum;
     var event_state;
