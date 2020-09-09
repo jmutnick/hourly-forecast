@@ -21,8 +21,8 @@ class HourlyForecast extends HTMLElement {
     
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
-    var numF = Number(this.config.hours);
-    console.log(numF);
+    const numF = Number(this.config.hours);
+    console.log("Number of loops: " + numF);
     var graph = this.config.graph;
     //console.log("HOURLY FORECAST: graph=" + graph);
     
@@ -39,7 +39,8 @@ class HourlyForecast extends HTMLElement {
 	var html1;
 	var Precip, PrecipProb, Temp, Humid, Weather, FeelsLike, HourNum;
     var event_state;
-    var l, x;
+    var l;
+    var x;
   
     // Loop
    	for (l=0; l<= numF; l++) {
