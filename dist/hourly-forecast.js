@@ -145,11 +145,11 @@ tr.border_bottom  td{
             <div>${Precip} in/hr</div></td></tr>`;
       };
       
-html1 += `</table><canvas id="MyCanvas" width="100%"></canvas>`;
-html1 += `<script language=javascript>
-var ctx = document.getElementById('MyCanvas');
+html1 += '</table><canvas id="MyCanvas" width="100%"></canvas>';
+html1 += '<script language=javascript>
+var ctx = document.getElementById("MyCanvas");
 console.log("Result: " + ctx);
-</script>`
+</script>'
 html1 += `</body>`;
 
 this.content.innerHTML = html1;
