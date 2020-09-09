@@ -152,8 +152,7 @@ html1 += `</table>
 this.content.innerHTML = html1;
 
 // document.getElementById('MyCanvas') returns NULL
-console.log("Mode: " + document.documentMode);
-console.log("URI: " + document.documentURI);
+console.log("Canvas: " + document.HTMLCanvasElement);
 console.log("Active Element: " + document.activeElement);
 
 
