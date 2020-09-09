@@ -38,7 +38,7 @@ class HourlyForecast extends HTMLElement {
 	var html1;
 	var Precip, PrecipProb, Temp, Humid, Weather, FeelsLike, HourNum;
     var event_state;
-    val l, x;
+    var l, x;
   
     // Loop
    	for (l=0; l<= numF; l++) {
