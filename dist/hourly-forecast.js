@@ -18,8 +18,10 @@ class HourlyForecast extends HTMLElement {
     // Variables Defined from Config
     
     const sunstatestr = hass.states[this.config.sun_object].state;
+    
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
+    var numF = Number(this.config.hours);
     var graph = this.config.graph;
     //console.log("HOURLY FORECAST: graph=" + graph);
     
@@ -33,14 +35,13 @@ class HourlyForecast extends HTMLElement {
 	var FeelsLikeTemp_state = new Array();
 	var event = new Array();  
 	var Hour = new Array();
-	var numF=7;
 	var html1;
 	var Precip, PrecipProb, Temp, Humid, Weather, FeelsLike, HourNum;
     var event_state;
+    val l, x;
   
     // Loop
-   	var l;
-	for (l=0; l<= numF; l++) {
+   	for (l=0; l<= numF; l++) {
 	    Precip = this.config.entity + '_precipitation_' + String(l) + 'h';
     	Precip_state[l] = hass.states[Precip].state;
 		
@@ -112,7 +113,6 @@ tr.border_bottom  td{
 </style>
       <table cellspacing=0>`;
   
-  var x;        
   for (x=0; x <= numF; x++) { 
     Weather = Weather_state[x];
     HourNum = Hour[x];
