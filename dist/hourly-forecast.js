@@ -21,7 +21,7 @@ class HourlyForecast extends HTMLElement {
     
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
-    const numF = 8;
+    const numF = 7;
     //const numF = Number(this.config.hours);
     console.log("Number of loops: " + numF);
     var graph = this.config.graph;
@@ -46,9 +46,9 @@ class HourlyForecast extends HTMLElement {
     var l;
    	for (l=0; l<= numF; l++) {
 	    Precip = this.config.entity + '_precipitation_' + String(l) + 'h';
-	    Precip_state[l] = hass.states[Precip];
-    	console.log(Precip_state[l]);
-    	console.log(Precip_state[l].state);
+	    Precip_state[l] = hass.states[Precip].state;
+    	//console.log(Precip_state[l]);
+    	//console.log(Precip_state[l].state);
     	
     	
 		PrecipProb = this.config.entity + '_precipitation_probability_' + String(l) + 'h';
