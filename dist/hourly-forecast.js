@@ -1,8 +1,6 @@
 // Project by Jonathan Mutnick to use the Climacell data provider to display an hourly forecast
 // Work in process
 
-import 'https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js?module';
-
 class HourlyForecast extends HTMLElement {
   set hass(hass) {
     if (!this.content) {
@@ -22,8 +20,6 @@ class HourlyForecast extends HTMLElement {
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
     const numF = Number(this.config.hours) - 1;
-    var graph = this.config.graph;
-    //console.log("HOURLY FORECAST: graph=" + graph);
     
     // Variable Declarations
     const uiDateOptions = { hour: 'numeric', };  
@@ -146,38 +142,9 @@ tr.border_bottom  td{
       };
       
 html1 += `</table>
-<div><canvas id="MyCanvas" width="100%"></canvas></div>
 </body>`;
 
 this.content.innerHTML = html1;
-
-// document.getElementById('MyCanvas') returns NULL
-console.log("Canvas: " + document.getElementById('ha-card').children);
-
-
-
-//do this after the html has been established
-
-// if (graph == true) {     
-//       var ctx = document.getElementById('myChart');
-// 	  new Chart(ctx, {
-//         	type: 'line',
-//         	data: {
-//         		labels:['0h','1h','2h','3h','4h'],
-//         		datasets: [{
-//         			label:'Forecast Temps',
-//         			data: [
-//         				85,
-//         				90,
-//         				87,
-//         				86,
-//         				85],
-//         			fill: false,
-//         			}] 		
-//         		}        
-//         });   
-// 		//document.body.appendChild(canvas);
-//      };
   }
 
   //make sure an entity is set
