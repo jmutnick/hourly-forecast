@@ -152,7 +152,10 @@ html1 += `</table>
 this.content.innerHTML = html1;
 
 // document.getElementById('MyCanvas') returns NULL
-console.log("Result: " + document.getElementById('MyCanvas'));
+console.log("Mode: " + document.documentMode);
+console.log("URI: " + document.documentURI);
+console.log("Active Element: " + document.activeElement);
+
 
 //do this after the html has been established
 
