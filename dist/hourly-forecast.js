@@ -152,8 +152,8 @@ html1 += `</table>
 this.content.innerHTML = html1;
 
 // document.getElementById('MyCanvas') returns NULL
-console.log("Canvas: " + document.HTMLCanvasElement);
-console.log("Active Element: " + document.activeElement);
+console.log("Canvas: " + document.getElementById('ha-card').children;
+
 
 
 //do this after the html has been established
