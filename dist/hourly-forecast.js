@@ -146,10 +146,11 @@ tr.border_bottom  td{
       };
       
 html1 += `</table>
-<div><canvas id="MyCanvas" width="100%"></canvas></div>;
+<div><canvas id="MyCanvas" width="100%"></canvas></div>
 <script language=javascript>
+    import 'https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js?module';
 	var ctx = document.getElementById("MyCanvas");
-	console.log("Result: " + ctx);
+	console.log("ctx=" + ctx);
 </script>
 </body>`;
 
