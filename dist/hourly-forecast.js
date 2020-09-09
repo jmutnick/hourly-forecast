@@ -22,6 +22,7 @@ class HourlyForecast extends HTMLElement {
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
     var numF = Number(this.config.hours);
+    console.log(numF);
     var graph = this.config.graph;
     //console.log("HOURLY FORECAST: graph=" + graph);
     
