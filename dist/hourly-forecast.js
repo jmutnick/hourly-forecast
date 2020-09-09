@@ -147,7 +147,8 @@ tr.border_bottom  td{
       
 html1 += `</table><canvas id="MyCanvas" width="100%"></canvas>`;
 html1 += `<script language=javascript>
-console.log("Result: " + document.getElementById('MyCanvas'));
+var ctx = document.getElementById('MyCanvas');
+console.log("Result: " + ctx);
 </script>`
 html1 += `</body>`;
 
