@@ -147,14 +147,14 @@ tr.border_bottom  td{
             <div>${Precip} in/hr</div></td></tr>`;
       };
       
-//html1 += `</table><canvas id="MyCanvas" name"myChart" width="100%"></canvas>`;
+html1 += `</table><canvas id="MyCanvas" name"myChart" width="100%"></canvas>`;
 
 html1 += `</body>`;
 
 this.content.innerHTML = html1;
 
 // document.getElementById('MyCanvas') returns NULL
-//console.log("Result: " + document.getElementById('MyCanvas'));
+console.log("Result: " + document.getElementById('MyCanvas'));
 
 //do this after the html has been established
 
