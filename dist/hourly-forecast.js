@@ -152,7 +152,7 @@ html1 += `</table>
 this.content.innerHTML = html1;
 
 // document.getElementById('MyCanvas') returns NULL
-console.log("Canvas: " + document.getElementById('ha-card').children;
+console.log("Canvas: " + document.getElementById('ha-card').children);
 
 
 
