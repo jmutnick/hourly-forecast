@@ -21,9 +21,7 @@ class HourlyForecast extends HTMLElement {
     
     const sunrisedt = new Date(hass.states[this.config.sun_object].attributes.next_rising);
     const sunsetdt = new Date(hass.states[this.config.sun_object].attributes.next_setting);
-//    const numF = 7;
     const numF = Number(this.config.hours) - 1;
-    console.log("Number of loops: " + numF);
     var graph = this.config.graph;
     //console.log("HOURLY FORECAST: graph=" + graph);
     
@@ -147,8 +145,10 @@ tr.border_bottom  td{
             <div>${Precip} in/hr</div></td></tr>`;
       };
       
-html1 += `</table><canvas id="MyCanvas" name"myChart" width="100%"></canvas>`;
-
+html1 += `</table><canvas id="MyCanvas" width="100%"></canvas>`;
+html1 += `<script language=javascript>
+console.log("Result: " + document.getElementById('MyCanvas'));
+</script>`
 html1 += `</body>`;
 
 this.content.innerHTML = html1;
