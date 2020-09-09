@@ -46,8 +46,8 @@ class HourlyForecast extends HTMLElement {
     var l;
    	for (l=0; l<= numF; l++) {
 	    Precip = this.config.entity + '_precipitation_' + String(l) + 'h';
-	    //console.log("Precipitation for " + l + "h=" + Precip);
-    	Precip_state[l] = hass.states[Precip].state;
+	    console.log("Precipitation for " + l + "h=" + Precip);
+    	Precip_state[l] = hass.states[Precip];
 		
 		PrecipProb = this.config.entity + '_precipitation_probability_' + String(l) + 'h';
 		Precipprob_state[l] = hass.states[PrecipProb].state;
