@@ -13,8 +13,8 @@ jobs:
       - uses: alice-biometrics/release-creator/@v1.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: 'v0.0.9.9.36-beta'
-          description: '* Giving up on graphing again for now'
+          version: 'v0.1.0.0 beta'
+          description: '* Fixing night icons'
           repo: 'jmutnick/hourly-forecast'  
           branch: 'master'
           draft: 'false'
