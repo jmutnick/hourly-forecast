@@ -80,7 +80,6 @@ class HourlyForecast extends HTMLElement {
     		else if (Weather_state[l] == "partly_cloudy" && event[l] > sunsetdt) {Weather_state[l] = "partly_cloudy_night";}
     		}
 
-
     //construct html
        
     html1 = `<body>    
